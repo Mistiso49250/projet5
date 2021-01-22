@@ -7,25 +7,23 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class HomeController extends AbstractController
+class ArticleController extends AbstractController
 {
-
     private $articleManager;
-   
+
     public function __construct(ArticleManager $articleManager)
     {
         $this->articleManager = $articleManager;
     }
 
     /**
-     * @Route("/home", name="home")
-     * @Route("/", name="homeroot")
+     * @Route("/article/{id}", name="article")
      */
-    public function index(): Response
+    public function index(int $id): Response
     {
-        $list = $this->articleManager->AllNouveaute();
-        return $this->render('home/index.html.twig', [
-            'list'=>$list,
+        $article = $this->articleManager->Article($id);
+        return $this->render('article/index.html.twig', [
+            'article'=>$article,
         ]);
     }
 }
