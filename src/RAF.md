@@ -53,3 +53,10 @@ créer les autres entity sans les pk et fk
 Faire les Fixtures
 
 Changer la langues des templates : ok
+
+
+Faire liste fonction du site
+rajouter les slug dans entité : categorie & marque & tva
+rajouter code dans tva
+
+faire tableau data marque et tva idem appFixtures
