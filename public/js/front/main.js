@@ -26,7 +26,7 @@ let marques = new marquesSlider(
         "images/logo/djeco.png",
         "images/logo/omy.png",
         "images/logo/smartgame.png",
-        "images/logo/omy.png",
+        "images/logo/papo.jfif",
         "images/logo/vilac.jfif",
     ], "marquesSliderImage",
 

@@ -50,13 +50,14 @@ créer les autres entity sans les pk et fk
         * symfony console m:mig
         * symfony console d:m:m 
 
-Faire les Fixtures
+Faire les Fixtures : ok
 
 Changer la langues des templates : ok
 
 
-Faire liste fonction du site
-rajouter les slug dans entité : categorie & marque & tva
-rajouter code dans tva
+26/01
+Faire liste fonction du site : ok
+rajouter les slug dans entité : categorie & marque & tva : ok
+rajouter code dans tva : ok
 
 faire tableau data marque et tva idem appFixtures
