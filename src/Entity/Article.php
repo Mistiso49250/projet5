@@ -59,6 +59,12 @@ class Article
      */
     private $slug;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="articles")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $categorie;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -153,9 +159,21 @@ class Article
         return $this->slug;
     }
 
-    public function setSlug(string $slug): self
+    // public function setSlug(string $slug): self
+    // {
+    //     $this->slug = $slug;
+
+    //     return $this;
+    // }
+
+    public function getCategorie(): ?Categorie
     {
-        $this->slug = $slug;
+        return $this->categorie;
+    }
+
+    public function setCategorie(?Categorie $categorie): self
+    {
+        $this->categorie = $categorie;
 
         return $this;
     }

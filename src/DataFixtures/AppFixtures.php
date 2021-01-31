@@ -227,7 +227,7 @@ class AppFixtures extends Fixture
             $tempCategorie->setCode($dataCategorie['code']);
             $tempCategorie->setSlug($dataCategorie['slug']);
             $manager->persist($tempCategorie);
-            $categories[] = $tempCategorie;
+            $categories[$dataCategorie['code']] = $tempCategorie;
         }
         $manager->flush();
 
@@ -341,8 +341,8 @@ class AppFixtures extends Fixture
                     ->setExtrait("Extrait de l'article n°$i")
                     ->setDetail("Détatil de l'article n°$i")
                     ->setPrixTTC(10.25)
-                    ->setSlug("titre_de_l_article_n_$i")
-                    ->setNew(1);
+                    ->setNew(1)
+                    ->setCategorie($categories['manuelle']);
 
             $manager->persist($article);
         }

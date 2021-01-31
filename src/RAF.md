@@ -61,3 +61,16 @@ rajouter les slug dans entité : categorie & marque & tva : ok
 rajouter code dans tva : ok
 
 faire tableau data marque et tva idem appFixtures
+
+
+29/01
+* Changer code tva : normal pour 20 reduit pour les 5.5
+* continuer de creer les relation article -> marque
+                                article -> tva
+
+* Faire les slug des autres entité + maj fictures
+* créer des articles pour chaque caté
+* Créer une table catégorie principal
+* créer une table caté secondaire avec une liaison 
+* rensigé toutes les caté 
+* lié la table caté avec caté secondaire

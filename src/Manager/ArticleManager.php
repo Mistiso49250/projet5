@@ -24,6 +24,10 @@ class ArticleManager
     // recupère les nouveaux articles pour la homePage
     public function AllNouveaute() : array
     {
+        $articles = $this->articleRepository->findBy(['new'=> 1]);
+        foreach($articles as $article){
+            dump($article->getCategorie()->getCode());
+        }
         return $this->articleRepository->findBy(['new'=> 1]);
     }
 }
