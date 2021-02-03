@@ -2,16 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\CategorieRepository;
+use App\Repository\CategorieSecondaireRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * @ORM\Entity(repositoryClass=CategorieRepository::class)
+ * @ORM\Entity(repositoryClass=CategorieSecondaireRepository::class)
  */
-class Categorie
+class CategorieSecondaire
 {
     /**
      * @ORM\Id
@@ -37,22 +37,22 @@ class Categorie
     private $slug;
 
     /**
-     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="categorie")
+     * @ORM\ManyToOne(targetEntity=CategoriePrincipal::class, inversedBy="secondaire")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $articles;
+    private $categoriePrincipal;
 
     /**
-     * @ORM\ManyToMany(targetEntity=CategorieSecondaire::class, inversedBy="secondaire")
+     * @ORM\ManyToMany(targetEntity=Categorie::class, mappedBy="secondaire")
      */
     private $secondaire;
 
-    
-
     public function __construct()
     {
-        $this->articles = new ArrayCollection();
         $this->secondaire = new ArrayCollection();
     }
+
+   
 
     public function getId(): ?int
     {
@@ -95,58 +95,44 @@ class Categorie
     //     return $this;
     // }
 
-    /**
-     * @return Collection|Article[]
-     */
-    public function getArticles(): Collection
+    public function getCategoriePrincipal(): ?CategoriePrincipal
     {
-        return $this->articles;
+        return $this->categoriePrincipal;
     }
 
-    public function addArticle(Article $article): self
+    public function setCategoriePrincipal(?CategoriePrincipal $categoriePrincipal): self
     {
-        if (!$this->articles->contains($article)) {
-            $this->articles[] = $article;
-            $article->setCategorie($this);
-        }
-
-        return $this;
-    }
-
-    public function removeArticle(Article $article): self
-    {
-        if ($this->articles->removeElement($article)) {
-            // set the owning side to null (unless already changed)
-            if ($article->getCategorie() === $this) {
-                $article->setCategorie(null);
-            }
-        }
+        $this->categoriePrincipal = $categoriePrincipal;
 
         return $this;
     }
 
     /**
-     * @return Collection|CategorieSecondaire[]
+     * @return Collection|Categorie[]
      */
     public function getSecondaire(): Collection
     {
         return $this->secondaire;
     }
 
-    public function addSecondaire(CategorieSecondaire $secondaire): self
+    public function addSecondaire(Categorie $secondaire): self
     {
         if (!$this->secondaire->contains($secondaire)) {
             $this->secondaire[] = $secondaire;
+            $secondaire->addSecondaire($this);
         }
 
         return $this;
     }
 
-    public function removeSecondaire(CategorieSecondaire $secondaire): self
+    public function removeSecondaire(Categorie $secondaire): self
     {
-        $this->secondaire->removeElement($secondaire);
+        if ($this->secondaire->removeElement($secondaire)) {
+            $secondaire->removeSecondaire($this);
+        }
 
         return $this;
     }
 
+   
 }

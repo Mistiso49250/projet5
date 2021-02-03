@@ -29,7 +29,7 @@ class Article
     private $extrait;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $detail;
 
@@ -64,6 +64,19 @@ class Article
      * @ORM\JoinColumn(nullable=false)
      */
     private $categorie;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Marque::class, inversedBy="articles")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $marque;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Tva::class, inversedBy="articles")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $tva;
 
     public function getId(): ?int
     {
@@ -174,6 +187,31 @@ class Article
     public function setCategorie(?Categorie $categorie): self
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+
+    public function getMarque(): ?Marque
+    {
+        return $this->marque;
+    }
+
+    public function setMarque(?Marque $marque): self
+    {
+        $this->marque = $marque;
+
+        return $this;
+    }
+
+    public function getTva(): ?Tva
+    {
+        return $this->tva;
+    }
+
+    public function setTva(?Tva $tva): self
+    {
+        $this->tva = $tva;
 
         return $this;
     }

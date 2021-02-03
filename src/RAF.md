@@ -64,13 +64,24 @@ faire tableau data marque et tva idem appFixtures
 
 
 29/01
-* Changer code tva : normal pour 20 reduit pour les 5.5
-* continuer de creer les relation article -> marque
-                                article -> tva
+* Changer code tva : normal pour 20 reduit pour les 5.5 : ok
+* continuer de creer les relation article -> marque : ok
+                                article -> tva : ok
 
-* Faire les slug des autres entité + maj fictures
-* créer des articles pour chaque caté
-* Créer une table catégorie principal
-* créer une table caté secondaire avec une liaison 
-* rensigé toutes les caté 
+* Faire les slug des autres entité + maj fictures : ok
+* créer des articles pour chaque caté : en cours
+* Créer une table catégorie principal : ok
+* créer une table caté secondaire avec une liaison : ok sans la liaison
+* rensigé toutes les caté : ok 
 * lié la table caté avec caté secondaire
+
+
+
+02/02
+* mettre la clef pour la tva : ok
+* Mettre Tva et Marque dans les articles : ok
+* controler les slug sous modèle article : ok
+* finir les fictures et faire fonctionner : 
+* creer relation entre catégorie secondaire et categorie : ok mais a verifier
+* remettre a jour les fictures : ok
+* faire les wireframe homePage en prio :
