@@ -3,9 +3,7 @@
 {% block title %}Les P'tits Pouces{% endblock %}
 
 {% block body %}
-{# {% for flashMessage in app.flashes('success') %} 
-    <div class="alert alert-success" role="alert">{{ flashMessage }}</div>
-{% endfor %} #}
+
 <header class="slide" id="slide">
 		<div class="circleLeft">
 			<a id="circleLeft">
@@ -50,7 +48,6 @@
 						<p class="cardPrice">{{ article.prixTTC }}
 							€</p>
 						<a class="btn btn-info btn-rouded mb-4" href="">Ajouter au panier</a>
-						<h3>{{ article.categorie.code }}</h3>
 					</div>
 				</div>
 			</div>

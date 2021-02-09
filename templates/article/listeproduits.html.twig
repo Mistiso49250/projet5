@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ListeProduitController!{% endblock %}
+
+{% block body %}
+<!-- notification message d'erreurs -->
+	{% for message in app.flashes('error') %}
+		<h2 class="danger">
+			{{ message }}
+		</h2>
+	{% endfor %}
+	{% for message in app.flashes('success') %}
+		<h2 class="success">
+			{{ message }}
+		</h2>
+	{% endfor %}
+
+	<div class="homeHeader">
+		<h2>Listes des articles</h2>
+	</div>
+
+	<div class="container-fluid row mb-4">
+		<div class="col-md-3 mb-4" id="aideRecherche">
+			<div class="card text-center">
+				<div class="cardBlock">
+					<h4 class="cardTitle">Filtrer</h4>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Par âge
+					</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">0 - 12mois</a>
+						<a class="dropdown-item" href="#">2 - 4ans</a>
+						<a class="dropdown-item" href="#">5 - 7ans</a>
+						{# <div class="dropdown-divider"></div> #}
+						<a class="dropdown-item" href="#">8 ans et +</a>
+					</div>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Par genre
+					</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">Garçon</a>
+						<a class="dropdown-item" href="#">Fille</a>
+						<a class="dropdown-item" href="#">Mixte</a>
+					</div>
+				</div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Par marque
+					</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">oiseaubateau</a>
+						<a class="dropdown-item" href="#">buki</a>
+						<a class="dropdown-item" href="#">baForKids</a>
+						<a class="dropdown-item" href="#">moulinroty</a>
+						<a class="dropdown-item" href="#">funkyframes</a>
+						<a class="dropdown-item" href="#">fresk</a>
+						<a class="dropdown-item" href="#">bergamotte</a>
+						<a class="dropdown-item" href="#">corolle</a>
+						<a class="dropdown-item" href="#">haba</a>
+						<a class="dropdown-item" href="#">janod</a>
+						<a class="dropdown-item" href="#">lilliputiens</a>
+						<a class="dropdown-item" href="#">Lunii</a>
+						<a class="dropdown-item" href="#">djeco</a>
+						<a class="dropdown-item" href="#">omy</a>
+						<a class="dropdown-item" href="#">smartgame</a>
+						<a class="dropdown-item" href="#">papo</a>
+						<a class="dropdown-item" href="#">pixie</a>
+						<a class="dropdown-item" href="#">Ugears</a>
+						<a class="dropdown-item" href="#">vilac</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{% for article in articles %}
+			<div class="col-md-3 mb-4">
+				<div class="card text-center h-100" style="width: 15rem;">
+					<a href="{{ path('article', {'id': article.id}) }} ">
+						<img src="{{ asset ('images/' ~ article.image) }}" alt="" class="cardImgTop"></a>
+					<div class="cardBlock">
+						<h4 class="cardTitle">{{ article.titre }}
+						</h4>
+						<p class="cardArticleText">{{ article.extrait | nl2br }}</p>
+						<p class="cardPrice">{{ article.prixTTC }}
+							€</p>
+						<a class="btn btn-info btn-rouded mb-4" href="">Ajouter au panier</a>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

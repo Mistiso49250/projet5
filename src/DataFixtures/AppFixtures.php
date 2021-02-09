@@ -15,237 +15,31 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        $dataCategories = [
-            [
-                'description' => 'arty toys',
-                'code' => 'arty',
-            ],
-            [
-                'description' => 'albums photos',
-                'code' => 'albums',
-            ],
-            [
-                'description' => 'activité bébé',
-                'code' => 'bébé',
-            ],
-            [
-                'description' => 'activité manuelle',
-                'code' => 'manuelle',
-            ],
-            [
-                'description' => 'bain',
-                'code' => 'bain',
-            ],
-            [
-                'description' => 'boite a musique',
-                'code' => 'boiteMusique',
-            ],
-            [
-                'description' => 'boite a dent',
-                'code' => 'dentition',
-            ],
-            [
-                'description' => 'boite a histoire',
-                'code' => 'lunii',
-            ],
-            [
-                'description' => 'cheval à bascule',
-                'code' => 'bascule',
-            ],
-            [
-                'description' => 'chariots de marche',
-                'code' => 'chariot',
-            ],
-            [
-                'description' => 'cartable',
-                'code' => 'cartable',
-            ],
-            [
-                'description' => 'cartes',
-                'code' => 'cartes',
-            ],
-            [
-                'description' => 'chevalier',
-                'code' => 'chevalier',
-            ],
-            [
-                'description' => 'coloriage',
-                'code' => 'coloriage',
-            ],
-            [
-                'description' => 'construction',
-                'code' => 'construction',
-            ],
-            [
-                'description' => 'doudou',
-                'code' => 'doudou',
-            ],
-            [
-                'description' => 'draisienne',
-                'code' => 'draisienne',
-            ],
-            [
-                'description' => 'ecole',
-                'code' => 'ecole',
-            ],
-            [
-                'description' => 'educatif',
-                'code' => 'educatif',
-            ],
-            [
-                'description' => 'epicerie',
-                'code' => 'epicerie',
-            ],
-            [
-                'description' => 'espace',
-                'code' => 'espace',
-            ],
-            [
-                'description' => 'figurine',
-                'code' => 'figurine',
-            ],
-            [
-                'description' => 'garage',
-                'code' => 'garage',
-            ],
-            [
-                'description' => 'hochet',
-                'code' => 'hochet',
-            ],
-            [
-                'description' => 'imitation',
-                'code' => 'imitation',
-            ],
-            [
-                'description' => 'jeux d\'extérieur',
-                'code' => 'extérieur',
-            ],
-            [
-                'description' => 'jouets a tirer',
-                'code' => 'a tirer',
-            ],
-            [
-                'description' => 'jouets a suspendre',
-                'code' => 'a suspendre',
-            ],
-            [
-                'description' => 'lampe a histoire',
-                'code' => 'histoire',
-            ],
-            [
-                'description' => 'luminaire',
-                'code' => 'luminaire',
-            ],
-            [
-                'description' => 'mobile',
-                'code' => 'mobile',
-            ],
-            [
-                'description' => 'montre',
-                'code' => 'montre',
-            ],
-            [
-                'description' => 'musique',
-                'code' => 'musique',
-            ],
-            [
-                'description' => 'observation',
-                'code' => 'observation',
-            ],
-            [
-                'description' => 'pate intéligente',
-                'code' => 'pate intéligente',
-            ],
-            [
-                'description' => 'peluche',
-                'code' => 'peluche',
-            ],
-            [
-                'description' => 'petite voiture',
-                'code' => 'petite voiture',
-            ],
-            [
-                'description' => 'porteur',
-                'code' => 'porteur',
-            ],
-            [
-                'description' => 'poupée',
-                'code' => 'poupée',
-            ],
-            [
-                'description' => 'Protèges carnet de santé',
-                'code' => 'carnet',
-            ],
-            [
-                'description' => 'puzzle',
-                'code' => 'puzzle',
-            ],
-            [
-                'description' => 'reflextion/stratégie',
-                'code' => 'reflextion',
-            ],
-            [
-                'description' => 'jeux de société',
-                'code' => 'société',
-            ],
-            [
-                'description' => 'tableaux',
-                'code' => 'tableaux',
-            ],
-            [
-                'description' => 'table et chaise',
-                'code' => 'table',
-            ],
-            [
-                'description' => 'tirelire',
-                'code' => 'tirelire',
-            ],
-            [
-                'description' => 'toise',
-                'code' => 'toise',
-            ],
-            [
-                'description' => 'trotinette',
-                'code' => 'trotinette',
-            ],
-            [
-                'description' => 'veilleuse',
-                'code' => 'veilleuse',
-            ],
-            [
-                'description' => 'voyage',
-                'code' => 'voyage',
-            ],
-        ];
-        $categories = [];
-        foreach($dataCategories as $dataCategorie){
-            $tempCategorie = new Categorie();
-            $tempCategorie->setDescription($dataCategorie['description']);
-            $tempCategorie->setCode($dataCategorie['code']);
-            $manager->persist($tempCategorie);
-            $categories[$dataCategorie['code']] = $tempCategorie;
-        }
-        $manager->flush();
-
-
         $dataCategoriesPrincipal = [
             [
-                'description' => 'cadeaux naissance',
+                'description' => 'Naissance',
                 'code' => 'naissance',
             ],
             [
-                'description' => 'jeux et jouets',
+                'description' => 'Imitation',
+                'code' => 'imitation',
+            ],
+            [
+                'description' => 'Jeux et jouets',
                 'code' => 'jeuxJouets',
             ],
             [
-                'description' => 'mobilier decoration',
+                'description' => 'Mobilier & decoration',
                 'code' => 'mobilier',
             ],
             [
-                'description' => 'accessoire textile',
+                'description' => 'Accessoire & textile',
                 'code' => 'accessoire',
             ],
-           
+            [
+                'description' => 'Plain air',
+                'code' => 'exterieur',
+            ],
         ];
         $categoriesPrincipal = [];
         foreach($dataCategoriesPrincipal as $dataCategoriePrincipal){
@@ -262,30 +56,82 @@ class AppFixtures extends Fixture
             [
                 'description' => 'pour bébé',
                 'code' => 'bébé',
+                'princ'=>$categoriesPrincipal['naissance'],
+            ],
+            [
+                'description' => 'Premier âge',
+                'code' => 'premierage',
+                'princ'=>$categoriesPrincipal['jeuxJouets'],
             ],
             [
                 'description' => 'eveil',
                 'code' => 'eveil',
+                'princ'=>$categoriesPrincipal['naissance'],
             ],
             [
-                'description' => 'pour enfant',
-                'code' => 'enfant',
+                'description' => 'Loisirs créatifs',
+                'code' => 'créatifs',
+                'princ'=>$categoriesPrincipal['jeuxJouets'],
+            ],
+            [
+                'description' => 'Construction',
+                'code' => 'construction',
+                'princ'=>$categoriesPrincipal['jeuxJouets'],
+            ],
+            [
+                'description' => 'Jeux de sociétés',
+                'code' => 'sociétés',
+                'princ'=>$categoriesPrincipal['jeuxJouets'],
+            ],
+            [
+                'description' => 'Histoire du soir',
+                'code' => 'histoire',
+                'princ'=>$categoriesPrincipal['jeuxJouets'],
+            ],
+            [
+                'description' => 'Jouets en bois',
+                'code' => 'jouetbois',
+                'princ'=>$categoriesPrincipal['imitation'],
+            ],
+            [
+                'description' => 'Déguisements',
+                'code' => 'déguisements',
+                'princ'=>$categoriesPrincipal['imitation'],
+            ],
+            [
+                'description' => 'Espace',
+                'code' => 'espace',
+                'princ'=>$categoriesPrincipal['imitation'],
             ],
             [
                 'description' => 'decoration',
                 'code' => 'decoration',
+                'princ'=>$categoriesPrincipal['mobilier'],
             ],
             [
                 'description' => 'mobilier',
                 'code' => 'mobilier',
+                'princ'=>$categoriesPrincipal['mobilier'],
             ],
             [
                 'description' => 'bagagerie',
                 'code' => 'bagagerie',
+                'princ'=>$categoriesPrincipal['accessoire'],
             ],
             [
                 'description' => 'textile',
                 'code' => 'textile',
+                'princ'=>$categoriesPrincipal['accessoire'],
+            ],
+            [
+                'description' => 'Se déplacer',
+                'code' => 'deplacer',
+                'princ'=>$categoriesPrincipal['exterieur'],
+            ],
+            [
+                'description' => 'Jeux d\'extérieur',
+                'code' => 'exterieur',
+                'princ'=>$categoriesPrincipal['exterieur'],
             ],
            
         ];
@@ -294,9 +140,297 @@ class AppFixtures extends Fixture
             $tempCategorieSecondaire = new CategorieSecondaire();
             $tempCategorieSecondaire->setDescription($dataCategorieSecondaire['description']);
             $tempCategorieSecondaire->setCode($dataCategorieSecondaire['code']);
-            $tempCategorieSecondaire->setCategoriePrincipal($categoriesPrincipal['accessoire']);
+            $tempCategorieSecondaire->setCategoriePrincipal($dataCategorieSecondaire['princ']);
             $manager->persist($tempCategorieSecondaire);
             $categoriesSecondaire[$dataCategorieSecondaire['code']] = $tempCategorieSecondaire;
+        }
+        $manager->flush();
+
+        $dataCategories = [
+            [
+                'description' => 'Doudous',
+                'code' => 'doudou',
+                'second'=>$categoriesSecondaire['bébé'],
+            ],
+            [
+                'description' => 'Peluches',
+                'code' => 'peluche',
+                'second'=>$categoriesSecondaire['bébé'],
+            ],
+            [
+                'description' => 'Albums photo',
+                'code' => 'albums',
+                'second'=>$categoriesSecondaire['bébé'],
+            ],
+            [
+                'description' => 'Protège carnet de santé',
+                'code' => 'carnetsanté',
+                'second'=>$categoriesSecondaire['bébé'],
+            ],
+            [
+                'description' => 'Jouets de bain',
+                'code' => 'bain',
+                'second'=>$categoriesSecondaire['eveil'],
+            ],
+            [
+                'description' => 'Jouets à tirer',
+                'code' => 'tirer',
+                'second'=>$categoriesSecondaire['eveil'],
+            ],
+            [
+                'description' => 'Jouets à suspendre',
+                'code' => 'suspendre',
+                'second'=>$categoriesSecondaire['eveil'],
+            ],
+            [
+                'description' => 'Mobile',
+                'code' => 'mobile',
+                'second'=>$categoriesSecondaire['eveil'],
+            ],
+            [
+                'description' => 'Hochets',
+                'code' => 'hochet',
+                'second'=>$categoriesSecondaire['eveil'],
+            ],
+            [
+                'description' => 'Cuisines',
+                'code' => 'cuisine',
+                'second'=>$categoriesSecondaire['jouetbois'],
+            ],
+            [
+                'description' => 'Epicerie',
+                'code' => 'epicerie',
+                'second'=>$categoriesSecondaire['jouetbois'],
+            ],
+            [
+                'description' => 'Garage',
+                'code' => 'garage',
+                'second'=>$categoriesSecondaire['jouetbois'],
+            ],
+            [
+                'description' => 'Poupée',
+                'code' => 'poupée',
+                'second'=>$categoriesSecondaire['jouetbois'],
+            ],
+            [
+                'description' => 'Miniature',
+                'code' => 'miniature',
+                'second'=>$categoriesSecondaire['jouetbois'],
+            ],
+            [
+                'description' => 'Figurine',
+                'code' => 'figurine',
+                'second'=>$categoriesSecondaire['jouetbois'],
+            ],
+            [
+                'description' => 'Chevalier',
+                'code' => 'chevalier',
+                'second'=>$categoriesSecondaire['déguisements'],
+            ],
+            [
+                'description' => 'Téléscope',
+                'code' => 'telescope',
+                'second'=>$categoriesSecondaire['espace'],
+            ],
+            [
+                'description' => 'Globe terrestre',
+                'code' => 'globe',
+                'second'=>$categoriesSecondaire['espace'],
+            ],
+            [
+                'description' => 'Premier jeux d\'éveil',
+                'code' => 'premiereveil',
+                'second'=>$categoriesSecondaire['premierage'],
+            ],
+            [
+                'description' => 'Chariots de marche',
+                'code' => 'chariot',
+                'second'=>$categoriesSecondaire['premierage'],
+            ],
+            [
+                'description' => 'Cheval à bascule',
+                'code' => 'bascule',
+                'second'=>$categoriesSecondaire['premierage'],
+            ],
+            [
+                'description' => 'Porteur',
+                'code' => 'porteur',
+                'second'=>$categoriesSecondaire['premierage'],
+            ],
+            [
+                'description' => 'Coloriage',
+                'code' => 'coloriage',
+                'second'=>$categoriesSecondaire['créatifs'],
+            ],
+            [
+                'description' => 'Peinture',
+                'code' => 'peinture',
+                'second'=>$categoriesSecondaire['créatifs'],
+            ],
+            [
+                'description' => 'Pâte à modeler',
+                'code' => 'pâtemodeler',
+                'second'=>$categoriesSecondaire['créatifs'],
+            ],
+            [
+                'description' => 'Activités manuelle',
+                'code' => 'manuelle',
+                'second'=>$categoriesSecondaire['créatifs'],
+            ],
+            [
+                'description' => 'Cartes à gratter',
+                'code' => 'cartegratter',
+                'second'=>$categoriesSecondaire['créatifs'],
+            ],
+            [
+                'description' => 'Puzzle',
+                'code' => 'puzzle',
+                'second'=>$categoriesSecondaire['créatifs'],
+            ],
+            [
+                'description' => 'Pate intélligente',
+                'code' => 'pateInté',
+                'second'=>$categoriesSecondaire['créatifs'],
+            ],
+            [
+                'description' => 'Premier jeux',
+                'code' => 'premier',
+                'second'=>$categoriesSecondaire['sociétés'],
+            ],
+            [
+                'description' => 'Educatif',
+                'code' => 'educatif',
+                'second'=>$categoriesSecondaire['sociétés'],
+            ],
+            [
+                'description' => 'Réflextion/stratégie',
+                'code' => 'reflexion',
+                'second'=>$categoriesSecondaire['sociétés'],
+            ],
+            [
+                'description' => 'Jeux de cartes',
+                'code' => 'cartes',
+                'second'=>$categoriesSecondaire['sociétés'],
+            ],
+            [
+                'description' => 'Voyage',
+                'code' => 'voyage',
+                'second'=>$categoriesSecondaire['sociétés'],
+            ],
+            [
+                'description' => 'Jouets à empiler, encastrer',
+                'code' => 'empiler',
+                'second'=>$categoriesSecondaire['construction'],
+            ],
+            [
+                'description' => 'Jouets magnétique',
+                'code' => 'magnétique',
+                'second'=>$categoriesSecondaire['construction'],
+            ],
+            [
+                'description' => 'Jeux de constructions',
+                'code' => 'construction',
+                'second'=>$categoriesSecondaire['construction'],
+            ],
+            [
+                'description' => 'Lunii',
+                'code' => 'lunii',
+                'second'=>$categoriesSecondaire['histoire'],
+            ],
+            [
+                'description' => 'Lampe à histoire',
+                'code' => 'lampehistoire',
+                'second'=>$categoriesSecondaire['histoire'],
+            ],
+            [
+                'description' => 'Petite tables & chaises',
+                'code' => 'tableschaises',
+                'second'=>$categoriesSecondaire['mobilier'],
+            ],
+            [
+                'description' => 'Boite à dents',
+                'code' => 'boitedent',
+                'second'=>$categoriesSecondaire['decoration'],
+            ],
+            [
+                'description' => 'Boite à musique',
+                'code' => 'boiteMusique',
+                'second'=>$categoriesSecondaire['decoration'],
+            ],
+            [
+                'description' => 'Tirelire',
+                'code' => 'tirelire',
+                'second'=>$categoriesSecondaire['decoration'],
+            ],
+            [
+                'description' => 'Toise',
+                'code' => 'toise',
+                'second'=>$categoriesSecondaire['decoration'],
+            ],
+            [
+                'description' => 'Tableaux',
+                'code' => 'tableaux',
+                'second'=>$categoriesSecondaire['decoration'],
+            ],
+            [
+                'description' => 'Veilleuse',
+                'code' => 'veilleuse',
+                'second'=>$categoriesSecondaire['decoration'],
+            ],
+            [
+                'description' => 'Luminaire',
+                'code' => 'luminaire',
+                'second'=>$categoriesSecondaire['decoration'],
+            ],
+            [
+                'description' => 'Cartable',
+                'code' => 'cartable',
+                'second'=>$categoriesSecondaire['bagagerie'],
+            ],
+            [
+                'description' => 'Voyage',
+                'code' => 'valise',
+                'second'=>$categoriesSecondaire['bagagerie'],
+            ],
+            [
+                'description' => 'Cape et kimono de bain',
+                'code' => 'capebain',
+                'second'=>$categoriesSecondaire['textile'],
+            ],
+            [
+                'description' => 'Serviettes',
+                'code' => 'serviette',
+                'second'=>$categoriesSecondaire['textile'],
+            ],
+            [
+                'description' => 'Plaid',
+                'code' => 'plaid',
+                'second'=>$categoriesSecondaire['textile'],
+            ],
+            [
+                'description' => 'Draisienne',
+                'code' => 'draisienne',
+                'second'=>$categoriesSecondaire['deplacer'],
+            ],
+            [
+                'description' => 'Trotinette',
+                'code' => 'trotinette',
+                'second'=>$categoriesSecondaire['deplacer'],
+            ],
+            [
+                'description' => 'Quilles, croquet',
+                'code' => 'quille',
+                'second'=>$categoriesSecondaire['exterieur'],
+            ],
+        ];
+        $categories = [];
+        foreach($dataCategories as $dataCategorie){
+            $tempCategorie = new Categorie();
+            $tempCategorie->setDescription($dataCategorie['description']);
+            $tempCategorie->setCode($dataCategorie['code']);
+            $tempCategorie->addSecondaire($dataCategorie['second']);
+            $manager->persist($tempCategorie);
+            $categories[$dataCategorie['code']] = $tempCategorie;
         }
         $manager->flush();
 
@@ -308,6 +442,14 @@ class AppFixtures extends Fixture
             ],
             [
                 'titre' => 'buki',
+                'image' => 'http://placehold.it/150x150',
+            ],
+            [
+                'titre' => 'dam',
+                'image' => 'http://placehold.it/150x150',
+            ],
+            [
+                'titre' => 'baForKids',
                 'image' => 'http://placehold.it/150x150',
             ],
             [
@@ -363,6 +505,10 @@ class AppFixtures extends Fixture
                 'image' => 'http://placehold.it/150x150',
             ],
             [
+                'titre' => 'pixie',
+                'image' => 'http://placehold.it/150x150',
+            ],
+            [
                 'titre' => 'ulysse',
                 'image' => 'http://placehold.it/150x150',
             ],
@@ -405,6 +551,7 @@ class AppFixtures extends Fixture
         }
         $manager->flush();
 
+
         // Article
         $dataArticle = [
             [
@@ -416,7 +563,7 @@ class AppFixtures extends Fixture
                 'detail'=>'Dimension: 6,6 x 8,5 x 5 cm Dimensions de la boîte : 14 x 12 x 5,7 cm',
                 'prixTTC'=>11,
                 'new'=>1,
-                'categorie'=>$categories['arty'],
+                'categorie'=>$categories['figurine'],
                 'marque'=>$marques['djeco'],
                 'tva'=>$tva['normal'],
             ],
@@ -443,7 +590,7 @@ class AppFixtures extends Fixture
                            Âge	à partir de 6 mois',
                 'prixTTC'=>17,
                 'new'=>1,
-                'categorie'=>$categories['bébé'],
+                'categorie'=>$categories['premiereveil'],
                 'marque'=>$marques['haba'],
                 'tva'=>$tva['normal'],
             ],
@@ -500,7 +647,7 @@ class AppFixtures extends Fixture
                            Couleur	Rose',
                 'prixTTC'=>11,
                 'new'=>0,
-                'categorie'=>$categories['dentition'],
+                'categorie'=>$categories['boitedent'],
                 'marque'=>$marques['moulinroty'],
                 'tva'=>$tva['normal'],
             ],
@@ -682,7 +829,7 @@ class AppFixtures extends Fixture
                            Label	Eco-friendly, GOTS',
                 'prixTTC'=>46,
                 'new'=>0,
-                'categorie'=>$categories['ecole'],
+                'categorie'=>$categories['cartable'],
                 'marque'=>$marques['fresk'],
                 'tva'=>$tva['normal'],
             ],
@@ -732,7 +879,7 @@ class AppFixtures extends Fixture
                             Age De 8 ans jusqu\'à 12 ans',
                 'prixTTC'=>80,
                 'new'=>0,
-                'categorie'=>$categories['espace'],
+                'categorie'=>$categories['telescope'],
                 'marque'=>$marques['buki'],
                 'tva'=>$tva['normal'],
             ],
@@ -796,7 +943,7 @@ class AppFixtures extends Fixture
                            Matière	Bois, papier, carton',
                 'prixTTC'=>100,
                 'new'=>0,
-                'categorie'=>$categories['imitation'],
+                'categorie'=>$categories['epicerie'],
                 'marque'=>$marques['janod'],
                 'tva'=>$tva['normal'],
             ],
@@ -811,7 +958,7 @@ class AppFixtures extends Fixture
                            Nb Joueurs	2 et plus',
                 'prixTTC'=>35,
                 'new'=>0,
-                'categorie'=>$categories['extérieur'],
+                'categorie'=>$categories['quille'],
                 'marque'=>$marques['janod'],
                 'tva'=>$tva['normal'],
             ],
@@ -825,7 +972,7 @@ class AppFixtures extends Fixture
                            Matière	Bois (hêtre et contreplaqué)',
                 'prixTTC'=>30,
                 'new'=>0,
-                'categorie'=>$categories['a tirer'],
+                'categorie'=>$categories['tirer'],
                 'marque'=>$marques['janod'],
                 'tva'=>$tva['normal'],
             ],
@@ -838,7 +985,7 @@ class AppFixtures extends Fixture
                            Lavage	Lavable en machine à 30°C – cycle délicat',
                 'prixTTC'=>25,
                 'new'=>0,
-                'categorie'=>$categories['a suspendre'],
+                'categorie'=>$categories['suspendre'],
                 'marque'=>$marques['lilliputiens'],
                 'tva'=>$tva['normal'],
             ],
@@ -854,7 +1001,7 @@ class AppFixtures extends Fixture
                             Dimensions : 16 x 4 cm',
                 'prixTTC'=>13,
                 'new'=>0,
-                'categorie'=>$categories['histoire'],
+                'categorie'=>$categories['lampehistoire'],
                 'marque'=>$marques['moulinroty'],
                 'tva'=>$tva['normal'],
             ],
@@ -890,241 +1037,264 @@ class AppFixtures extends Fixture
                 'marque'=>$marques['moulinroty'],
                 'tva'=>$tva['normal'],
             ],
+            // [
+            //     'titre'=>'Montre Cheval',
+            //     'extrait'=>'Ludique, originale et colorée',
+            //     'contenu'=>'La montre pédagogique Cheval est issue de la collection Little Big Room de la marque française Djeco. Elle se compose de 3 aiguilles et d\'un double cadran avec au centre les heures et autour les minutes. Son bracelet en polyester de 20 cm et sa fermeture de type boucle ardillon ',
+            //     'image'=>'images\djeco\montre-cheval.jpg',
+            //     'detail'=>'Pile incluse SR626SW Sony Dimensions de la montre : 3 x 20 x 1,4 cm, poids de 15 grammes Dimensions de la boite : 5,3 x 22,5 x 1,5 cm Les montres Djeco sont garanties 2 ans et sans bisphénol A.',
+            //     'prixTTC'=>23,
+            //     'new'=>0,
+            //     'categorie'=>$categories['montre'],
+            //     'marque'=>$marques['djeco'],
+            //     'tva'=>$tva['normal'],
+            // ],
+            // [
+            //     'titre'=>'Kalimba Le Voyage d\'Olga',
+            //     'extrait'=>'Idéal pour les petits musiciens',
+            //     'contenu'=>'Les lamelles en métal émettent des sons différents selon la taille. La sonorité est harmonieuse quelque soit l\'âge du joueur. Illustré du renard de la gamme, cet instrument de musique permettra à votre enfant de s\'éveiller à la musique',
+            //     'image'=>'images\moulin\kalimba.jpg',
+            //     'detail'=>'Dimension du produit	13x14 cm
+            //             Détails des matières	MDF, métal
+            //             Marque	Moulin Roty
+            //             Couleur	Multicolore
+            //             Age	Dès 4 ans',
+            //     'prixTTC'=>25,
+            //     'new'=>0,
+            //     'categorie'=>$categories['musique'],
+            //     'marque'=>$marques['moulinroty'],
+            //     'tva'=>$tva['normal'],
+            // ],
             [
-                'titre'=>'Montre Cheval',
-                'extrait'=>'Ludique, originale et colorée',
-                'contenu'=>'La montre pédagogique Cheval est issue de la collection Little Big Room de la marque française Djeco. Elle se compose de 3 aiguilles et d\'un double cadran avec au centre les heures et autour les minutes. Son bracelet en polyester de 20 cm et sa fermeture de type boucle ardillon ',
-                'image'=>'images\djeco\montre-cheval.jpg',
-                'detail'=>'Pile incluse SR626SW Sony Dimensions de la montre : 3 x 20 x 1,4 cm, poids de 15 grammes Dimensions de la boite : 5,3 x 22,5 x 1,5 cm Les montres Djeco sont garanties 2 ans et sans bisphénol A.',
-                'prixTTC'=>23,
+                'titre'=>'Pate intélligente crazy aaron - baguette de sorcier',
+                'extrait'=>'A manipuler, à modeler mais pas que',
+                'contenu'=>'Elle rebondit et chaque pâte de la gamme Crazy Aaron a une propriété en plus. Violette aux étincelles dorées elle devient bleut électrique dans le noir',
+                'image'=>'images\pate-crazy-aaron-baguette-de-sorcier-crazy-aaron.jpg',
+                'detail'=>'boite de 10cm de diamètre Conseillé à partir de 6 ans',
+                'prixTTC'=>15,
                 'new'=>0,
-                'categorie'=>$categories['montre'],
+                'categorie'=>$categories['pateInté'],
+                'marque'=>$marques['dam'],
+                'tva'=>$tva['normal'],
+            ],
+            [
+                'titre'=>'Pantin lapin Rose',
+                'extrait'=>'On peut l’accrocher partout',
+                'contenu'=>'Ce joyeux lapin rose a de si longues oreilles, on peut l’accrocher partout pour le  garder et ne jamais le perdre. Il peut tout faire avec : le poirier, de la balançoire, s’accroche au fil à linge, et va même jusqu’à se balancer à la lune. Avec ses si longues oreilles, il enveloppe les bébés de tendres câlins et partage des moments de douceur avec eux. Lavable en machine. Présenté dans un joli coffret cadeau personnalisable avec un message dans l\'espace disponible sous le couvercle.',
+                'image'=>'public\images\janod\pantin-lapin-rose-medium.jpg',
+                'detail'=>'Matière(s) Velours Couleur Rose Taille 35 cm',
+                'prixTTC'=>25,
+                'new'=>0,
+                'categorie'=>$categories['peluche'],
+                'marque'=>$marques['janod'],
+                'tva'=>$tva['normal'],
+            ],
+            // [
+            //     'titre'=>'',
+            //     'extrait'=>'',
+            //     'contenu'=>'',
+            //     'image'=>'',
+            //     'detail'=>'',
+            //     'prixTTC'=>180,
+            //     'new'=>0,
+            //     'categorie'=>$categories['petite voiture'],
+            //     'marque'=>$marques[''],
+            //     'tva'=>$tva['normal'],
+            // ],
+            [
+                'titre'=>'Porteur voiture vintage en méta',
+                'extrait'=>'Porteur pour les enfants dès 18 mois ',
+                'contenu'=>'la voiture en métal bleu pétrole de Vilac, un porteur idéal pour les enfants à partir de 18 mois au look qui fera craquer tous les parents. Un cadeau à offrir dès la naissance ou le baptême pour décorer la chambre ou pour le premier anniversaire. Ce porteur est un petit bijou avec sa carrosserie en métal bleu pétrole.',
+                'image'=>'images\vilac\voiture-porteur-metal-bleu-petrole-vilac.jpg',
+                'detail'=>'Couleur bleu pétrole Age 18 mois et + Dimensions	76 x 38 x 40 cm À monter soi-même. Hauteur de l\'assise = 28 cm.',
+                'prixTTC'=>110,
+                'new'=>0,
+                'categorie'=>$categories['porteur'],
+                'marque'=>$marques['vilac'],
+                'tva'=>$tva['normal'],
+            ],
+            [
+                'titre'=>'Ma Corolle Priscille',
+                'extrait'=>'Priscille de Corolle est parée pour passer un Hiver Polaire !',
+                'contenu'=>'La poupée Ma Corolle Priscille de Corolle est parée pour passer un Hiver Polaire ! Poupée de 36 cm en édition limitée, Priscille a un corps souple « effet » sous-vêtement avec de longs cheveux soyeux faciles à coiffer. Son visage, ses bras et ses jambes, à la délicate senteur de vanille, sont en vinyle doux au toucher. Avec ses yeux dormeurs, elle dort quand on la couche sur le dos. Elle est habillée d\'une toque en fausse fourrure et lainage écrue, d\'une veste sans manches en fausse fourrure écrue avec un petit nœud bleu constellé de pois argentés, d\'une robe à pois argentés, d\'une paire de collants écrus et chaussée d\'une paire de bottines argentés avec de la fausse fourrure.',
+                'image'=>'images\corolle\Priscille.jpg',
+                'detail'=>'Âge	De 4 à 8 ans Marque	Corolle Poids 706 g Poupée de 36cm Emballage 18.5 x 13 x 40 cm',
+                'prixTTC'=>70,
+                'new'=>0,
+                'categorie'=>$categories['poupée'],
+                'marque'=>$marques['corolle'],
+                'tva'=>$tva['normal'],
+            ],
+            [
+                'titre'=>'Georges housse Carnet de santé ',
+                'extrait'=>'Un magnifique protège carnet de santé pratique et coloré',
+                'contenu'=>'Un cadeau utile et tout en douceur pour les jeunes mamans, cette housse zippée de Georges le lémurien protègera le carnet de santé de bébé. Très pratique, vous y glisserez son carnet, y écrirez son nom et y glisserez toutes les informations indispensables dans les pochettes intérieures, pour tout transporter dans les meilleures conditions.',
+                'image'=>'images\lilli\georges-housse-carnet-de-sante-lilliputiens.jpg',
+                'detail'=>'Dimensions : 24 x 17 cm Matière : polyester et coton  lavable à 30° en mâchine.',
+                'prixTTC'=>26,
+                'new'=>0,
+                'categorie'=>$categories['carnetsanté'],
+                'marque'=>$marques['lilliputiens'],
+                'tva'=>$tva['normal'],
+            ],
+            [
+                'titre'=>'Puzzle dodo 350 pièces Puzz\'art',
+                'extrait'=>'Un Puzz\'art au format inédit sans coins ni bordures',
+                'contenu'=>' le puzzle Dodo de 350 pièces, un Puzz\'art Djeco au format inédit sans coins ni bordures pour les enfants dès 7 ans. Un oiseau qui vous demandera de la patience et de la concentration. Un format inédit et une façon ludique et originale de réaliser un puzzle avec une grande silhouette dans laquelle de nombreuses illustrations sont représentées.',
+                'image'=>'images\djeco\puzzle-dodo-350-pieces-puzz-art-djeco.jpg',
+                'detail'=>'Dimension du puzzle : 46 x 62 cm Dimension de la boîte : 34 x 23 x 5 cm',
+                'prixTTC'=>15,
+                'new'=>0,
+                'categorie'=>$categories['puzzle'],
                 'marque'=>$marques['djeco'],
                 'tva'=>$tva['normal'],
             ],
             [
-                'titre'=>'Kalimba Le Voyage d\'Olga',
-                'extrait'=>'Idéal pour les petits musiciens',
-                'contenu'=>'Les lamelles en métal émettent des sons différents selon la taille. La sonorité est harmonieuse quelque soit l\'âge du joueur. Illustré du renard de la gamme, cet instrument de musique permettra à votre enfant de s\'éveiller à la musique',
-                'image'=>'images\moulin\kalimba.jpg',
-                'detail'=>'Dimension du produit	13x14 cm
-                        Détails des matières	MDF, métal
-                        Marque	Moulin Roty
-                        Couleur	Multicolore
-                        Age	Dès 4 ans',
+                'titre'=>'Pagodes édition du dragon',
+                'extrait'=>'Construisez chemins et ponts pour relier les pagodes entre elles!',
+                'contenu'=>'Placez judicieusement les pièces nécessaires à la construction de chemins et de ponts pour vous rendre d’une pagode à l’autre!
+                Quels étages de chaque pagode relierez-vous ensemble pour trouver la solution ? Propose 80 défis de niveau de difficulté croissant.
+                Dans cette édition de luxe, un dragon d’or vous fournira des indices supplémentaires !',
+                'image'=>'images\smart\smartgames_templeconnectiondragonedition-FR_banner.jpg',
+                'detail'=>'Âge 7+ Défis 80 Joueurs 1
+                Dans la boîte Un plan de jeu, 3 pagodes, 7 pièces de jeu, 1 Dragon et 1 livret de 80 défis et toutes les solutions.',
                 'prixTTC'=>25,
                 'new'=>0,
-                'categorie'=>$categories['musique'],
+                'categorie'=>$categories['reflexion'],
+                'marque'=>$marques['smartgame'],
+                'tva'=>$tva['normal'],
+            ],
+            [
+                'titre'=>'Poule poule',
+                'extrait'=>'Le Festival de Cinéma vient de commencer, et l’avant-première du film Poule Poule est en train de virer au drame...',
+                'contenu'=>'Un peu moins d’une heure avant la projection, ce maladroit de Waf a mélangé l’ensemble des pellicules. Pour aider Cocotte, qui n’a pas une minute à perdre, et pour éviter que Crack ne craque pour de bon, il faut reconstituer le film au plus vite. Et n’oubliez pas, l’histoire ne prend fin qu\'à l\'apparition du cinquième œuf!
+                Le réalisateur, appelé le "Maître Poule Poule", va empiler les cartes, une par une, les unes sur les autres au centre de la table. Pendant ce temps, les autres joueurs devront "juste" compter les oeufs "disponibles" et être le premier à taper sur le tas dès qu’il y en a 5… facile non? Attendez-vous à quelques perturbations tout de même… car : Lorsqu\'une poule vient couver un oeuf, il disparait! Lorsqu\'un renard chasse une poule, elle s\'enfuit... et l\'oeuf réapparait!               
+                Et c\'est sans compter sur le reste du casting... comprenant : Rico Coco (le coq au passé tumultueux), Waf (le cousin de Paf), Tiger Worm (le ver qui fera son trou), Crack et Double (qui ont bien l\'intention de percer... leur coquille), Coin (l’ambitieux canard bruyant), Grrr (qui essaye de se faire passer pour une poule), et le Fermier...',
+                'image'=>'images\pixie\Poule-Poule.jpg',
+                'detail'=>'De 2 à 8 joueurs à partir de 8 ans.
+                Durée de la partie : 20 min',
+                'prixTTC'=>15,
+                'new'=>0,
+                'categorie'=>$categories['cartes'],
+                'marque'=>$marques['pixie'],
+                'tva'=>$tva['normal'],
+            ],
+            [
+                'titre'=>'HORS-JEU',
+                'extrait'=>'Boule & Bill, c’est l’histoire d’une amitié extraordinaire',
+                'contenu'=>'Boule & Bill, c’est l’histoire d’une amitié extraordinaire entre un petit garçon et son chien ! Le cocker le plus célèbre de la bande dessinée fait équipe avec son meilleur ami Boule et la tortue Caroline pour de nouvelles aventures hors du cadre! Un design qui séduira autant les enfants que les collectionneurs. Cette oeuvre est issue d’une belle collaboration entre les studios créations Mediatoon et Funky Frame',
+                'image'=>'images\funkyframe\xbouleetbill_hors-jeu-600x600.png',
+                'detail'=>'D’après l’univers de Boule et Bill par Roba.
+                Cadre en bois
+                Finition du design: mate
+                Dimensions du cadre : 50 x 50 x 3 cm
+                Dimension du design externe : 35 cm maximum en dehors du cadre ( 1 cm d’épaisseur)
+                Poids : 1.3 kg
+                Système d’accroche : cadre avec huit accroches murales sur sa partie dorsale.
+                Emballage : un emballage sous forme de mallette, 100% recyclable, facile à transporter et idéal
+                pour offrir.
+                Copyright Studio Boule et Bill, 2019',
+                'prixTTC'=>150,
+                'new'=>0,
+                'categorie'=>$categories['tableaux'],
+                'marque'=>$marques['funkyframes'],
+                'tva'=>$tva['normal'],
+            ],
+            [
+                'titre'=>'Table et Chaises Banquise',
+                'extrait'=>'Pour les artistes en herbe',
+                'contenu'=>' 
+                Avec cette table en bois et ses 2 chaises aux couleurs douces, les enfants pourront dessiner et jouer à volonté. Les chaises sont adaptées à la taille des enfants dès 3 ans. Au centre de la table, le pot à crayon permettra de ranger les feutres et crayons de couleurs. Le pot à crayon amovible est fourni. Crayons de couleurs non inclus.',
+                'image'=>'images\janod\AB0005676068_1.jpg',
+                'detail'=>'Dimensions 60 x 60 x 47 cm Matière Bois 
+                La table a un diamètre de 60 cm et mesure 47 cm de haut. Les chaises mesurent 49 cm de haut. La hauteur de l\'assise est de 26 cm et mesure 29 cm par 27 cm.',
+                'prixTTC'=>90,
+                'new'=>0,
+                'categorie'=>$categories['tableschaises'],
+                'marque'=>$marques['janod'],
+                'tva'=>$tva['normal'],
+            ],
+            [
+                'titre'=>'Tirelire éléphant Sous mon baobab',
+                'extrait'=>'Bergamote l\'éléphant se promène avec Paprika le lion sur le dos.',
+                'contenu'=>'Une jolie tirelire en résine avec Paprika le lion et ses amis les oiseaux qui se baladant à dos d\'éléphant. Un cadeau de naissance très décoratif pour la chambre des bébés. 
+                En résine, elle participera à la décoration de chambre de votre enfant et renfermera dans le ventre de cet éléphant les sous de votre enfant.',
+                'image'=>'images\moulin\tirelire_sous_mon_baobab.jpg',
+                'detail'=>'Dimensions de la tirelire : 14 x 14 cm',
+                'prixTTC'=>29,
+                'new'=>0,
+                'categorie'=>$categories['tirelire'],
                 'marque'=>$marques['moulinroty'],
                 'tva'=>$tva['normal'],
             ],
             [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
-                'new'=>0,
-                'categorie'=>$categories['observation'],
-                'marque'=>$marques[''],
-                'tva'=>$tva['normal'],
-            ],
-            [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
-                'new'=>0,
-                'categorie'=>$categories['pate intéligente'],
-                'marque'=>$marques[''],
-                'tva'=>$tva['normal'],
-            ],
-            [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
-                'new'=>0,
-                'categorie'=>$categories['peluche'],
-                'marque'=>$marques[''],
-                'tva'=>$tva['normal'],
-            ],
-            [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
-                'new'=>0,
-                'categorie'=>$categories['petite voiture'],
-                'marque'=>$marques[''],
-                'tva'=>$tva['normal'],
-            ],
-            [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
-                'new'=>0,
-                'categorie'=>$categories['porteur'],
-                'marque'=>$marques[''],
-                'tva'=>$tva['normal'],
-            ],
-            [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
-                'new'=>0,
-                'categorie'=>$categories['poupée'],
-                'marque'=>$marques[''],
-                'tva'=>$tva['normal'],
-            ],
-            [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
-                'new'=>0,
-                'categorie'=>$categories['carnet'],
-                'marque'=>$marques[''],
-                'tva'=>$tva['normal'],
-            ],
-            [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
-                'new'=>0,
-                'categorie'=>$categories['puzzle'],
-                'marque'=>$marques[''],
-                'tva'=>$tva['normal'],
-            ],
-            [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
-                'new'=>0,
-                'categorie'=>$categories['reflextion'],
-                'marque'=>$marques[''],
-                'tva'=>$tva['normal'],
-            ],
-            [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
-                'new'=>0,
-                'categorie'=>$categories['société'],
-                'marque'=>$marques[''],
-                'tva'=>$tva['normal'],
-            ],
-            [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
-                'new'=>0,
-                'categorie'=>$categories['tableaux'],
-                'marque'=>$marques[''],
-                'tva'=>$tva['normal'],
-            ],
-            [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
-                'new'=>0,
-                'categorie'=>$categories['table'],
-                'marque'=>$marques[''],
-                'tva'=>$tva['normal'],
-            ],
-            [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
-                'new'=>0,
-                'categorie'=>$categories['tirelire'],
-                'marque'=>$marques[''],
-                'tva'=>$tva['normal'],
-            ],
-            [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
+                'titre'=>'Toise carnet Les Moustaches',
+                'extrait'=>'toise en carton avec stickers déco reprenant les couleurs et illustrations de la gamme.',
+                'contenu'=>'une fois dépliée vous pourrez inscrire le prénom de l\'enfant, sa date de naissance, et sa taille de naissance. Puis vous aurez à votre disposition des stickers pour compléter la toise au fil des années. Des stickers "c\'est mon anniversaire, j\'ai...ans !" et des stickers marquants les étapes de la vie de votre bébé : "je sais faire mes lacets","je sais lire", "je sais compter jusqu\'à 10", "mon premier jour d\'école"...',
+                'image'=>'images\moulin\Toise_carnet_Les_Moustaches_-_Moulin_Roty.jpg',
+                'detail'=>'Dimensions de la toise dépliée : 15 x 138 cm',
+                'prixTTC'=>18,
                 'new'=>0,
                 'categorie'=>$categories['toise'],
-                'marque'=>$marques[''],
+                'marque'=>$marques['moulinroty'],
                 'tva'=>$tva['normal'],
             ],
             [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
-                'new'=>0,
+                'titre'=>'Porteur & trottinette Scoot & ride',
+                'extrait'=>'Un porteur intelligent qui se transforme en trottinette.',
+                'contenu'=>'Le Highwaykick 1 de Scoot and Ride est un porteur intelligent qui se transforme en trottinette pour le plus grand plaisir de votre bambin. Alors qu\'il sait à peine marcher, dès qu\'il a soufflé sa première bougie, il peut goûter à la joie de se déplacer en toute autonomie grâce au mode porteur. L\'engin a été conçu pour apporter un maximum de confort et de sécurité à votre enfant. Quand il marche enfin et se tient debout, vous pouvez très facilement modifier la configuration du porteur. Sans outil, vous le passez en mode trottinette en quelques secondes.',
+                'image'=>'images\baForKids\scoot-and-ride-highwaykick-1-kiwi-04.jpg',
+                'detail'=>'Pour les enfants de 1 à 5 ans
+                Porteur/trottinette 2 en 1
+                Supporte un poids de 20 kg en mode porteur et 50 kg en mode trottinette
+                Passe du mode porteur au mode trottinette en quelques secondes sans outil
+                Trotteur à 3 roues : 1 petite à l\'arrière et 2 à l\'avant très larges pour plus de stabilité
+                Possède un tampon de sécurité breveté entre les roues avant pour éviter à l\'engin de basculer
+                En mode porteur, large assise souple pour plus de confort
+                Assise réglable en hauteur de 22,5 à 29 cm
+                Guidon réglable en hauteur pour s\'adapter à la taille de l\'enfant de 82 à 118 cm
+                Roue arrière munie d\'un garde-boue',
+                'prixTTC'=>105,
+                'new'=>1,
                 'categorie'=>$categories['trotinette'],
-                'marque'=>$marques[''],
+                'marque'=>$marques['baForKids'],
                 'tva'=>$tva['normal'],
             ],
             [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
-                'prixTTC'=>180,
+                'titre'=>'Luciole Perceval',
+                'extrait'=>'Lampe d\'ambiance à poser pour lire et écouter des histoires',
+                'contenu'=>'aussi jolie éteinte qu\'allumée, entièrement décorée à la main : un futur compagnon de chambre, à la personnalité affirmée.
+                Lampe avec transformateur basse tension à la prise, entièrement sécurisée l\'enfant ne peut pas toucher l\'ampoule.             
+                Coque en résine incassable et ampoule protégée et inaccessible par l\'enfant. Seul un adulte est habilité à changer l\'ampoule.  Répond parfaitement aux normes CE et à l\'esprit de celles-ci.',
+                'image'=>'images\oiseauBateau\luciole-perceval.jpg',
+                'detail'=>'Coloris	Bleu
+                Matiere	Résine
+                Profil	Garçon
+                Dimension	300x180x180',
+                'prixTTC'=>80,
                 'new'=>0,
                 'categorie'=>$categories['veilleuse'],
-                'marque'=>$marques[''],
+                'marque'=>$marques['oiseaubateau'],
                 'tva'=>$tva['normal'],
             ],
             [
-                'titre'=>'',
-                'extrait'=>'',
-                'contenu'=>'',
-                'image'=>'',
-                'detail'=>'',
+                'titre'=>'Sac week-end Pingouin',
+                'extrait'=>'idéal pour les sorties du week-end, les activités sportives ou encore les séjours chez les grands-parents',
+                'contenu'=>'Fabriqué à partir de bouteilles en PET recyclées, ce sac à motifs possède une poche extérieure avec une fermeture éclair ainsi qu\'un compartiment interne. De plus, grâce à ses doubles poignées adaptées aux petites mains, votre bambin pourra le transporter facilement lors de ses déplacements. Ultra pratique pour ranger les petites affaires de votre bout de chou et les maintenir bien en sécurité, cet adorable sac cylindrique est à la fois esthétique, résistant et fonctionnel. Un allié parfait pour les premiers voyages de votre petit. Disponibles dans de nombreux motifs.',
+                'image'=>'images\fresk\Sac_weekend_enfant_Pingouin_Fresk.jpg',
+                'detail'=>'Dimension du produit	46x21x21 cm
+                Conseils d\'entretien	lavage en surface avec un chiffon humide
+                Couleur	Jaune
+                Age	Dès 12 mois
+                Label	Eco-friendly, GOTS',
                 'prixTTC'=>180,
                 'new'=>0,
-                'categorie'=>$categories['voyage'],
-                'marque'=>$marques[''],
+                'categorie'=>$categories['valise'],
+                'marque'=>$marques['fresk'],
                 'tva'=>$tva['normal'],
             ],
         ];
         $article = [];
-        // dump($categories['voyage'], $tva[1], $marques['funkyframes']);
         foreach($dataArticle as $dataArticles){
             $tempArticle = new Article();
             $tempArticle->setTitre($dataArticles['titre']);

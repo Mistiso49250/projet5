@@ -1,7 +1,7 @@
 * symfony serve => lance le serveur
 
-Crer un controller
-* console make:controller Nom du controller 
+Créer un controller
+* symfony console make:controller Nom du controller 
 
 Fixtures
 * composer require --dev orm-fixtures  => installe les fixtures dans symfony
@@ -23,3 +23,19 @@ Relation table
 * inverseBy : articles
 * null ou pas
 
+relation entre fictures
+tableaux : catégorie Principal, catégorie secondaire, catégorie
+
+$dataCategoriesPrincipal = ['donnéesDeLaCatégorie']
+$categoriesPrincipal = [];
+$tempCategoriePrincipal->setCode($dataCategoriePrincipal['code']);
+$categoriesPrincipal[$dataCategoriePrincipal['code']] = $tempCategoriePrincipal;
+
+$dataCategoriesSecondaire = ['princ'=>$categoriesPrincipal['accessoire'],]
+$categoriesSecondaire = [];
+$tempCategorieSecondaire->setCategoriePrincipal($dataCategorieSecondaire['princ']);
+$categoriesSecondaire[$dataCategorieSecondaire['code']] = $tempCategorieSecondaire;
+
+$dataCategories = ['second'=>$categoriesSecondaire['decoration'],]
+$tempCategorie->addSecondaire($dataCategorie['second']);
+$categories[$dataCategorie['code']] = $tempCategorie;

@@ -5,14 +5,19 @@ namespace App\Manager;
 
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
+use App\Repository\CategorieRepository;
+
+use function Symfony\Component\DependencyInjection\Loader\Configurator\ref;
 
 class ArticleManager
 {
     private $articleRepository;
+    private $categorieRepository;
 
-    public function __construct(ArticleRepository $articleRepository)
+    public function __construct(ArticleRepository $articleRepository, CategorieRepository $categorieRepository)
     {
         $this->articleRepository = $articleRepository;
+        $this->categorieRepository = $categorieRepository;
     }
 
     // récupère les informations d'un article
@@ -24,10 +29,13 @@ class ArticleManager
     // recupère les nouveaux articles pour la homePage
     public function AllNouveaute() : array
     {
-        $articles = $this->articleRepository->findBy(['new'=> 1]);
-        foreach($articles as $article){
-            dump($article->getCategorie()->getCode());
-        }
         return $this->articleRepository->findBy(['new'=> 1]);
+    }
+
+    public function ArticleByCategorie(string $slugCategorie): ?array
+    {
+        $categorie = $this->categorieRepository->findOneBy(['slug'=>$slugCategorie]);
+       
+        return $this->articleRepository->findBy(['categorie'=>$categorie]);
     }
 }

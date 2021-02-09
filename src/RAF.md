@@ -81,7 +81,16 @@ faire tableau data marque et tva idem appFixtures
 * mettre la clef pour la tva : ok
 * Mettre Tva et Marque dans les articles : ok
 * controler les slug sous modèle article : ok
-* finir les fictures et faire fonctionner : 
+* finir les fictures et faire fonctionner : ok
 * creer relation entre catégorie secondaire et categorie : ok mais a verifier
 * remettre a jour les fictures : ok
 * faire les wireframe homePage en prio :
+
+
+05/02
+* bien regler les catégorie des fictures pour le menu : ok
+* faire la page liste des produits de la catégorie : ok
+* faire un wireframe de la page liste des produits de la catégorie : ok
+
+* faire les routes co ...
+* creer relation entre catégorie secondaire et categorie : a corriger
