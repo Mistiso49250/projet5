@@ -18,11 +18,11 @@ class ArticleController extends MainController
     }
 
     /**
-     * @Route("/article/{id}", name="article")
+     * @Route("/article/{slug}", name="article")
      */
-    public function index(int $id): Response
+    public function index(string $slug): Response
     {
-        $article = $this->articleManager->Article($id);
+        $article = $this->articleManager->Article($slug);
         return $this->render('article/index.html.twig', [
             'article'=>$article,
         ]);

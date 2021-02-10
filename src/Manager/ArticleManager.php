@@ -21,9 +21,9 @@ class ArticleManager
     }
 
     // récupère les informations d'un article
-    public function Article(int $idArticle) : ?Article
+    public function Article(string $slugArticle) : ?Article
     {
-        return $this->articleRepository->find($idArticle);
+        return $this->articleRepository->find($slugArticle);
     }
 
     // recupère les nouveaux articles pour la homePage

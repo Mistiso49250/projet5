@@ -94,3 +94,11 @@ faire tableau data marque et tva idem appFixtures
 
 * faire les routes co ...
 * creer relation entre catégorie secondaire et categorie : a corriger
+
+
+09/02
+* parge index article, retirer l'id et passer par le slug : ok
+* liste catégorie, mettre le bon title : ok
+* re mettre en place la gestion Utilisateur : 
+* faire le slider avec bootstrap image mini 1400pix : ok
+* dans les fictures rensigner l'entité slider : ok 
