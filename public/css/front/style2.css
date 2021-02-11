@@ -1,9 +1,8 @@
 html, body{
-    font-family: 'Roboto', 'fontawesome', Arial, "Arial Black",sans-serif;
+    font-family: "Nunito",-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
     line-height: 1.4;
     height: 100%;
-
     margin: 0;
     padding: 0;
 }
@@ -101,6 +100,15 @@ header p
 }
 
 /* Menu */
+
+.dropdown-menu {
+    background-color: #1A237E !important;
+}
+
+.dropdown-menu :hover{
+    background-color: #1A237E !important;
+}
+
 .dropdown:hover .dropdown-menu {
     display: block;
 }
@@ -111,6 +119,7 @@ header p
 
 .navbar .dropdown-menu a:not(.active) {
     color: #fff !important;
+    /* background-color: #1A237E !important; */
 }
 
 .special-color {
@@ -205,12 +214,31 @@ header p
 
 /* Page Login */
 
-.form-signin {
+.form-signin, .formReset {
     width: 100%;
-    max-width: 330px;
+    max-width: 390px;
     padding: 15px;
     margin: 0 auto;
+    padding: 10em 0 10em;
+}
+
+.form-control{
+    height: calc(2.3em + 0.75rem + 2px) !important;
+}
+
+.h3 h1{
+    font-family: "Nunito" !important;
+    line-height: 1.2;
+    color: inherit;
+}
+
+.form-signin h1{
     text-align: center;
+    margin-top: 0;
+}
+
+.font-weight-normal {
+    font-weight: 400!important;
 }
 
 .mb-3, .my-3 {
@@ -221,41 +249,70 @@ header p
     font-size: 1.75rem;
 }
 
-.form-signin .checkbox {
-  font-weight: 400;
+.form-label-group input:not(:placeholder-shown) {
+    padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+    padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-signin .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
+:root {
+    --input-padding-x: .75rem;
+    --input-padding-y: .75rem;
 }
 
-.form-signin .form-control:focus {
-  z-index: 2;
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
 }
 
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+.form-label-group > input, .form-label-group > label {
+    padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+.form-label-group > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    line-height: 1.5;
+    color: #495057;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: all .1s ease-in-out;
 }
 
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
+
+input[type=checkbox] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+}
+
+.btn.btn-lg {
+    margin-bottom: 1rem !important;
+}
+
+/* Page Reset password */
+
+.formReset label{
+    margin-right: 1em;
+    padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.formReset input{
+    padding: 0.4em;
+}
+
+.formResetSmall{
+    margin: 1em 0 1em;
+}
 
 @media only screen and (min-width: 601px){
     #circleRight

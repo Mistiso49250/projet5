@@ -23,7 +23,7 @@ Relation table
 * inverseBy : articles
 * null ou pas
 
-relation entre fictures
+Relation entre fictures
 tableaux : catégorie Principal, catégorie secondaire, catégorie
 
 $dataCategoriesPrincipal = ['donnéesDeLaCatégorie']
@@ -39,3 +39,6 @@ $categoriesSecondaire[$dataCategorieSecondaire['code']] = $tempCategorieSecondai
 $dataCategories = ['second'=>$categoriesSecondaire['decoration'],]
 $tempCategorie->addSecondaire($dataCategorie['second']);
 $categories[$dataCategorie['code']] = $tempCategorie;
+
+Vider le cache
+symfony console c:c   => Clearing the cache

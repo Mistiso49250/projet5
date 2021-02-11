@@ -38,7 +38,7 @@ class AppFixtures extends Fixture
                 'code' => 'accessoire',
             ],
             [
-                'description' => 'Plain air',
+                'description' => 'Plein air',
                 'code' => 'exterieur',
             ],
         ];
