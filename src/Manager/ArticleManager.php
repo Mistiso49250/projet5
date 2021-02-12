@@ -6,18 +6,19 @@ namespace App\Manager;
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use App\Repository\CategorieRepository;
+use App\Repository\SliderRepository;
 
-use function Symfony\Component\DependencyInjection\Loader\Configurator\ref;
 
 class ArticleManager
 {
     private $articleRepository;
     private $categorieRepository;
 
-    public function __construct(ArticleRepository $articleRepository, CategorieRepository $categorieRepository)
+    public function __construct(ArticleRepository $articleRepository, CategorieRepository $categorieRepository, SliderRepository $sliderRepository)
     {
         $this->articleRepository = $articleRepository;
         $this->categorieRepository = $categorieRepository;
+        $this->sliderRepository = $sliderRepository;
     }
 
     // récupère les informations d'un article

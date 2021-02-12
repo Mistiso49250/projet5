@@ -567,7 +567,7 @@ class AppFixtures extends Fixture
         foreach($dataSlider as $imageSlider){
             $tempSlider = new Slider();
             $tempSlider->setImage($imageSlider['image']);
-            $manager->persist($tempTVA);
+            $manager->persist($tempSlider);
             $slider[] = $tempSlider;
         }
         $manager->flush();

@@ -101,4 +101,12 @@ faire tableau data marque et tva idem appFixtures
 * liste catégorie, mettre le bon title : ok
 * re mettre en place la gestion Utilisateur : ok 
 * faire le slider avec bootstrap image mini 1400pix : ok
-* dans les fictures rensigner l'entité slider : ok 
+* dans les fictures rensigner l'entité slider : 
+
+
+12/02
+
+* modifier les function pas de cc
+* changer le nom de la methode article dans article manager
+* faire fonctionner le slider comme pour killme5
+* faire slider marques 

@@ -42,3 +42,7 @@ $categories[$dataCategorie['code']] = $tempCategorie;
 
 Vider le cache
 symfony console c:c   => Clearing the cache
+
+BUNDLES
+
+$ composer req liip/imagine-bundle :  gestion d'image

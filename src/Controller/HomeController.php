@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Controller\MainController;
+use App\Manager\SliderManager;
 
 class HomeController extends MainController
 {
@@ -23,12 +24,17 @@ class HomeController extends MainController
      * @Route("/home", name="home")
      * @Route("/", name="homeroot")
      */
-    public function index(): Response
+    public function index(SliderManager $sliderManager): Response
     {
-
-        $list = $this->articleManager->AllNouveaute();
-        return $this->render('home/index.html.twig', [
-            'list'=>$list,
+        $slider = $sliderManager->generateHomePage();
+        return $this->render('killme5.html.twig', [
+            'slider'=>$slider,
         ]);
+        // $slider = $sliderManager->generateHomePage();
+        // $list = $this->articleManager->AllNouveaute();
+        // return $this->render('home/index.html.twig', [
+        //     'list'=>$list,
+        //     'slider'=>$slider,
+        // ]);
     }
 }
