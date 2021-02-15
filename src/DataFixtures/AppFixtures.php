@@ -587,6 +587,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['figurine'],
                 'marque'=>$marques['djeco'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Album photo Ignace',
@@ -600,6 +601,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['albums'],
                 'marque'=>$marques['lilliputiens'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Culbuto Eléphant',
@@ -614,6 +616,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['premiereveil'],
                 'marque'=>$marques['haba'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Les tableaux qui bougent',
@@ -628,6 +631,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['manuelle'],
                 'marque'=>$marques['djeco'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Jeu de bain 3 bateaux',
@@ -642,6 +646,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['bain'],
                 'marque'=>$marques['lilliputiens'],
                 'tva'=>$tva['normal'],
+                'selection'=>1,
             ],
             [
                 'titre'=>'Boite à musique Les moustaches ',
@@ -656,6 +661,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['boiteMusique'],
                 'marque'=>$marques['moulinroty'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Boite dent de lait il était une fois',
@@ -671,6 +677,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['boitedent'],
                 'marque'=>$marques['moulinroty'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Ma fabrique à histoires Lunii',
@@ -691,6 +698,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['lunii'],
                 'marque'=>$marques['Lunii'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Cheval à bascule diamant',
@@ -705,6 +713,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['bascule'],
                 'marque'=>$marques['vilac'],
                 'tva'=>$tva['normal'],
+                'selection'=>1,
             ],
             [
                 'titre'=>'Chariot multi-activités Chat',
@@ -721,6 +730,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['chariot'],
                 'marque'=>$marques['janod'],
                 'tva'=>$tva['normal'],
+                'selection'=>1,
             ],
             [
                 'titre'=>'Cartable baleine gris',
@@ -737,6 +747,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['cartable'],
                 'marque'=>$marques['fresk'],
                 'tva'=>$tva['normal'],
+                'selection'=>1,
             ],
             [
                 'titre'=>'Jeu de cartes Pipolo ',
@@ -752,6 +763,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['cartes'],
                 'marque'=>$marques['djeco'],
                 'tva'=>$tva['normal'],
+                'selection'=>1,
             ],
             [
                 'titre'=>'Bouclier et épée loup',
@@ -766,6 +778,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['chevalier'],
                 'marque'=>$marques['vilac'],
                 'tva'=>$tva['normal'],
+                'selection'=>1,
             ],
             [
                 'titre'=>'3D Licorne Lily',
@@ -779,6 +792,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['coloriage'],
                 'marque'=>$marques['omy'],
                 'tva'=>$tva['normal'],
+                'selection'=>1,
             ],
             [
                 'titre'=>'Navire de recherche',
@@ -799,6 +813,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['construction'],
                 'marque'=>$marques['Ugears'],
                 'tva'=>$tva['normal'],
+                'selection'=>1,
             ],
             [
                 'titre'=>'Chat moutarde Lulu Les Moustaches',
@@ -812,10 +827,11 @@ class AppFixtures extends Fixture
                            Couleur: jaune
                            Age: dés la naissance',
                 'prixTTC'=>22,
-                'new'=>'1',
+                'new'=>1,
                 'categorie'=>$categories['doudou'],
                 'marque'=>$marques['moulinroty'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Draisienne Indian',
@@ -833,6 +849,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['draisienne'],
                 'marque'=>$marques['ulysse'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Sac à dos primaire Ours Polaire',
@@ -853,6 +870,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['cartable'],
                 'marque'=>$marques['fresk'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Eduludo spacio',
@@ -870,6 +888,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['educatif'],
                 'marque'=>$marques['djeco'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Poulet rôti à découper',
@@ -888,6 +907,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['epicerie'],
                 'marque'=>$marques['vilac'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Télescope 50 activités',
@@ -903,6 +923,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['telescope'],
                 'marque'=>$marques['buki'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Allosaure',
@@ -918,6 +939,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['figurine'],
                 'marque'=>$marques['papo'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Garage station service',
@@ -933,6 +955,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['garage'],
                 'marque'=>$marques['janod'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Hochet bois Pakou',
@@ -949,6 +972,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['hochet'],
                 'marque'=>$marques['moulinroty'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Épicerie green market',
@@ -967,6 +991,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['epicerie'],
                 'marque'=>$marques['janod'],
                 'tva'=>$tva['normal'],
+                'selection'=>1,
             ],
             [
                 'titre'=>'Quilles jurassiennes',
@@ -982,6 +1007,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['quille'],
                 'marque'=>$marques['janod'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Escargot à promener',
@@ -996,6 +1022,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['tirer'],
                 'marque'=>$marques['janod'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Jouet à suspendre Georges hochet clap clap',
@@ -1009,6 +1036,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['suspendre'],
                 'marque'=>$marques['lilliputiens'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Lampe à histoires Chien pourri !',
@@ -1025,6 +1053,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['lampehistoire'],
                 'marque'=>$marques['moulinroty'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Lampe ballon',
@@ -1045,6 +1074,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['luminaire'],
                 'marque'=>$marques['buki'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Mobile musical Le voyage d\'Olga',
@@ -1057,6 +1087,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['mobile'],
                 'marque'=>$marques['moulinroty'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             // [
             //     'titre'=>'Montre Cheval',
@@ -1069,6 +1100,7 @@ class AppFixtures extends Fixture
             //     'categorie'=>$categories['montre'],
             //     'marque'=>$marques['djeco'],
             //     'tva'=>$tva['normal'],
+            //'selection'=>0,
             // ],
             // [
             //     'titre'=>'Kalimba Le Voyage d\'Olga',
@@ -1085,6 +1117,7 @@ class AppFixtures extends Fixture
             //     'categorie'=>$categories['musique'],
             //     'marque'=>$marques['moulinroty'],
             //     'tva'=>$tva['normal'],
+            //'selection'=>0,
             // ],
             [
                 'titre'=>'Pate intélligente crazy aaron - baguette de sorcier',
@@ -1097,6 +1130,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['pateInté'],
                 'marque'=>$marques['dam'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Pantin lapin Rose',
@@ -1109,6 +1143,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['peluche'],
                 'marque'=>$marques['janod'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             // [
             //     'titre'=>'',
@@ -1121,6 +1156,7 @@ class AppFixtures extends Fixture
             //     'categorie'=>$categories['petite voiture'],
             //     'marque'=>$marques[''],
             //     'tva'=>$tva['normal'],
+           // 'selection'=>0,
             // ],
             [
                 'titre'=>'Porteur voiture vintage en méta',
@@ -1133,6 +1169,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['porteur'],
                 'marque'=>$marques['vilac'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Ma Corolle Priscille',
@@ -1145,6 +1182,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['poupée'],
                 'marque'=>$marques['corolle'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Georges housse Carnet de santé ',
@@ -1157,6 +1195,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['carnetsanté'],
                 'marque'=>$marques['lilliputiens'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Puzzle dodo 350 pièces Puzz\'art',
@@ -1169,6 +1208,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['puzzle'],
                 'marque'=>$marques['djeco'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Pagodes édition du dragon',
@@ -1184,6 +1224,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['reflexion'],
                 'marque'=>$marques['smartgame'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Poule poule',
@@ -1199,6 +1240,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['cartes'],
                 'marque'=>$marques['pixie'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'HORS-JEU',
@@ -1220,6 +1262,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['tableaux'],
                 'marque'=>$marques['funkyframes'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Table et Chaises Banquise',
@@ -1234,6 +1277,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['tableschaises'],
                 'marque'=>$marques['janod'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Tirelire éléphant Sous mon baobab',
@@ -1247,6 +1291,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['tirelire'],
                 'marque'=>$marques['moulinroty'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Toise carnet Les Moustaches',
@@ -1259,6 +1304,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['toise'],
                 'marque'=>$marques['moulinroty'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Porteur & trottinette Scoot & ride',
@@ -1280,6 +1326,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['trotinette'],
                 'marque'=>$marques['baForKids'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Luciole Perceval',
@@ -1297,6 +1344,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['veilleuse'],
                 'marque'=>$marques['oiseaubateau'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
             [
                 'titre'=>'Sac week-end Pingouin',
@@ -1313,6 +1361,7 @@ class AppFixtures extends Fixture
                 'categorie'=>$categories['valise'],
                 'marque'=>$marques['fresk'],
                 'tva'=>$tva['normal'],
+                'selection'=>0,
             ],
         ];
         $article = [];
@@ -1328,6 +1377,7 @@ class AppFixtures extends Fixture
             $tempArticle->setTva($dataArticles['tva']);
             $tempArticle->setMarque($dataArticles['marque']);
             $tempArticle->setCategorie($dataArticles['categorie']);
+            $tempArticle->setSelection($dataArticles['selection']);
             $manager->persist($tempArticle);
             $article[] = $tempArticle;
         }

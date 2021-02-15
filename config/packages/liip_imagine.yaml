@@ -11,3 +11,20 @@ liip_imagine:
                 thumbnail: 
                     size: [800,400]
                     mode: outbound
+        article:
+            quality: 80
+            filters: 
+                upscale: 
+                    min: [240,240]
+                thumbnail: 
+                    size: [240,240]
+                    mode: outbound
+        marque:
+            quality: 80
+            filters: 
+                upscale: 
+                    min: [240,240]
+                thumbnail: 
+                    size: [240,240]
+                    mode: outbound
+

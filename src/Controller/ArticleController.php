@@ -22,7 +22,7 @@ class ArticleController extends MainController
      */
     public function index(string $slug): Response
     {
-        $article = $this->articleManager->Article($slug);
+        $article = $this->articleManager->findArticle($slug);
         return $this->render('article/index.html.twig', [
             'article'=>$article,
         ]);

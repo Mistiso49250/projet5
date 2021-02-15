@@ -27,8 +27,12 @@ class HomeController extends MainController
     public function index(SliderManager $sliderManager): Response
     {
         $slider = $sliderManager->generateHomePage();
-        return $this->render('killme5.html.twig', [
+        $list = $this->articleManager->AllNouveaute();
+        $selection = $this->articleManager->findSelectionArticle();
+        return $this->render('home/index.html.twig', [
             'slider'=>$slider,
+            'list'=>$list,
+            'selection'=>$selection,
         ]);
         // $slider = $sliderManager->generateHomePage();
         // $list = $this->articleManager->AllNouveaute();

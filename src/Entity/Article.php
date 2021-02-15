@@ -78,6 +78,11 @@ class Article
      */
     private $tva;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $selection;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -212,6 +217,18 @@ class Article
     public function setTva(?Tva $tva): self
     {
         $this->tva = $tva;
+
+        return $this;
+    }
+
+    public function getSelection(): ?bool
+    {
+        return $this->selection;
+    }
+
+    public function setSelection(bool $selection): self
+    {
+        $this->selection = $selection;
 
         return $this;
     }

@@ -106,7 +106,7 @@ faire tableau data marque et tva idem appFixtures
 
 12/02
 
-* modifier les function pas de cc
-* changer le nom de la methode article dans article manager
+* modifier les function pas de cc : ok
+* changer le nom de la methode article dans article manager : ok
 * faire fonctionner le slider comme pour killme5
 * faire slider marques 

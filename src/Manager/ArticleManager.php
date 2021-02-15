@@ -22,18 +22,23 @@ class ArticleManager
     }
 
     // récupère les informations d'un article
-    public function Article(string $slugArticle) : ?Article
+    public function findArticle(string $slugArticle) : ?Article
     {
         return $this->articleRepository->find($slugArticle);
     }
 
     // recupère les nouveaux articles pour la homePage
-    public function AllNouveaute() : array
+    public function allNouveaute() : array
     {
         return $this->articleRepository->findBy(['new'=> 1]);
     }
 
-    public function ArticleByCategorie(string $slugCategorie): ?array
+    // recupère la selection d'article
+    public function findSelectionArticle(): array{
+        return $this->articleRepository->findBy(['selection'=>1]);
+    }
+
+    public function articleByCategorie(string $slugCategorie): ?array
     {
         $categorie = $this->categorieRepository->findOneBy(['slug'=>$slugCategorie]);
        
