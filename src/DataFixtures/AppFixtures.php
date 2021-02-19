@@ -439,11 +439,11 @@ class AppFixtures extends Fixture
         $dataMarques = [
             [
                 'titre' => 'oiseaubateau',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\oiseaubateau.jpg',
             ],
             [
                 'titre' => 'buki',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\buki-logo.jpg',
             ],
             [
                 'titre' => 'dam',
@@ -451,63 +451,63 @@ class AppFixtures extends Fixture
             ],
             [
                 'titre' => 'baForKids',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\baforkid.png',
             ],
             [
                 'titre' => 'moulinroty',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\moulinroty.png',
             ],
             [
                 'titre' => 'funkyframes',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\funkyframes.png',
             ],
             [
                 'titre' => 'fresk',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\fresk.png',
             ],
             [
                 'titre' => 'bergamotte',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\bergamote.jpg',
             ],
             [
                 'titre' => 'corolle',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\corolle.png',
             ],
             [
                 'titre' => 'haba',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\haba.png',
             ],
             [
                 'titre' => 'janod',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\janod.png',
             ],
             [
                 'titre' => 'lilliputiens',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\lilliputiens.jpg',
             ],
             [
                 'titre' => 'Lunii',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\lunii.png',
             ],
             [
                 'titre' => 'djeco',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\djeco.png',
             ],
             [
                 'titre' => 'omy',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\omy.png',
             ],
             [
                 'titre' => 'smartgame',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\smartgame.png',
             ],
             [
                 'titre' => 'papo',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\papo.jpg',
             ],
             [
                 'titre' => 'pixie',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\pixie.jpg',
             ],
             [
                 'titre' => 'ulysse',
@@ -515,11 +515,11 @@ class AppFixtures extends Fixture
             ],
             [
                 'titre' => 'Ugears',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\ugears.png',
             ],
             [
                 'titre' => 'vilac',
-                'image' => 'http://placehold.it/150x150',
+                'image' => 'logo\vilac.jpg',
             ],
         ];
         $marques = [];

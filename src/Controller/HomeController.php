@@ -29,10 +29,12 @@ class HomeController extends MainController
         $slider = $sliderManager->generateHomePage();
         $list = $this->articleManager->AllNouveaute();
         $selection = $this->articleManager->findSelectionArticle();
+        $marque = $sliderManager->generateSilderMarque();
         return $this->render('home/index.html.twig', [
             'slider'=>$slider,
             'list'=>$list,
             'selection'=>$selection,
+            'marque'=>$marque,
         ]);
         // $slider = $sliderManager->generateHomePage();
         // $list = $this->articleManager->AllNouveaute();

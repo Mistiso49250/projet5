@@ -23,8 +23,8 @@ liip_imagine:
             quality: 80
             filters: 
                 upscale: 
-                    min: [240,240]
+                    min: [224,224]
                 thumbnail: 
-                    size: [240,240]
-                    mode: outbound
+                    size: [224,224]
+                    # mode: outbound
 

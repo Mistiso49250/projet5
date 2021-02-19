@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Manager;
@@ -22,26 +23,27 @@ class ArticleManager
     }
 
     // récupère les informations d'un article
-    public function findArticle(string $slugArticle) : ?Article
+    public function findArticle(string $slugArticle): ?Article
     {
-        return $this->articleRepository->find($slugArticle);
+        return $this->articleRepository->findOneBy(['slug' => $slugArticle]);
     }
 
     // recupère les nouveaux articles pour la homePage
-    public function allNouveaute() : array
+    public function allNouveaute(): array
     {
-        return $this->articleRepository->findBy(['new'=> 1]);
+        return $this->articleRepository->findBy(['new' => 1]);
     }
 
     // recupère la selection d'article
-    public function findSelectionArticle(): array{
-        return $this->articleRepository->findBy(['selection'=>1]);
+    public function findSelectionArticle(): array
+    {
+        return $this->articleRepository->findBy(['selection' => 1]);
     }
 
     public function articleByCategorie(string $slugCategorie): ?array
     {
-        $categorie = $this->categorieRepository->findOneBy(['slug'=>$slugCategorie]);
-       
-        return $this->articleRepository->findBy(['categorie'=>$categorie]);
+        $categorie = $this->categorieRepository->findOneBy(['slug' => $slugCategorie]);
+
+        return $this->articleRepository->findBy(['categorie' => $categorie]);
     }
 }

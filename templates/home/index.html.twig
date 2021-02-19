@@ -4,28 +4,25 @@
 {% endblock %}
 
 {% block body %}
-	{# {% for slide in slider %}
-				<img src="{{ asset ('images/' ~ slide.image) | imagine_filter('slider') }}" alt="First slide">
-			{% endfor %} #}
 
 	<header class="slide" id="slide">
-			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-				<div class="carousel-inner">
-					{% for slide in slider %}
-						<div class="carousel-item {{ loop.index == 1 ? 'active' : '' }} ">
-							<img src="{{ asset ('images/' ~ slide.image) | imagine_filter('slider') }}" class="d-block w-100" alt="...">
-						</div>
-					{% endfor %}
-				</div>
-				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
+		<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-inner">
+				{% for slide in slider %}
+					<div class="carousel-item {{ loop.index == 1 ? 'active' : '' }} ">
+						<img src="{{ asset ('images/' ~ slide.image) | imagine_filter('slider') }}" class="d-block w-100" alt="...">
+					</div>
+				{% endfor %}
 			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
 	</header>
 
 	<!-- notification message d'erreurs -->
@@ -41,75 +38,86 @@
 	{% endfor %}
 
 	<div class="homeHeader">
-		<h2>Nouveautés</h2>
+		<h2>Les nouveautés</h2>
 	</div>
 
-	<div class="container-fluid row mb-4">
-		{% for article in list %}
-			<div class="col-md-3 mb-4">
-				<div class="card text-center h-100" style="width: 15rem;">
+	<section class="nouveaute">
+		<div class="row row-cols-1 row-cols-md-3 row-cols-lg-5">
+			{% for article in list %}
+				<div class="col mb-3">
 					<a href="{{ path('article', {'slug': article.slug}) }} ">
-						<img src="{{ asset ('images/' ~ article.image) | imagine_filter('article') }}" alt="" class="cardImgTop"></a>
-					<div class="cardBlock">
-						<h4 class="cardTitle">{{ article.titre }}
-						</h4>
-						<p class="cardArticleText">{{ article.extrait | nl2br }}</p>
-						<p class="cardPrice">{{ article.prixTTC }}
-							€</p>
-						<a class="btn btn-info btn-rouded mb-4" href="">Ajouter au panier</a>
-					</div>
-				</div>
-			</div>
-		{% endfor %}
-	</div>
-
-	<div class="titleSection">
-		<h2>Notre séléctions d'articles</h2>
-	</div>
-	<section class="container-fluid d-flex justify-content-center" id="selection">
-		<div class="container-fluid row mb-4">
-			{% for article in selection %}
-				<div class="col-md-3 mb-4">
-					<div class="card text-center h-100" style="width: 15rem;">
-						<a href="{{ path('article', {'slug': article.slug}) }} ">
-							<img src="{{ asset ('images/' ~ article.image) | imagine_filter('article')}}" alt="" class="cardImgTop"></a>
-						<div class="cardBlock">
-							<h4 class="cardTitle">{{ article.titre }}
-							</h4>
-							<p class="cardArticleText">{{ article.extrait | nl2br }}</p>
-							<p class="cardPrice">{{ article.prixTTC }}
-								€</p>
-							<a class="btn btn-info btn-rouded mb-4" href="">Ajouter au panier</a>
+						<div class="card text-center h-100">
+							<img src="{{ asset ('images/' ~ article.image) | imagine_filter('article') }}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">{{ article.titre }}</h5>
+								<p class="card-text">{{ article.extrait | nl2br }}</p>
+								<p class="cardPrice">{{ article.prixTTC }}
+									€</p>
+								<a class="btn btn-info btn-rouded mb-4" href="">Ajouter au panier</a>
+							</div>
 						</div>
 					</div>
-				</div>
-			{% endfor %}
-		</div>
-	</section>
-
-	<section class="row mb-4">
-		<div class="col-lg-12">
-			<p>
-				<em>Les P'tits Pouces</em>
-				est le magasin de jouet en ligne de la boutique
-				<em>Les P'tits Pouces</em>
-				à Saumur.</p>
-			<p>Notre boutique propose un large éventail de produits de grande qualité dés la naissance et pour les plus grands, constitué de marques renommées comme
-				<a href="index.php?action=Moulin Roty">Moulin Roty</a>, Funky frame, Djeco, Haba, Lilliputiens et beaucoup d'autres…</p>
-			<p>Dans notre boutique de jouets, vous trouverez vos cadeaux de naissance, articles de puériculture, jeux d’éveil, décoration pour la chambre et produits personnalisables au prénom de votre enfant.</p>
-			<p>Nous vous souhaitons une agréable visite sur note site, à la découverte de cadeaux de qualité à offrir aux
-				<em>loupiots</em>
-				et leurs heureux parents  !</p>
-		</div>
-	</section>
-
-	<secion class="row mb-4">
-		<div class="col-lg-10">
-			<h4>Nos marques</h4>
-			<div class="marquesSlider">
-				<img src="images/logo/oiseaubateau.jpg" id="marquesSliderImage" alt="marques">
-				<span id="timerMarques"></span>
+				{% endfor %}
 			</div>
+		</section>
+
+		<div class="titleSection">
+			<h2>Notre séléctions d'articles</h2>
 		</div>
-	</secion>
-{% endblock %}
+
+		<section class="selection">
+			<div class="row row-cols-1 row-cols-md-3 row-cols-lg-5">
+				{% for article in selection %}
+					<div class="col mb-3">
+						<a href="{{ path('article', {'slug': article.slug}) }} ">
+							<div class="card text-center h-100">
+								<img src="{{ asset ('images/' ~ article.image) | imagine_filter('article') }}" class="card-img-top" alt="...">
+								<div class="card-body">
+									<h5 class="card-title">{{ article.titre }}</h5>
+									<p class="card-text">{{ article.extrait | nl2br }}</p>
+									<p class="cardPrice">{{ article.prixTTC }}
+										€</p>
+									<a class="btn btn-info btn-rouded mb-4" href="">Ajouter au panier</a>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</section>
+
+			<section class="row mb-4">
+				<div class="col-lg-12 history">
+					<p>
+						<em>Les P'tits Pouces</em>
+						est le magasin de jouet en ligne de la boutique
+						<em>Les P'tits Pouces</em>
+						à Saumur.</p>
+					<p>Notre boutique propose un large éventail de produits de grande qualité dés la naissance et pour les plus grands, constitué de marques renommées comme
+						<a href="index.php?action=Moulin Roty">
+							<span style="color:blueviolet">Moulin Roty</span>
+						</a>, Funky frame, Djeco, Haba, Lilliputiens et beaucoup d'autres…</p>
+					<p>Dans notre boutique de jouets, vous trouverez vos cadeaux de naissance, articles de puériculture, jeux d’éveil, décoration pour la chambre et produits personnalisables au prénom de votre enfant.</p>
+					<p>Nous vous souhaitons une agréable visite sur note site, à la découverte de cadeaux de qualité à offrir aux
+						<em>loupiots</em>
+						et leurs heureux parents  !</p>
+				</div>
+			</section>
+
+			<div class="titleMarque">
+				<h2>Nos marques</h2>
+			</div>
+
+			<secion class="row marque">
+				{% for item in marque %}
+					<div class="col-xs-4 col-sm-3 col-md-2 marqueContent">
+						<div class="content">
+							<a href="{{ path('article', {'slug': item.slug}) }} ">
+								<img src="{{ asset ('images/' ~ item.image)}}" class="card-img-top" alt="...">
+							</a>
+						</div>
+					</div>
+				{% endfor %}
+			</secion>
+
+
+		{% endblock %}

@@ -24,7 +24,7 @@ class ArticleController extends MainController
     {
         $article = $this->articleManager->findArticle($slug);
         return $this->render('article/index.html.twig', [
-            'article'=>$article,
+            'article' => $article,
         ]);
     }
 
@@ -33,9 +33,31 @@ class ArticleController extends MainController
      */
     public function listeProduitsParCateg(string $slug): Response
     {
-        $articles = $this->articleManager->ArticleByCategorie($slug);
+        $articles = $this->articleManager->articleByCategorie($slug);
         return $this->render('article/listeproduits.html.twig', [
-            'articles'=>$articles,
+            'articles' => $articles,
+        ]);
+    }
+
+    /**
+     * @Route("/nouveaute}", name="article_list_nouveaute")
+     */
+    public function listePageNouveaute(): Response
+    {
+        $nouveau = $this->articleManager->allNouveaute();
+        return $this->render('article/nouveauarticle.html.twig', [
+            'nouveau' => $nouveau,
+        ]);
+    }
+
+    /**
+     * @Route("selection", name="article_list_selection")
+     */
+    public function listePageSelection(): Response
+    {
+        $selection = $this->articleManager->findSelectionArticle();
+        return $this->render('article/selectionarticle.html.twig', [
+            'selection' => $selection,
         ]);
     }
 }

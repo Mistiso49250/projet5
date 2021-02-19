@@ -101,12 +101,23 @@ faire tableau data marque et tva idem appFixtures
 * liste catégorie, mettre le bon title : ok
 * re mettre en place la gestion Utilisateur : ok 
 * faire le slider avec bootstrap image mini 1400pix : ok
-* dans les fictures rensigner l'entité slider : 
+* dans les fictures rensigner l'entité slider : ok
 
 
 12/02
 
 * modifier les function pas de cc : ok
 * changer le nom de la methode article dans article manager : ok
-* faire fonctionner le slider comme pour killme5
-* faire slider marques 
+* faire fonctionner le slider comme pour killme5 : bof
+* faire slider marques : a voir
+
+16/02 
+
+* virer MdBootstrap et refaire menu et footer : ok
+* ajouter une page : selection et nouveauté pour ne pas avoir a retourner 
+                    sur la homePage " dans le menu" : ok
+* créer entité articleImage et faire relation avec article OTM depuis article
+* créer entité age et genre et faire une relation avec article
+* mettre en place la pagination
+* ajouter la page tous les articles avec filtres caté princp, age, marque, genre : ok
+

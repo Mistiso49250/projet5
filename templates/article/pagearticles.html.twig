@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+	<title>Tout les articles</title>
+{% endblock %}
+
+{% block body %}
+	<!-- notification message d'erreurs -->
+	{% for message in app.flashes('error') %}
+		<h2 class="danger">
+			{{ message }}
+		</h2>
+	{% endfor %}
+	{% for message in app.flashes('success') %}
+		<h2 class="success">
+			{{ message }}
+		</h2>
+	{% endfor %}
+
+	<div class="homeHeader">
+		<h4>Tout les articles</h4>
+	</div>
+
+	<div class="container-fluid row mb-4">
+		<div class="col-md-3 mb-4" id="aideRecherche">
+			<div class="card text-center">
+				<div class="cardBlock">
+					<h4 class="cardTitle">Filtrer</h4>
+				</div>
+				<div class="form-check form-switch">
+					<h5>Par âge</h5>
+					<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+					<label class="form-check-label" for="flexSwitchCheckChecked">
+						0 - 18 mois//2 - 4 ans//5 - 7 ans//8 ans et +
+					</label>
+
+					<h5>Par genre</h5>
+					<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+					<label class="form-check-label" for="flexSwitchCheckChecked">
+						Garçon Fille Mixte
+					</label>
+
+					<h5>Par marques</h5>
+					<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+					<label class="form-check-label" for="flexSwitchCheckChecked">
+						voir liste
+					</label>
+
+					<h5>Par catégories</h5>
+					<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+					<label class="form-check-label" for="flexSwitchCheckChecked">
+						catéPrinc
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	{# <a class="dropdown-item" href="#">oiseaubateau</a>
+								<a class="dropdown-item" href="#">buki</a>
+								<a class="dropdown-item" href="#">baForKids</a>
+								<a class="dropdown-item" href="#">moulinroty</a>
+								<a class="dropdown-item" href="#">funkyframes</a>
+								<a class="dropdown-item" href="#">fresk</a>
+								<a class="dropdown-item" href="#">bergamotte</a>
+								<a class="dropdown-item" href="#">corolle</a>
+								<a class="dropdown-item" href="#">haba</a>
+								<a class="dropdown-item" href="#">janod</a>
+								<a class="dropdown-item" href="#">lilliputiens</a>
+								<a class="dropdown-item" href="#">Lunii</a>
+								<a class="dropdown-item" href="#">djeco</a>
+								<a class="dropdown-item" href="#">omy</a>
+								<a class="dropdown-item" href="#">smartgame</a>
+								<a class="dropdown-item" href="#">papo</a>
+								<a class="dropdown-item" href="#">pixie</a>
+								<a class="dropdown-item" href="#">Ugears</a>
+								<a class="dropdown-item" href="#">vilac</a> #}
+
+	{% for article in articles %}
+		<div class="col-md-3 mb-4">
+			<div class="card text-center h-100" style="width: 15rem;">
+				<a href="{{ path('article', {'slug': article.slug}) }} ">
+					<img src="{{ asset ('images/' ~ article.image) }}" alt="" class="cardImgTop"></a>
+				<div class="cardBlock">
+					<h4 class="cardTitle">{{ article.titre }}
+					</h4>
+					<p class="cardArticleText">{{ article.extrait | nl2br }}</p>
+					<p class="cardPrice">{{ article.prixTTC }}
+						€</p>
+					<a class="btn btn-info btn-rouded mb-4" href="">Ajouter au panier</a>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+
+{# Pagination #}
+<div class="d-flex justify-content-between my4">
+	{% if data.pagePrecedente !==0 %}
+		<a href="index.php?action=album&page={{ data.pagePrecedente }}" class="btn btn-info m-3">&laquo;
+														            Page
+														            précédente</a>
+	{% endif %}
+	{% if data.pageSuivante %}
+		<a href="index.php?action=album&page={{ data.pageSuivante }}" class="btn btn-info ml-auto m-3">Page
+														            suivante &raquo;</a>
+	{% endif %}
+</div>
+
+{% endblock %}

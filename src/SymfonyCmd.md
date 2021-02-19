@@ -18,8 +18,8 @@ Bdd
 Relation table
 * symfony console m:e Article
 * property : tva
-* field type => ManyToOne ......
 * class : Tva
+* field type => ManyToOne ......
 * inverseBy : articles
 * null ou pas
 
