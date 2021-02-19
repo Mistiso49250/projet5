@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\GenreRepository;
+use App\Repository\ImageRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=GenreRepository::class)
+ * @ORM\Entity(repositoryClass=ImageRepository::class)
  */
-class Genre
+class Image
 {
     /**
      * @ORM\Id
@@ -20,21 +20,21 @@ class Genre
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $code;
+    private $image;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getCode(): ?string
+    public function getImage(): ?string
     {
-        return $this->code;
+        return $this->image;
     }
 
-    public function setCode(string $code): self
+    public function setImage(string $image): self
     {
-        $this->code = $code;
+        $this->image = $image;
 
         return $this;
     }

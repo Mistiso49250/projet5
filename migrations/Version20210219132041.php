@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210219131250 extends AbstractMigration
+final class Version20210219132041 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -25,7 +25,6 @@ final class Version20210219131250 extends AbstractMigration
         $this->addSql('CREATE TABLE categorie_categorie_secondaire (categorie_id INT NOT NULL, categorie_secondaire_id INT NOT NULL, INDEX IDX_ABC1A0C7BCF5E72D (categorie_id), INDEX IDX_ABC1A0C7867E4656 (categorie_secondaire_id), PRIMARY KEY(categorie_id, categorie_secondaire_id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE categorie_principal (id INT AUTO_INCREMENT NOT NULL, description LONGTEXT NOT NULL, code VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE categorie_secondaire (id INT AUTO_INCREMENT NOT NULL, categorie_principal_id INT NOT NULL, description LONGTEXT NOT NULL, code VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, INDEX IDX_EF5292333E4B366C (categorie_principal_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE genre (id INT AUTO_INCREMENT NOT NULL, garã§on VARCHAR(255) NOT NULL, fille VARCHAR(255) NOT NULL, mixte VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE marque (id INT AUTO_INCREMENT NOT NULL, titre VARCHAR(255) NOT NULL, image VARCHAR(255) NOT NULL, slug VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE reset_password_request (id INT AUTO_INCREMENT NOT NULL, user_id INT NOT NULL, selector VARCHAR(20) NOT NULL, hashed_token VARCHAR(100) NOT NULL, requested_at DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', expires_at DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', INDEX IDX_7CE748AA76ED395 (user_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE slider (id INT AUTO_INCREMENT NOT NULL, image VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
@@ -55,7 +54,6 @@ final class Version20210219131250 extends AbstractMigration
         $this->addSql('DROP TABLE categorie_categorie_secondaire');
         $this->addSql('DROP TABLE categorie_principal');
         $this->addSql('DROP TABLE categorie_secondaire');
-        $this->addSql('DROP TABLE genre');
         $this->addSql('DROP TABLE marque');
         $this->addSql('DROP TABLE reset_password_request');
         $this->addSql('DROP TABLE slider');
