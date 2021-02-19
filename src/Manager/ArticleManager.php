@@ -29,9 +29,17 @@ class ArticleManager
     }
 
     // recupère les nouveaux articles pour la homePage
-    public function allNouveaute(): array
+    public function allNouveaute(int $page): array
     {
-        return $this->articleRepository->findBy(['new' => 1]);
+        $count = 12;
+        $offset = 0;
+        $limit = 4;
+        if ($count !== 0) {
+            $page = $page < 1 ? 1 : $page;
+            $page = $page > ceil($count / $limit) ? ceil($count / $limit) : $page;
+            $offset = $limit * ($page - 1);
+        }
+        return $this->articleRepository->findBy(['new' => 1], [], $limit, $offset);
     }
 
     // recupère la selection d'article

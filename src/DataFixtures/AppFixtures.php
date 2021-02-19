@@ -7,7 +7,6 @@ use App\Entity\Genre;
 use App\Entity\Marque;
 use App\Entity\Slider;
 use APP\Entity\Article;
-use App\Entity\ArticleImage;
 use App\Entity\Categorie;
 use App\Entity\CategoriePrincipal;
 use App\Entity\CategorieSecondaire;
