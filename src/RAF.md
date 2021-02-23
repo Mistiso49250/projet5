@@ -121,3 +121,7 @@ faire tableau data marque et tva idem appFixtures
 * mettre en place la pagination
 * ajouter la page tous les articles avec filtres caté princp, age, marque, genre : ok
 
+23/02
+
+* faire bouton pec next
+* faire ancre maintien 

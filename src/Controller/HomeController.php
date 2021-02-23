@@ -6,10 +6,11 @@ use App\Entity\Article;
 use App\Manager\SliderManager;
 use App\Manager\ArticleManager;
 use App\Controller\MainController;
+use App\Services\Paginator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 
 class HomeController extends MainController
 {
@@ -25,14 +26,12 @@ class HomeController extends MainController
      * @Route("/home", name="home")
      * @Route("/", name="homeroot")
      */
-    public function index(Request $request, SliderManager $sliderManager): Response
+    public function index(Request $request, SliderManager $sliderManager, Paginator $paginator): Response
     {
         $slider = $sliderManager->generateHomePage();
+        $paginator->paginate();
 
-
-        $page = $request->query->getInt('page', 1);
-        // recupère la page dans l'url, ne recupère que la partie int, 1= si rien prend page defaut
-        $list = $this->articleManager->AllNouveaute($page);
+        $list = $this->articleManager->AllNouveaute($paginator);
 
         $selection = $this->articleManager->findSelectionArticle();
         $marque = $sliderManager->generateSilderMarque();
@@ -41,6 +40,7 @@ class HomeController extends MainController
             'list' => $list,
             'selection' => $selection,
             'marque' => $marque,
+            'paginator' => $paginator,
         ]);
         // $slider = $sliderManager->generateHomePage();
         // $list = $this->articleManager->AllNouveaute();

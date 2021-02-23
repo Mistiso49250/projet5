@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace App\Manager;
 
 use App\Entity\Article;
+use App\Services\Paginator;
+use App\Repository\SliderRepository;
 use App\Repository\ArticleRepository;
 use App\Repository\CategorieRepository;
-use App\Repository\SliderRepository;
 
 
 class ArticleManager
@@ -29,17 +30,9 @@ class ArticleManager
     }
 
     // recupère les nouveaux articles pour la homePage
-    public function allNouveaute(int $page): array
+    public function allNouveaute(Paginator $paginator): array
     {
-        $count = 12;
-        $offset = 0;
-        $limit = 4;
-        if ($count !== 0) {
-            $page = $page < 1 ? 1 : $page;
-            $page = $page > ceil($count / $limit) ? ceil($count / $limit) : $page;
-            $offset = $limit * ($page - 1);
-        }
-        return $this->articleRepository->findBy(['new' => 1], [], $limit, $offset);
+        return $this->articleRepository->findBy(['new' => 1], [], $paginator->getLimit(), $paginator->getOffset());
     }
 
     // recupère la selection d'article
