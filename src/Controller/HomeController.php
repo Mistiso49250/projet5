@@ -29,18 +29,18 @@ class HomeController extends MainController
     public function index(Request $request, SliderManager $sliderManager, Paginator $paginator): Response
     {
         $slider = $sliderManager->generateHomePage();
-        $paginator->paginate();
+        // $paginator->paginate();
 
-        $list = $this->articleManager->AllNouveaute($paginator);
+        // $list = $this->articleManager->AllNouveaute($paginator);
 
         $selection = $this->articleManager->findSelectionArticle();
         $marque = $sliderManager->generateSilderMarque();
         return $this->render('home/index.html.twig', [
             'slider' => $slider,
-            'list' => $list,
+            // 'list' => $list,
             'selection' => $selection,
             'marque' => $marque,
-            'paginator' => $paginator,
+            'paginator' => $paginator->createPagination(Article::class,['new'=>1]),
         ]);
         // $slider = $sliderManager->generateHomePage();
         // $list = $this->articleManager->AllNouveaute();

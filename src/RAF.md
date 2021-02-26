@@ -123,5 +123,6 @@ faire tableau data marque et tva idem appFixtures
 
 23/02
 
+* voir bug indentation + indentation auto a la save : auto ok, 
 * faire bouton pec next
 * faire ancre maintien 

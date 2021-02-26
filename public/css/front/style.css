@@ -21,6 +21,14 @@ a{
     color: #007bff !important;
 }
 
+/* ::marker{
+    visibility: hidden;
+} */
+
+.paginate{
+    margin: 1em !important;
+}
+
 /* homePage */
 .homeHeader, .titleSelection
 {
@@ -29,6 +37,10 @@ a{
 
 .titleSelection, .titleMarque{
     margin: 2em !important;
+}
+
+.titleSection{
+    margin: 3em;
 }
 
 .history p{

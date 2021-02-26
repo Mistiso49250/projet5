@@ -30,10 +30,10 @@ class ArticleManager
     }
 
     // recupère les nouveaux articles pour la homePage
-    public function allNouveaute(Paginator $paginator): array
-    {
-        return $this->articleRepository->findBy(['new' => 1], [], $paginator->getLimit(), $paginator->getOffset());
-    }
+    // public function allNouveaute(Paginator $paginator): array
+    // {
+    //     return $this->articleRepository->findBy(['new' => 1], [], $paginator->getLimit(), $paginator->getOffset());
+    // }
 
     // recupère la selection d'article
     public function findSelectionArticle(): array

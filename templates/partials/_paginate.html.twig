@@ -3,8 +3,22 @@
 {# recupère tout ce qu'il y a dans ? #}
 {% set routeParams = app.request.query.all %}
 
-{% for i in 1..paginator.lastPage %}
-	<li class="page-item {% if i == paginator.currentPage %}active{% endif %}">
-		<a class="page-link" href="{{ path(route, routeParams|merge({page: i})) }}">{{ i }}</a>
-	</li>
-{% endfor %}
+<nav aria-label="Pagination" class="paginate">
+	<ul class="pagination justify-content-center">
+		{% if paginator.previousPage %}
+			<li class="page-item">
+				<a class="page-link" href="{{ path(route, routeParams|merge({page: paginator.previousPage})) }}#pagination" tabindex="-1" aria-disabled="true">Précédent</a>
+			</li>
+		{% endif %}
+		{% for i in 1..paginator.lastPage %}
+			<li class="page-item {% if i == paginator.currentPage %}active{% endif %}">
+				<a class="page-link" href="{{ path(route, routeParams|merge({page: i})) }}">{{ i }}</a>
+			</li>
+		{% endfor %}
+		{% if paginator.nextPage %}
+			<li class="page-item">
+				<a class="page-link" href="{{ path(route, routeParams|merge({page: paginator.nextPage})) }}">Suivant</a>
+			</li>
+		{% endif %}
+	</ul>
+</nav>
