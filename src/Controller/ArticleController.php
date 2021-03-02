@@ -2,19 +2,18 @@
 
 namespace App\Controller;
 
-use App\Manager\ArticleManager;
+use App\Entity\Article;
+use App\Entity\Categorie;
+use App\Services\Paginator;
 use App\Controller\MainController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ArticleController extends MainController
 {
-    private $articleManager;
 
-    public function __construct(ArticleManager $articleManager)
+    public function __construct()
     {
-        $this->articleManager = $articleManager;
     }
 
     /**
@@ -31,33 +30,45 @@ class ArticleController extends MainController
     /**
      * @Route("/article/list/{slug}", name="article_list_categ")
      */
-    public function listeProduitsParCateg(string $slug): Response
+    public function listeProduitsParCateg(Paginator $paginator, string $slug): Response
     {
-        $articles = $this->articleManager->articleByCategorie($slug);
+        $categorieRepository = $this->getDoctrine()->getRepository(Categorie::class);
+        $categorie = $categorieRepository->findOneBy(['slug'=>$slug]);
         return $this->render('article/listeproduits.html.twig', [
-            'articles' => $articles,
+            'paginator' => $paginator->createPagination(Article::class,['categorie'=>$categorie]),
         ]);
     }
 
     /**
      * @Route("/nouveaute}", name="article_list_nouveaute")
      */
-    public function listePageNouveaute(): Response
+    public function listePageNouveaute(Paginator $paginator): Response
     {
-        $nouveau = $this->articleManager->allNouveaute();
-        return $this->render('article/nouveauarticle.html.twig', [
-            'nouveau' => $nouveau,
+        // $nouveau = $this->articleManager->allNouveaute();
+        return $this->render('article/listeproduits.html.twig', [
+            'paginator' => $paginator->createPagination(Article::class,['new'=>1]),
         ]);
     }
 
     /**
-     * @Route("selection", name="article_list_selection")
+     * @Route("/selection", name="article_list_selection")
      */
-    public function listePageSelection(): Response
+    public function listePageSelection(Paginator $paginator): Response
     {
-        $selection = $this->articleManager->findSelectionArticle();
-        return $this->render('article/selectionarticle.html.twig', [
-            'selection' => $selection,
+        
+        return $this->render('article/listeproduits.html.twig', [
+            'paginator'=> $paginator->createPagination(Article::class,['selection'=>1]),
         ]);
     }
+
+    /**
+     * @Route("/all", name="all_article")
+     */
+    public function allArticle(Paginator $paginator): Response
+    {
+        return $this->render('article/listeproduits.html.twig', [
+            'paginator'=> $paginator->createPagination(Article::class,[], 8),
+        ]);
+    }
+
 }

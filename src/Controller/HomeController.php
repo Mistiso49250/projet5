@@ -6,6 +6,8 @@ use App\Entity\Article;
 use App\Manager\SliderManager;
 use App\Manager\ArticleManager;
 use App\Controller\MainController;
+use App\Entity\Marque;
+use App\Entity\Slider;
 use App\Services\Paginator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,27 +28,22 @@ class HomeController extends MainController
      * @Route("/home", name="home")
      * @Route("/", name="homeroot")
      */
-    public function index(Request $request, SliderManager $sliderManager, Paginator $paginator): Response
+    public function index(Request $request, Paginator $paginator): Response
     {
-        $slider = $sliderManager->generateHomePage();
-        // $paginator->paginate();
+        $sliderRepository = $this->getDoctrine()->getRepository(Slider::class);
+        $slider = $sliderRepository->findAll();
+        $marqueRepository = $this->getDoctrine()->getRepository(Marque::class);
+        $marque = $marqueRepository->findAll();
 
-        // $list = $this->articleManager->AllNouveaute($paginator);
-
-        $selection = $this->articleManager->findSelectionArticle();
-        $marque = $sliderManager->generateSilderMarque();
+        $selectionRepository = $this->getDoctrine()->getRepository(Article::class);
+        $selection = $selectionRepository->findBy(['selection'=>1]);
         return $this->render('home/index.html.twig', [
             'slider' => $slider,
-            // 'list' => $list,
             'selection' => $selection,
             'marque' => $marque,
             'paginator' => $paginator->createPagination(Article::class,['new'=>1]),
+            // Article::class  sert a récuperer les info dans la class article pour l' EntityManagerInterface
         ]);
-        // $slider = $sliderManager->generateHomePage();
-        // $list = $this->articleManager->AllNouveaute();
-        // return $this->render('home/index.html.twig', [
-        //     'list'=>$list,
-        //     'slider'=>$slider,
-        // ]);
+       
     }
 }

@@ -23,7 +23,7 @@ class SliderManager
         return $this->sliderRepository->findAll();
     }
 
-    public function generateSilderMarque(): array
+    public function generateSliderMarque(): array
     {
         return $this->marqueRepository->findAll();
     }
