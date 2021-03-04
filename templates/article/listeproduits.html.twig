@@ -1,10 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste{% endblock %}
+{% block title %}Liste
+{% endblock %}
 {# {% block title %}{{ menucateg.description }}{% endblock %} #}
 
 {% block body %}
-<!-- notification message d'erreurs -->
+	<!-- notification message d'erreurs -->
 	{% for message in app.flashes('error') %}
 		<h2 class="danger">
 			{{ message }}
@@ -27,57 +28,58 @@
 				<div class="cardBlock">
 					<h4 class="cardTitle">Filtrer</h4>
 				</div>
-				<div class="btn-group">
-					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Par âge
-					</button>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">0 - 12mois</a>
-						<a class="dropdown-item" href="#">2 - 4ans</a>
-						<a class="dropdown-item" href="#">5 - 7ans</a>
-						<a class="dropdown-item" href="#">8 ans et +</a>
-					</div>
-				</div>
-				<div class="btn-group">
-					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Par genre
-					</button>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Garçon</a>
-						<a class="dropdown-item" href="#">Fille</a>
-						<a class="dropdown-item" href="#">Mixte</a>
-					</div>
-				</div>
-				<div class="btn-group">
-					<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Par marque
-					</button>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">oiseaubateau</a>
-						<a class="dropdown-item" href="#">buki</a>
-						<a class="dropdown-item" href="#">baForKids</a>
-						<a class="dropdown-item" href="#">moulinroty</a>
-						<a class="dropdown-item" href="#">funkyframes</a>
-						<a class="dropdown-item" href="#">fresk</a>
-						<a class="dropdown-item" href="#">bergamotte</a>
-						<a class="dropdown-item" href="#">corolle</a>
-						<a class="dropdown-item" href="#">haba</a>
-						<a class="dropdown-item" href="#">janod</a>
-						<a class="dropdown-item" href="#">lilliputiens</a>
-						<a class="dropdown-item" href="#">Lunii</a>
-						<a class="dropdown-item" href="#">djeco</a>
-						<a class="dropdown-item" href="#">omy</a>
-						<a class="dropdown-item" href="#">smartgame</a>
-						<a class="dropdown-item" href="#">papo</a>
-						<a class="dropdown-item" href="#">pixie</a>
-						<a class="dropdown-item" href="#">Ugears</a>
-						<a class="dropdown-item" href="#">vilac</a>
-					</div>
+				<div class="form-check form-switch">
+					<h5>Par âge</h5>
+					<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+					<label class="form-check-label" for="flexSwitchCheckChecked">
+						0 - 18 mois//2 - 4 ans//5 - 7 ans//8 ans et +
+					</label>
+
+					<h5>Par genre</h5>
+					<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+					<label class="form-check-label" for="flexSwitchCheckChecked">
+						Garçon Fille Mixte
+					</label>
+
+					<h5>Par marques</h5>
+					<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+					<label class="form-check-label" for="flexSwitchCheckChecked">
+						voir liste
+					</label>
+
+					<h5>Par catégories</h5>
+					<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+					<label class="form-check-label" for="flexSwitchCheckChecked">
+						catéPrinc
+					</label>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<section class="allArticles">
+	{# <div class="dropdown-menu">
+							<a class="dropdown-item" href="#">oiseaubateau</a>
+							<a class="dropdown-item" href="#">buki</a>
+							<a class="dropdown-item" href="#">baForKids</a>
+							<a class="dropdown-item" href="#">moulinroty</a>
+							<a class="dropdown-item" href="#">funkyframes</a>
+							<a class="dropdown-item" href="#">fresk</a>
+							<a class="dropdown-item" href="#">bergamotte</a>
+							<a class="dropdown-item" href="#">corolle</a>
+							<a class="dropdown-item" href="#">haba</a>
+							<a class="dropdown-item" href="#">janod</a>
+							<a class="dropdown-item" href="#">lilliputiens</a>
+							<a class="dropdown-item" href="#">Lunii</a>
+							<a class="dropdown-item" href="#">djeco</a>
+							<a class="dropdown-item" href="#">omy</a>
+							<a class="dropdown-item" href="#">smartgame</a>
+							<a class="dropdown-item" href="#">papo</a>
+							<a class="dropdown-item" href="#">pixie</a>
+							<a class="dropdown-item" href="#">Ugears</a>
+							<a class="dropdown-item" href="#">vilac</a>
+						</div> #}
+
+	<section class="allArticles">
 		<div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 container-fluid d-flex justify-content-center">
 			{% for article in paginator.datas %}
 				<div class="col mb-3">

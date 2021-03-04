@@ -3,8 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Article;
-use App\Manager\SliderManager;
-use App\Manager\ArticleManager;
 use App\Controller\MainController;
 use App\Entity\Marque;
 use App\Entity\Slider;
@@ -17,11 +15,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends MainController
 {
 
-    private $articleManager;
 
-    public function __construct(ArticleManager $articleManager)
+    public function __construct()
     {
-        $this->articleManager = $articleManager;
+    
     }
 
     /**

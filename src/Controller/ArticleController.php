@@ -21,7 +21,8 @@ class ArticleController extends MainController
      */
     public function index(string $slug): Response
     {
-        $article = $this->articleManager->findArticle($slug);
+        $articleRepository = $this->getDoctrine()->getRepository(Article::class);
+        $article = $articleRepository->findOneBy(['slug'=>$slug]);
         return $this->render('article/index.html.twig', [
             'article' => $article,
         ]);
