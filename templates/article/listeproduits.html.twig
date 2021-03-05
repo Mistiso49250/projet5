@@ -17,11 +17,18 @@
 		</h2>
 	{% endfor %}
 
+	<div class="title">
+		{% if form is defined %}
+		<h4>filter</h4>
+			{{ form(form) }}
+		{% endif %}
+	</div>
+
 	<div class="homeHeader">
 		<h4>Listes des articles</h4>
 		{# <h4>{{ menucateg.description }}</h4> #}
 	</div>
-
+{# 
 	<div class="container-fluid row mb-4">
 		<div class="col-md-3 mb-4" id="aideRecherche">
 			<div class="card text-center">
@@ -55,7 +62,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> #}
 
 	{# <div class="dropdown-menu">
 							<a class="dropdown-item" href="#">oiseaubateau</a>
@@ -83,7 +90,7 @@
 		<div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 container-fluid d-flex justify-content-center">
 			{% for article in paginator.datas %}
 				<div class="col mb-3">
-					<a href="{{ path('article', {'slug': article.slug}) }} "></a>
+					<a href="{{ path('article', {'slug': article.slug}) }} ">
 					<div class="card text-center h-100">
 						<img src="{{ asset ('images/' ~ article.image) | imagine_filter('article') }}" class="card-img-top" alt="...">
 						<div class="card-body">
@@ -94,6 +101,7 @@
 							<a class="btn btn-info btn-rouded mb-4" href="">Ajouter au panier</a>
 						</div>
 					</div>
+					</a>
 				</div>
 			{% endfor %}
 		</div>

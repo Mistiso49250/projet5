@@ -6,6 +6,8 @@ use App\Entity\Article;
 use App\Entity\Categorie;
 use App\Services\Paginator;
 use App\Controller\MainController;
+use App\Form\SearchArticleAllType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -65,10 +67,24 @@ class ArticleController extends MainController
     /**
      * @Route("/all", name="all_article")
      */
-    public function allArticle(Paginator $paginator): Response
+    public function allArticle(Request $request,Paginator $paginator): Response
     {
+        $criteria = [];
+        $form = $this->createForm(SearchArticleAllType::class);
+        $search = $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            $categ = $search->get('categorie')->getData();
+            if($categ !== null){
+                $criteria['categorie'] = $categ;
+            }
+            $marque = $search->get('marque')->getData();
+            if($marque !== null){
+                $criteria['marque'] = $marque;
+            }
+        }
         return $this->render('article/listeproduits.html.twig', [
-            'paginator'=> $paginator->createPagination(Article::class,[], 8),
+            'paginator'=> $paginator->createPagination(Article::class, $criteria, 8),
+            'form'=>$form->createView(),
         ]);
     }
 
