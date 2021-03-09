@@ -21,9 +21,17 @@ a{
     color: #007bff !important;
 }
 
-/* ::marker{
-    visibility: hidden;
-} */
+.btn .btn-formSearch{
+    margin-top: 2rem !important;
+}
+
+.form{
+    margin-bottom: 5rem !important;
+}
+
+.formSearch{
+    margin-top: 10rem !important;
+}
 
 .paginate{
     margin: 1em !important;

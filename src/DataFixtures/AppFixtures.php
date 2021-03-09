@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Age;
 use App\Entity\Tva;
 use App\Entity\Genre;
 use App\Entity\Marque;
@@ -573,42 +574,48 @@ class AppFixtures extends Fixture
         }
         $manager->flush();
 
-        // $dataGenre = [
-        //     [
-        //         'code' => 'fille',
-        //         'code' => 'garçon',
-        //         'code' => 'mixte',
-        //     ],
-        // ];
-        // $genre = [];
-        // foreach ($dataGenre as $valeurGenre) {
-        //     $tempGenre = new Genre();
-        //     $tempGenre->setFille($valeurGenre['code']);
-        //     $tempGenre->setGarçon($valeurGenre['code']);
-        //     $tempGenre->setMixte($valeurGenre['code']);
-        //     $manager->persist($tempGenre);
-        //     $genre[$valeurGenre['code']] = $tempGenre;
-        // }
-        // $manager->flush();
+        $dataGenre = [
+            [
+                'code' => 'fille',
+            ],
+            [
+                'code' => 'garçon',
+            ],
+            [
+                'code' => 'mixte',
+            ],
+        ];
+        $genre = [];
+        foreach ($dataGenre as $valeurGenre) {
+            $tempGenre = new Genre();
+            $tempGenre->setCode($valeurGenre['code']);
+            $manager->persist($tempGenre);
+            $genre[$valeurGenre['code']] = $tempGenre;
+        }
+        $manager->flush();
 
-        // $dataAge = [
-        //     [
-        //         'code' => '0 - 18 mois',
-        //         'code' => '2 - 4 ans',
-        //         'code' => '5 - 7 ans',
-        //         'code' => '8 ans et +',
-        //     ],
-        // ];
-        // $age = [];
-        // foreach ($dataAge as $valeurAge) {
-        //     $tempAge = new Age();
-        //     $tempAge->setFille($valeurAge['code']);
-        //     $tempAge->setGarçon($valeurAge['code']);
-        //     $tempAge->setMixte($valeurAge['code']);
-        //     $manager->persist($tempAge);
-        //     $age[$valeurAge['code']] = $tempAge;
-        // }
-        // $manager->flush();
+        $dataAge = [
+            [
+                'code' => '0 - 18 mois',
+            ],
+            [
+                'code' => '2 - 4 ans',
+            ],
+            [
+                'code' => '5 - 7 ans',
+            ],
+            [
+                'code' => '8 ans et +',
+            ],
+        ];
+        $age = [];
+        foreach ($dataAge as $valeurAge) {
+            $tempAge = new Age();
+            $tempAge->setCode($valeurAge['code']);
+            $manager->persist($tempAge);
+            $age[$valeurAge['code']] = $tempAge;
+        }
+        $manager->flush();
 
         // $dataArticleImage = [
         //     [
@@ -639,6 +646,9 @@ class AppFixtures extends Fixture
                 'marque' => $marques['djeco'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'genre'=>$genre['garçon'],
+                'age'=>$age['2 - 4 ans'],
             ],
             [
                 'titre' => 'Album photo Ignace',
@@ -653,6 +663,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['lilliputiens'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['garçon'],
+                'age'=>$age['0 - 18 mois'],
             ],
             [
                 'titre' => 'Culbuto Eléphant',
@@ -668,6 +680,9 @@ class AppFixtures extends Fixture
                 'marque' => $marques['haba'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'genre'=>$genre['garçon'],
+                'age'=>$age['0 - 18 mois'],
             ],
             [
                 'titre' => 'Les tableaux qui bougent',
@@ -683,6 +698,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['djeco'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['5 - 7 ans'],
             ],
             [
                 'titre' => 'Jeu de bain 3 bateaux',
@@ -698,6 +715,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['lilliputiens'],
                 'tva' => $tva['normal'],
                 'selection' => 1,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['0 - 18 mois'],
             ],
             [
                 'titre' => 'Boite à musique Les moustaches ',
@@ -713,6 +732,9 @@ class AppFixtures extends Fixture
                 'marque' => $marques['moulinroty'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'genre'=>$genre['garçon'],
+                'age'=>$age['2 - 4 ans'],
             ],
             [
                 'titre' => 'Boite dent de lait il était une fois',
@@ -729,6 +751,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['moulinroty'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['fille'],
+                'age'=>$age['5 - 7 ans'],
             ],
             [
                 'titre' => 'Ma fabrique à histoires Lunii',
@@ -750,6 +774,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['Lunii'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['2 - 4 ans'],
             ],
             [
                 'titre' => 'Cheval à bascule diamant',
@@ -765,6 +791,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['vilac'],
                 'tva' => $tva['normal'],
                 'selection' => 1,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['2 - 4 ans'],
             ],
             [
                 'titre' => 'Chariot multi-activités Chat',
@@ -782,6 +810,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['janod'],
                 'tva' => $tva['normal'],
                 'selection' => 1,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['0 - 18 mois'],
             ],
             [
                 'titre' => 'Cartable baleine gris',
@@ -799,6 +829,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['fresk'],
                 'tva' => $tva['normal'],
                 'selection' => 1,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['2 - 4 ans'],
             ],
             [
                 'titre' => 'Jeu de cartes Pipolo ',
@@ -815,6 +847,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['djeco'],
                 'tva' => $tva['normal'],
                 'selection' => 1,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['5 - 7 ans'],
             ],
             [
                 'titre' => 'Bouclier et épée loup',
@@ -830,6 +864,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['vilac'],
                 'tva' => $tva['normal'],
                 'selection' => 1,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['2 - 4 ans'],
             ],
             [
                 'titre' => '3D Licorne Lily',
@@ -844,6 +880,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['omy'],
                 'tva' => $tva['normal'],
                 'selection' => 1,
+                'genre'=>$genre['fille'],
+                'age'=>$age['2 - 4 ans'],
             ],
             [
                 'titre' => 'Navire de recherche',
@@ -865,6 +903,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['Ugears'],
                 'tva' => $tva['normal'],
                 'selection' => 1,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['8 ans et +'],
             ],
             [
                 'titre' => 'Chat moutarde Lulu Les Moustaches',
@@ -883,6 +923,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['moulinroty'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['0 - 18 mois'],
             ],
             [
                 'titre' => 'Draisienne Indian',
@@ -901,6 +943,9 @@ class AppFixtures extends Fixture
                 'marque' => $marques['ulysse'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['2 - 4 ans'],
+                'age'=>$age['5 - 7 ans'],
             ],
             [
                 'titre' => 'Sac à dos primaire Ours Polaire',
@@ -922,6 +967,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['fresk'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['5 - 7 ans'],
             ],
             [
                 'titre' => 'Eduludo spacio',
@@ -940,6 +987,9 @@ class AppFixtures extends Fixture
                 'marque' => $marques['djeco'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['2 - 4 ans'],
+                'age'=>$age['5 - 7 ans'],
             ],
             [
                 'titre' => 'Poulet rôti à découper',
@@ -959,6 +1009,9 @@ class AppFixtures extends Fixture
                 'marque' => $marques['vilac'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['2 - 4 ans'],
+                'age'=>$age['5 - 7 ans'],
             ],
             [
                 'titre' => 'Télescope 50 activités',
@@ -975,10 +1028,12 @@ class AppFixtures extends Fixture
                 'marque' => $marques['buki'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['8 ans et +'],
             ],
             [
                 'titre' => 'Allosaure',
-                'extrait' => '',
+                'extrait' => 'foulez la terre du Jurassique',
                 'contenu' => 'Avec les dinosaures, foulez la terre du Jurassique, côtoyez le légendaire T-Rex, parcourez de vastes plaines avec le vélociraptor ou envolez-vous avec un ptéranodon.',
                 'image' => 'papo\allosaure.jpg',
                 'detail' => 'Longueur: 25 cm
@@ -991,6 +1046,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['papo'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['2 - 4 ans'],
             ],
             [
                 'titre' => 'Garage station service',
@@ -1007,6 +1064,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['janod'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['2 - 4 ans'],
             ],
             [
                 'titre' => 'Hochet bois Pakou',
@@ -1024,6 +1083,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['moulinroty'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['0 - 18 mois'],
             ],
             [
                 'titre' => 'Épicerie green market',
@@ -1043,6 +1104,9 @@ class AppFixtures extends Fixture
                 'marque' => $marques['janod'],
                 'tva' => $tva['normal'],
                 'selection' => 1,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['2 - 4 ans'],
+                'age'=>$age['5 - 7 ans'],
             ],
             [
                 'titre' => 'Quilles jurassiennes',
@@ -1059,6 +1123,9 @@ class AppFixtures extends Fixture
                 'marque' => $marques['janod'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['5 - 7 ans'],
+                'age'=>$age['8 ans et +'],
             ],
             [
                 'titre' => 'Escargot à promener',
@@ -1074,6 +1141,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['janod'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['0 - 18 mois'],
             ],
             [
                 'titre' => 'Jouet à suspendre Georges hochet clap clap',
@@ -1088,6 +1157,9 @@ class AppFixtures extends Fixture
                 'marque' => $marques['lilliputiens'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'genre'=>$genre['garçon'],
+                'age'=>$age['0 - 18 mois'],
             ],
             [
                 'titre' => 'Lampe à histoires Chien pourri !',
@@ -1105,6 +1177,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['moulinroty'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['2 - 4 ans'],
             ],
             [
                 'titre' => 'Lampe ballon',
@@ -1126,6 +1200,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['buki'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['2 - 4 ans'],
             ],
             [
                 'titre' => 'Mobile musical Le voyage d\'Olga',
@@ -1139,6 +1215,9 @@ class AppFixtures extends Fixture
                 'marque' => $marques['moulinroty'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'genre'=>$genre['fille'],
+                'age'=>$age['0 - 18 mois'],
             ],
             // [
             //     'titre'=>'Montre Cheval',
@@ -1151,7 +1230,9 @@ class AppFixtures extends Fixture
             //     'categorie'=>$categories['montre'],
             //     'marque'=>$marques['djeco'],
             //     'tva'=>$tva['normal'],
-            //'selection'=>0,
+            //     'selection'=>0,
+            //     'genre'=>$genre['fille'],
+            //     'age'=>$age['5 - 7 ans'],       
             // ],
             // [
             //     'titre'=>'Kalimba Le Voyage d\'Olga',
@@ -1169,7 +1250,9 @@ class AppFixtures extends Fixture
             //     'marque'=>$marques['moulinroty'],
             //     'tva'=>$tva['normal'],
             //'selection'=>0,
-            // ],
+            //  'genre'=>$genre['mixte'],
+            //  'age'=>$age['5 - 7 ans'],  
+         // ],
             [
                 'titre' => 'Pate intélligente crazy aaron - baguette de sorcier',
                 'extrait' => 'A manipuler, à modeler mais pas que',
@@ -1182,6 +1265,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['dam'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['5 - 7 ans'],
             ],
             [
                 'titre' => 'Pantin lapin Rose',
@@ -1195,6 +1280,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['janod'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['fille'],
+                'age'=>$age['0 - 18 mois'],
             ],
             // [
             //     'titre'=>'',
@@ -1208,9 +1295,11 @@ class AppFixtures extends Fixture
             //     'marque'=>$marques[''],
             //     'tva'=>$tva['normal'],
             // 'selection'=>0,
-            // ],
+            // 'genre'=>$genre[''],
+            // 'age'=>$age[''],
+           // ],
             [
-                'titre' => 'Porteur voiture vintage en méta',
+                'titre' => 'Porteur voiture vintage en métal',
                 'extrait' => 'Porteur pour les enfants dès 18 mois ',
                 'contenu' => 'la voiture en métal bleu pétrole de Vilac, un porteur idéal pour les enfants à partir de 18 mois au look qui fera craquer tous les parents. Un cadeau à offrir dès la naissance ou le baptême pour décorer la chambre ou pour le premier anniversaire. Ce porteur est un petit bijou avec sa carrosserie en métal bleu pétrole.',
                 'image' => 'vilac\voiture-porteur-metal-bleu-petrole-vilac.jpg',
@@ -1221,19 +1310,24 @@ class AppFixtures extends Fixture
                 'marque' => $marques['vilac'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['0 - 18 mois'],
             ],
             [
                 'titre' => 'Ma Corolle Priscille',
                 'extrait' => 'Priscille de Corolle est parée pour passer un Hiver Polaire !',
                 'contenu' => 'La poupée Ma Corolle Priscille de Corolle est parée pour passer un Hiver Polaire ! Poupée de 36 cm en édition limitée, Priscille a un corps souple « effet » sous-vêtement avec de longs cheveux soyeux faciles à coiffer. Son visage, ses bras et ses jambes, à la délicate senteur de vanille, sont en vinyle doux au toucher. Avec ses yeux dormeurs, elle dort quand on la couche sur le dos. Elle est habillée d\'une toque en fausse fourrure et lainage écrue, d\'une veste sans manches en fausse fourrure écrue avec un petit nœud bleu constellé de pois argentés, d\'une robe à pois argentés, d\'une paire de collants écrus et chaussée d\'une paire de bottines argentés avec de la fausse fourrure.',
                 'image' => 'corolle\Priscille.jpg',
-                'detail' => 'Âge	De 4 à 8 ans Marque	Corolle Poids 706 g Poupée de 36cm Emballage 18.5 x 13 x 40 cm',
+                'detail' => 'Âge De 4 à 8 ans Marque	Corolle Poids 706 g Poupée de 36cm Emballage 18.5 x 13 x 40 cm',
                 'prixTTC' => 70,
                 'new' => 0,
                 'categorie' => $categories['poupée'],
                 'marque' => $marques['corolle'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['fille'],
+                'age'=>$age['2 - 4 ans'],
+                'age'=>$age['5 - 7 ans'],
             ],
             [
                 'titre' => 'Georges housse Carnet de santé ',
@@ -1247,6 +1341,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['lilliputiens'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['garçon'],
+                'age'=>$age['0 - 18 mois'],
             ],
             [
                 'titre' => 'Puzzle dodo 350 pièces Puzz\'art',
@@ -1260,6 +1356,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['djeco'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['5 - 7 ans'],
             ],
             [
                 'titre' => 'Pagodes édition du dragon',
@@ -1276,6 +1374,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['smartgame'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['5 - 7 ans'],
             ],
             [
                 'titre' => 'Poule poule',
@@ -1292,6 +1392,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['pixie'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['8 ans et +'],
             ],
             [
                 'titre' => 'HORS-JEU',
@@ -1314,6 +1416,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['funkyframes'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['2 - 4 ans'],
             ],
             [
                 'titre' => 'Table et Chaises Banquise',
@@ -1329,6 +1433,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['janod'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['2 - 4 ans'],
             ],
             [
                 'titre' => 'Tirelire éléphant Sous mon baobab',
@@ -1343,6 +1449,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['moulinroty'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['2 - 4 ans'],
             ],
             [
                 'titre' => 'Toise carnet Les Moustaches',
@@ -1356,6 +1464,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['moulinroty'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['0 - 18 mois'],
             ],
             [
                 'titre' => 'Porteur & trottinette Scoot & ride',
@@ -1378,6 +1488,9 @@ class AppFixtures extends Fixture
                 'marque' => $marques['baForKids'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['0 - 18 mois'],
+                'age'=>$age['2 - 4 ans'],
             ],
             [
                 'titre' => 'Luciole Perceval',
@@ -1396,6 +1509,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['oiseaubateau'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['garçon'],
+                'age'=>$age['0 - 18 mois'],
             ],
             [
                 'titre' => 'Sac week-end Pingouin',
@@ -1413,6 +1528,8 @@ class AppFixtures extends Fixture
                 'marque' => $marques['fresk'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
+                'genre'=>$genre['mixte'],
+                'age'=>$age['0 - 18 mois'],
             ],
         ];
         $article = [];

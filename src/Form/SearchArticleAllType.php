@@ -2,14 +2,16 @@
 
 namespace App\Form;
 
-use App\Entity\Categorie;
+use App\Entity\Age;
+use App\Entity\Genre;
 use App\Entity\Marque;
+use App\Entity\Categorie;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class SearchArticleAllType extends AbstractType
 {
@@ -40,9 +42,33 @@ class SearchArticleAllType extends AbstractType
                     ->orderBy('m.titre', 'ASC');
                 }
             ])
+            // ->add('genre', EntityType::class, [
+            //     'class'=>Genre::class,
+            //     'label'=>'Genre',
+            //     'attr'=>[
+            //         'class'=>'form-select',
+            //     ],
+            //     'required'=>false,
+            //     'query_builder'=>function(EntityRepository $er){
+            //         return $er->createQueryBuilder('g')
+            //         ->orderBy('g.code', 'ASC');
+            //     }
+            // ])
+            // ->add('age', EntityType::class, [
+            //     'class'=>Age::class,
+            //     'label'=>'Age',
+            //     'attr'=>[
+            //         'class'=>'form-select',
+            //     ],
+            //     'required'=>false,
+            //     'query_builder'=>function(EntityRepository $er){
+            //         return $er->createQueryBuilder('a')
+            //         ->orderBy('a.code', 'ASC');
+            //     }
+            // ])
             ->add('Rechercher', SubmitType::class, [
                 'attr'=>[
-                    'class'=>'btn primary',
+                    'class'=>'btn btn-info btn-rounded btn-formSearch',
                 ],
             ])
         ;

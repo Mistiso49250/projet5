@@ -85,12 +85,24 @@ class Article
      */
     private $selection;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Genre::class, inversedBy="articles")
+     */
+    private $genre;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Age::class, mappedBy="article")
+     */
+    private $age;
+
 
 
 
     public function __construct()
     {
         $this->articleImage = new ArrayCollection();
+        $this->genre = new ArrayCollection();
+        $this->age = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -239,6 +251,60 @@ class Article
     public function setSelection(bool $selection): self
     {
         $this->selection = $selection;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Genre[]
+     */
+    public function getGenre(): Collection
+    {
+        return $this->genre;
+    }
+
+    public function addGenre(Genre $genre): self
+    {
+        if (!$this->genre->contains($genre)) {
+            $this->genre[] = $genre;
+        }
+
+        return $this;
+    }
+
+    public function removeGenre(Genre $genre): self
+    {
+        $this->genre->removeElement($genre);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Age[]
+     */
+    public function getAge(): Collection
+    {
+        return $this->age;
+    }
+
+    public function addAge(Age $age): self
+    {
+        if (!$this->age->contains($age)) {
+            $this->age[] = $age;
+            $age->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAge(Age $age): self
+    {
+        if ($this->age->removeElement($age)) {
+            // set the owning side to null (unless already changed)
+            if ($age->getArticle() === $this) {
+                $age->setArticle(null);
+            }
+        }
 
         return $this;
     }

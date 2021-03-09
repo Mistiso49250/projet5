@@ -126,3 +126,8 @@ faire tableau data marque et tva idem appFixtures
 * voir bug indentation + indentation auto a la save : auto ok, 
 * faire bouton pec next
 * faire ancre maintien 
+
+
+09/03
+Refaire les relations genre, age -> article
+ajouter slug dans genre && age
