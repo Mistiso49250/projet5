@@ -22,11 +22,6 @@ class Age
      */
     private $code;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Article::class, inversedBy="age")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $article;
 
     public function getId(): ?int
     {
@@ -50,15 +45,5 @@ class Age
         return $this->code;
     }
 
-    public function getArticle(): ?Article
-    {
-        return $this->article;
-    }
 
-    public function setArticle(?Article $article): self
-    {
-        $this->article = $article;
-
-        return $this;
-    }
 }
