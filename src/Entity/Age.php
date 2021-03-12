@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AgeRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -30,10 +32,14 @@ class Age
     private $slug;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Article::class, inversedBy="age")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="age")
      */
-    private $article;
+    private $articles;
+
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+    }
 
 
     public function getId(): ?int
@@ -64,21 +70,40 @@ class Age
 
     //     return $this;
     // }
-    
-    public function getArticle(): ?Article
-    {
-        return $this->article;
-    }
-    
-    public function setArticle(?Article $article): self
-    {
-        $this->article = $article;
-        
-        return $this;
-    }
+
     
     public function __toString(): string
     {
         return $this->code;
+    }
+
+    /**
+     * @return Collection|Article[]
+     */
+    public function getArticles(): Collection
+    {
+        return $this->articles;
+    }
+
+    public function addArticle(Article $article): self
+    {
+        if (!$this->articles->contains($article)) {
+            $this->articles[] = $article;
+            $article->setAge($this);
+        }
+
+        return $this;
+    }
+
+    public function removeArticle(Article $article): self
+    {
+        if ($this->articles->removeElement($article)) {
+            // set the owning side to null (unless already changed)
+            if ($article->getAge() === $this) {
+                $article->setAge(null);
+            }
+        }
+
+        return $this;
     }
 }

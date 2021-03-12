@@ -73,13 +73,6 @@ class Genre
 
     //     return $this;
     // }
-    
-   
-    
-    public function __toString(): string
-    {
-        return $this->code;
-    }
 
     /**
      * @return Collection|Article[]
@@ -109,5 +102,10 @@ class Genre
         }
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->code;
     }
 }

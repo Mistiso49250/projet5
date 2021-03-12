@@ -17,12 +17,12 @@ Bdd
 
 Relation table
 * symfony console m:e Article
-* new property : genre
+* new property : tva
 * field type : relation
-* what class : Genre
-* field type => OneToMany ......
-* new field name inside : article
-<!-- * inverseBy : articles -->
+* what class : Tva
+* field type => ManyToOne ......
+* new field name inside : 
+* inverseBy : articles
 * null ou pas
 
 Relation entre fictures

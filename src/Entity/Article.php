@@ -2,11 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticleRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Age;
+use App\Entity\Tva;
+use App\Entity\Genre;
+use App\Entity\Marque;
+use App\Entity\Categorie;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ArticleRepository;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
@@ -67,7 +72,6 @@ class Article
      */
     private $categorie;
 
-
     /**
      * @ORM\ManyToOne(targetEntity=Marque::class, inversedBy="articles")
      * @ORM\JoinColumn(nullable=false)
@@ -85,24 +89,22 @@ class Article
      */
     private $selection;
 
-
-
-    /**
-     * @ORM\OneToMany(targetEntity=Age::class, mappedBy="article")
-     */
-    private $age;
-
     /**
      * @ORM\ManyToOne(targetEntity=Genre::class, inversedBy="articles")
      * @ORM\JoinColumn(nullable=false)
      */
     private $genre;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Age::class, inversedBy="articles")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $age;
+
 
     public function __construct()
     {
         $this->articleImage = new ArrayCollection();
-        $this->age = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -255,38 +257,6 @@ class Article
         return $this;
     }
 
-    
-
-    /**
-     * @return Collection|Age[]
-     */
-    public function getAge(): Collection
-    {
-        return $this->age;
-    }
-
-    public function addAge(Age $age): self
-    {
-        if (!$this->age->contains($age)) {
-            $this->age[] = $age;
-            $age->setArticle($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAge(Age $age): self
-    {
-        if ($this->age->removeElement($age)) {
-            // set the owning side to null (unless already changed)
-            if ($age->getArticle() === $this) {
-                $age->setArticle(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function getGenre(): ?Genre
     {
         return $this->genre;
@@ -295,6 +265,18 @@ class Article
     public function setGenre(?Genre $genre): self
     {
         $this->genre = $genre;
+
+        return $this;
+    }
+
+    public function getAge(): ?Age
+    {
+        return $this->age;
+    }
+
+    public function setAge(?Age $age): self
+    {
+        $this->age = $age;
 
         return $this;
     }
