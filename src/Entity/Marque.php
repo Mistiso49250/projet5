@@ -40,6 +40,7 @@ class Marque
      * @ORM\OneToMany(targetEntity=Article::class, mappedBy="marque")
      */
     private $articles;
+    
 
     public function __construct()
     {

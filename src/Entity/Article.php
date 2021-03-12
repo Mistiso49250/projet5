@@ -87,10 +87,22 @@ class Article
 
 
 
+    /**
+     * @ORM\OneToMany(targetEntity=Age::class, mappedBy="article")
+     */
+    private $age;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Genre::class, inversedBy="articles")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $genre;
+
 
     public function __construct()
     {
         $this->articleImage = new ArrayCollection();
+        $this->age = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -243,5 +255,48 @@ class Article
         return $this;
     }
 
+    
+
+    /**
+     * @return Collection|Age[]
+     */
+    public function getAge(): Collection
+    {
+        return $this->age;
+    }
+
+    public function addAge(Age $age): self
+    {
+        if (!$this->age->contains($age)) {
+            $this->age[] = $age;
+            $age->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAge(Age $age): self
+    {
+        if ($this->age->removeElement($age)) {
+            // set the owning side to null (unless already changed)
+            if ($age->getArticle() === $this) {
+                $age->setArticle(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getGenre(): ?Genre
+    {
+        return $this->genre;
+    }
+
+    public function setGenre(?Genre $genre): self
+    {
+        $this->genre = $genre;
+
+        return $this;
+    }
 
 }
