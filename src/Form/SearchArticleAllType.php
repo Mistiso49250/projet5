@@ -42,30 +42,30 @@ class SearchArticleAllType extends AbstractType
                     ->orderBy('m.titre', 'ASC');
                 }
             ])
-            // ->add('genre', EntityType::class, [
-            //     'class'=>Genre::class,
-            //     'label'=>'Genre',
-            //     'attr'=>[
-            //         'class'=>'form-select',
-            //     ],
-            //     'required'=>false,
-            //     'query_builder'=>function(EntityRepository $er){
-            //         return $er->createQueryBuilder('g')
-            //         ->orderBy('g.code', 'ASC');
-            //     }
-            // ])
-            // ->add('age', EntityType::class, [
-            //     'class'=>Age::class,
-            //     'label'=>'Age',
-            //     'attr'=>[
-            //         'class'=>'form-select',
-            //     ],
-            //     'required'=>false,
-            //     'query_builder'=>function(EntityRepository $er){
-            //         return $er->createQueryBuilder('a')
-            //         ->orderBy('a.code', 'ASC');
-            //     }
-            // ])
+            ->add('genre', EntityType::class, [
+                'class'=>Genre::class,
+                'label'=>'Genre',
+                'attr'=>[
+                    'class'=>'form-select',
+                ],
+                'required'=>false,
+                'query_builder'=>function(EntityRepository $er){
+                    return $er->createQueryBuilder('g')
+                    ->orderBy('g.code', 'ASC');
+                }
+            ])
+            ->add('age', EntityType::class, [
+                'class'=>Age::class,
+                'label'=>'Age',
+                'attr'=>[
+                    'class'=>'form-select',
+                ],
+                'required'=>false,
+                'query_builder'=>function(EntityRepository $er){
+                    return $er->createQueryBuilder('a')
+                    ->orderBy('a.code', 'ASC');
+                }
+            ])
             ->add('Rechercher', SubmitType::class, [
                 'attr'=>[
                     'class'=>'btn btn-info btn-rounded btn-formSearch',

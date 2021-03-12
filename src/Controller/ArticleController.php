@@ -5,53 +5,20 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Entity\Categorie;
 use App\Services\Paginator;
-use Symfony\Component\Form\Form;
 use App\Controller\MainController;
 use App\Form\SearchArticleAllType;
+use App\Services\Filter;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ArticleController extends MainController
 {
-    private function getFromForm(array $criteria, array $filters, Form $search, Request $request): array
+    private $filter;
+
+    public function __construct(Filter $filter)
     {
-        if ($request->getMethod() === 'POST') {
-            foreach ($filters as $filter) {
-                if ($search->has($filter)) {
-                    $data = $search->get($filter)->getData();
-                    if ($data !== null) {
-                        $criteria[$filter] = $data;
-                        $request->query->add([
-                            $filter => $data->getSlug()
-                        ]);
-                    }
-                }
-            }
-        }
-
-        return $criteria;
-    }
-
-    private function getFromQueryString(array $criteria, array $filters, Request $request): array
-    {
-        if ($request->getMethod() === 'GET') {
-            foreach ($filters as $filter) {
-                if ($request->query->has($filter)) {
-                    $dataFilter = $request->query->get($filter);
-                    $data = $this->getDoctrine()->getRepository('App\Entity\\' . $filter)->findOneBy(['slug' => $dataFilter]);
-                    if ($data !== null) {
-                        $criteria[$filter] = $data;
-                    }
-                }
-            }
-        }
-
-        return $criteria;
-    }
-
-    public function __construct()
-    {
+        $this->filter = $filter;
     }
 
     /**
@@ -63,9 +30,9 @@ class ArticleController extends MainController
         $form = $this->createForm(SearchArticleAllType::class);
         $search = $form->handleRequest($request);
         $filters = ['categorie', 'marque'];
-        $criteria = $this->getFromQueryString($criteria, $filters, $request);
+        $criteria = $this->filter->getFromQueryString($criteria, $filters, $request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $criteria = $this->getFromForm($criteria, $filters, $search, $request);
+            $criteria = $this->filter->getFromForm($criteria, $filters, $search, $request);
         }
         return $this->render('article/listeproduits.html.twig', [
             'paginator' => $paginator->createPagination(Article::class, $criteria, 8),
