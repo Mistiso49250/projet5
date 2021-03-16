@@ -17,6 +17,7 @@ class SearchArticleAllType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $searchDatas = $options['searchdatas'];
         $builder
             ->add('categorie', EntityType::class, [
                 'class'=>Categorie::class,
@@ -28,7 +29,8 @@ class SearchArticleAllType extends AbstractType
                 'query_builder'=>function(EntityRepository $er){
                     return $er->createQueryBuilder('c')
                     ->orderBy('c.description', 'ASC');
-                }
+                },
+                'data'=>array_key_exists('categorie', $searchDatas) ? $searchDatas['categorie'] : null,
             ])
             ->add('marque', EntityType::class, [
                 'class'=>Marque::class,
@@ -40,7 +42,8 @@ class SearchArticleAllType extends AbstractType
                 'query_builder'=>function(EntityRepository $er){
                     return $er->createQueryBuilder('m')
                     ->orderBy('m.titre', 'ASC');
-                }
+                },
+                'data'=>array_key_exists('marque', $searchDatas) ? $searchDatas['marque'] : null,
             ])
             ->add('genre', EntityType::class, [
                 'class'=>Genre::class,
@@ -52,7 +55,8 @@ class SearchArticleAllType extends AbstractType
                 'query_builder'=>function(EntityRepository $er){
                     return $er->createQueryBuilder('g')
                     ->orderBy('g.code', 'ASC');
-                }
+                },
+                'data'=>array_key_exists('genre', $searchDatas) ? $searchDatas['genre'] : null,
             ])
             ->add('age', EntityType::class, [
                 'class'=>Age::class,
@@ -64,7 +68,8 @@ class SearchArticleAllType extends AbstractType
                 'query_builder'=>function(EntityRepository $er){
                     return $er->createQueryBuilder('a')
                     ->orderBy('a.code', 'ASC');
-                }
+                },
+                'data'=>array_key_exists('age', $searchDatas) ? $searchDatas['age'] : null,
             ])
             ->add('Rechercher', SubmitType::class, [
                 'attr'=>[
@@ -77,7 +82,7 @@ class SearchArticleAllType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            // Configure your form options here
+            'searchdatas'=>'none',
         ]);
     }
 }

@@ -581,9 +581,6 @@ class AppFixtures extends Fixture
             [
                 'code' => 'garçon',
             ],
-            [
-                'code' => 'mixte',
-            ],
         ];
         $genre = [];
         foreach ($dataGenre as $valeurGenre) {
@@ -807,7 +804,7 @@ class AppFixtures extends Fixture
                 'marque' => $marques['janod'],
                 'tva' => $tva['normal'],
                 'selection' => 1,
-                'genre'=>$genre['garçon'],
+                'genre'=>$genre['fille'],
                 'age'=>$age['0 - 18 mois'],
             ],
             [
@@ -1004,7 +1001,7 @@ class AppFixtures extends Fixture
                 'marque' => $marques['vilac'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
-                'genre'=>$genre['garçon'],
+                'genre'=>$genre['fille'],
                 'age'=>$age['2 - 4 ans'],
             ],
             [
@@ -1098,7 +1095,7 @@ class AppFixtures extends Fixture
                 'marque' => $marques['janod'],
                 'tva' => $tva['normal'],
                 'selection' => 1,
-                'genre'=>$genre['garçon'],
+                'genre'=>$genre['fille'],
                 'age'=>$age['2 - 4 ans'],
             ],
             [
@@ -1422,7 +1419,7 @@ class AppFixtures extends Fixture
                 'marque' => $marques['janod'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
-                'genre'=>$genre['garçon'],
+                'genre'=>$genre['fille'],
                 'age'=>$age['2 - 4 ans'],
             ],
             [
@@ -1453,7 +1450,7 @@ class AppFixtures extends Fixture
                 'marque' => $marques['moulinroty'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
-                'genre'=>$genre['garçon'],
+                'genre'=>$genre['fille'],
                 'age'=>$age['0 - 18 mois'],
             ],
             [
@@ -1516,7 +1513,7 @@ class AppFixtures extends Fixture
                 'marque' => $marques['fresk'],
                 'tva' => $tva['normal'],
                 'selection' => 0,
-                'genre'=>$genre['garçon'],
+                'genre'=>$genre['fille'],
                 'age'=>$age['0 - 18 mois'],
             ],
         ];

@@ -27,10 +27,10 @@ class ArticleController extends MainController
     public function allArticle(Request $request, Paginator $paginator): Response
     {
         $criteria = [];
-        $form = $this->createForm(SearchArticleAllType::class);
-        $search = $form->handleRequest($request);
-        $filters = ['categorie', 'marque'];
+        $filters = ['categorie', 'marque', 'genre', 'age'];
         $criteria = $this->filter->getFromQueryString($criteria, $filters, $request);
+        $form = $this->createForm(SearchArticleAllType::class, null, ['searchdatas'=> $this->filter->getSearchDatas()]);
+        $search = $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $criteria = $this->filter->getFromForm($criteria, $filters, $search, $request);
         }
