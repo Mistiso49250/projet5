@@ -71,21 +71,27 @@ a{
 .marqueContent
 {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
+    /* flex-direction: row; */
+    /* justify-content: space-around; */
+    /* align-items: center; */
+    /* flex-wrap: wrap; */
+    /* margin: 0; */
+    margin-top: 20px;
+    /* padding: 0;*/
 }
 
 .content
 {
     width: 100px;
     height: 100px;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 4%;
+    /* position: relative; */
+    background-color: white;
+    display: flex;
+    /* padding-bottom: 4%; */
+    align-items: center;
+    border: 1px solid rgba(0,0,0,.125);
+    -webkit-box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
 
 .content img
@@ -93,10 +99,6 @@ a{
     border: none;
     max-width: 100%;
     max-height: 100%;
-    border: 1px solid rgba(0,0,0,.125);
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-
 }
 
 /* Slider */
