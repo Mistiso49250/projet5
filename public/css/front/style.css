@@ -17,6 +17,14 @@ a{
     color: inherit;
 }
 
+.fas{
+    font-size: 25px;
+}
+
+#compteCo a{
+    color: white !important;
+}
+
 .btn-link{
     color: #007bff !important;
 }
@@ -193,6 +201,11 @@ a{
     height: 3em;
 }
 
+.navbar .mega-dropdown{
+    padding: 5px 30px 5px 30px !important;
+    text-align: center;
+}
+
 .mb-xl-0{
     margin-left: 1em !important;
 }
@@ -216,6 +229,8 @@ a{
 
 .navbar.navbar-dark .navbar-nav .nav-item .nav-link {
     color: #fff !important;
+    border-right: 1px solid grey !important;
+    text-align: center !important;
 }
 
 .navbar .dropdown-menu a:not(.active) {
@@ -271,8 +286,21 @@ a{
 .nouveaute, .selection{
     color: #fff;
     margin: 0 .5em 0 .5em;
+    padding: 5px 30px 5px 30px;
 }
 
+.nouveaute :hover, .selection :hover{
+    color: #fff;
+}
+
+.nouveaute a, .selection a{
+    padding: .5rem .3rem;
+}
+
+.nouveaute a{
+    padding-right: .5rem;
+    border-right: 1px solid grey;
+} 
 
 /* Menu description article */
 
@@ -431,6 +459,85 @@ input[type=checkbox] {
     color: #fff;
 }
 
+/* User */
+/* .main.account .hello a.logout {
+    position: absolute;
+    right: 25px;
+    left: auto;
+    top: 50%;
+    margin-top: -15px;
+} */
+
+/* .main.account .hello a.logout {
+    margin: 0 auto;
+} */
+.button.outline.color9 {
+    border-color: #e61414;
+    color: #e61414;
+}
+.button.outline.mini {
+    padding: 3px 11px 2px;
+}
+.button.outline {
+    background: 0 0;
+    padding: 8px 15px 7px;
+    border: 2px solid #0a3782;
+}
+
+.dashboard{
+    background: #f2f2f2;
+}
+
+.info{
+    margin: 0 auto 50px;
+    padding: 0 50px;
+}
+
+.f-wishlist-newIcon {
+    background: #232323;
+    border-radius: 50%;
+    color: #fff;
+    padding: 10px;
+    font-size: 28px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.top {
+    display: table;
+    width: 100%;
+    min-height: 80px;
+}
+
+#formSearch, #navCompte, .basket {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#navCompte{
+    cursor: pointer;
+}
+
+.basket :hover{
+    color: white;
+}
+
+#formControlSearch {
+    vertical-align: middle;
+    height: 40px !important;
+    width: 50%;
+    margin-left: 32%;
+}
+
+.basket{
+    color: white;
+}
+
+.basket .fas{
+    font-size: 30px;
+}
 
 @media only screen and (min-width: 601px){
     #circleRight

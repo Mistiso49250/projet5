@@ -1,20 +1,68 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello UserController!{% endblock %}
+{% block title %}Mon compte
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+	<!-- notification message d'erreurs -->
+	{% for message in app.flashes('error') %}
+		<h2 class="danger">
+			{{ message }}
+		</h2>
+	{% endfor %}
+	{% for message in app.flashes('success') %}
+		<h2 class="success">
+			{{ message }}
+		</h2>
+	{% endfor %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/laragon/www/projet5/src/Controller/UserController.php'|file_link(0) }}">src/Controller/UserController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/laragon/www/projet5/templates/user/index.html.twig'|file_link(0) }}">templates/user/index.html.twig</a></code></li>
-    </ul>
-</div>
+	{% include 'partials/_infoscompte.html.twig' %}
+
+	<div class="dashboard">
+		<section class="info">
+			<h1>Ma dernière commande</h1>
+			<div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 container-fluid d-flex justify-content-center">
+				<div class="col mb-3">
+					<div class="card text-center h-100">
+						<div class="card-body">
+							<h5 class="card-title">Commande N°{{  }}</h5>
+							<img src="" class="card-img-top" alt="...">
+						</div>
+						<div class="card-footer">
+							<a href="#" class="transparent3-btn">Mes commandes</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="liste">
+			<h1>Mes listes</h1>
+			<div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 container-fluid d-flex justify-content-center">
+				<div class="col mb-3">
+					<div class="card text-center h-100">
+						<a href="#">
+							<div class="card-body">
+								<h5 class="card-title">Commande N°{{  }}</h5>
+								<img src="" class="card-img-top" alt="...">
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 container-fluid d-flex justify-content-center">
+				<div class="col mb-3">
+					<div class="card text-center h-100">
+						<a href="#">
+							<div class="card-body">
+								<i class="icon icon_i_211_plus f-wishlist-newIcon"></i>
+                                <p>Créer une nouvelle liste</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
 {% endblock %}

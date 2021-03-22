@@ -1,73 +1,89 @@
-   <!-- Navbar -->
-			<nav
-				class="navbar navbar-expand-lg navbar-dark  indigo darken-4">
+<header>
+	<div
+		class="top" style="background-color: #0A3782;">
+		<!-- logo -->
+		<div class="logo">
+			<a href="{{ path('home') }}">
+				<img src="" alt="...">
+			</a>
+		</div>
 
-				<!-- Navbar brand -->
-				<a class="navbar-brand text-uppercase" href="{{ path('home') }}">Accueil</a>
+		<!-- Search form -->
+		<form class="form-inline" id="formSearch" role="search">
+			<div class="md-form my-0">
+				<input class="form-control mr-sm-2" id="formControlSearch" type="text" placeholder="Recherche" aria-label="Rechercher parmi le contenu du site" minlength="4" maxlength="12" pattern="[A-Za-z\é\è\ê\-\¨]">
+			</div>
+		</form>
+		<!-- comptes -->
+		<li class="nav-item dropdown ml-5" id="navCompte">
+			<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fas fa-user"></i>
+			</a>
+			<div class="dropdown-menu dropdown-menu-right dropdown-default" id="compteCo" aria-labelledby="navbarDropdownMenuLink-333">
+				<a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a>
+				<a class="dropdown-item" href="{{ path('app_register') }}">S' inscrire</a>
+			</div>
+		</li>
+		<!-- panier -->
+		<div class="basket">
+			<a href="">
+				<span class="icon icon-basket"><i class="fas fa-shopping-basket"></i></span>
+			</a>
+		</div>
+	</div>
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1a237e;">
+		<div
+			class="container-fluid">
+			<!-- Navbar brand -->
+			{# <a class="navbar-brand" href="{{ path('home') }}">Accueil</a> #}
 
-				<!-- Collapse button -->
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+			<!-- Collapse button -->
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-				<!-- Collapsible content -->
-				<div
-					class="collapse navbar-collapse" id="navbarSupportedContent2">
+			<!-- Collapsible content -->
+			<div
+				class="collapse navbar-collapse" id="navbarScroll">
 
-					<!-- Links -->
-					<ul
-						class="navbar-nav mr-auto">
-
-                        {% for menuprinc in menu %}
+				<!-- Links -->
+				<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+					{% for menuprinc in menu %}
 						<li class="nav-item dropdown mega-dropdown active">
-							<a class="nav-link dropdown-toggle text-uppercase" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ menuprinc.description }}
-								<span class="sr-only">(current)</span>
+							<a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								{{ menuprinc.description }}<span class="sr-only">(current)</span>
 							</a>
-							<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-5 px-3" aria-labelledby="navbarDropdownMenuLink2">
+							<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-5 px-3 dropdown-menu-right dropdown-default" aria-labelledby="navbarScrollingDropdown">
 								<div class="row">
-                                    {% for menusec in menuprinc.secondaire %}
-									<div class="col-md-6 col-xl-3 sub-menu mb-xl-0 mb-4">
-										<h6 class="sub-title text-uppercase font-weight-bold white-text">{{ menusec.description }}</h6>
-										<ul class="list-unstyled">
-                                            {% for menucateg in menusec.secondaire %}
-											<li>
-												<a class="menu-item pl-0" href="{{ path('article_list_categ', {slug:menucateg.slug}) }}">
-													<i class="fas fa-caret-right pl-1 pr-3"></i>{{ menucateg.description }}
-												</a>
-											</li>
-                                            {% endfor %}
-										</ul>
-									</div>
-                                    {% endfor %}
+									{% for menusec in menuprinc.secondaire %}
+										<div class="col-md-6 col-xl-3 sub-menu mb-xl-0 mb-4">
+											<h6 class="sub-title text-uppercase font-weight-bold white-text">{{ menusec.description }}</h6>
+											<ul class="list-unstyled">
+												{% for menucateg in menusec.secondaire %}
+													<li>
+														<a class="menu-item pl-0" href="{{ path('article_list_categ', {slug:menucateg.slug}) }}">
+															<i class="fas fa-caret-right pl-1 pr-3"></i>
+															{{ menucateg.description }}
+														</a>
+													</li>
+												{% endfor %}
+											</ul>
+										</div>
+									{% endfor %}
 								</div>
 							</div>
 						</li>
-                        {% endfor %}
-                
-					<!-- comptes -->
-					
-						<li class="nav-item dropdown ml-5">
-							<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="fas fa-user"></i>
-							</a>
-							<div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-								<a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a>
-								<a class="dropdown-item" href="{{ path('app_register') }}">S' inscrire</a>
-							</div> 
-						</li>
-					</ul>
-					<!-- Search form -->
-					<form class="form-inline" role="search">
-						<div class="md-form my-0">
-							<input class="form-control mr-sm-2" type="text" placeholder="Recherche" aria-label="Rechercher parmi le contenu du site" size="30" minlength="4" maxlength="12" pattern="[A-Za-z\é\è\ê\-\¨]">
-						</div>
-					</form>
-					<!-- role="search" => permettra aux lecteurs d'écran d'indiquer le formulaire comme étant un formulaire de recherche. -->
-					<!-- aria-label => contenir un texte descriptif qui sera lu à voix haute par un lecteur d'écran. -->
+					{% endfor %}
+					<li class="nouveaute">
+						<a href="{{ path('article_list_nouveaute', {}) }}">Nouveautés</a>
+					</li>
+					<li class="selection">
+						<a href="{{ path('article_list_selection', {}) }}">Sélection</a>
+					</li>
 
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-				</div>
-				<!-- Collapsible content -->
-
-			</nav>
-			<!-- Navbar -->
+</header>
