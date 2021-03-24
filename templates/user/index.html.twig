@@ -7,17 +7,19 @@
 
 	<!-- notification message d'erreurs -->
 	{% for message in app.flashes('error') %}
-		<h2 class="danger">
+		<h5 class="alert alert-danger">
 			{{ message }}
-		</h2>
+		</h5>
 	{% endfor %}
 	{% for message in app.flashes('success') %}
-		<h2 class="success">
+		<h5 class="alert alert-success">
 			{{ message }}
-		</h2>
+		</h5>
 	{% endfor %}
 
 	{% include 'partials/_infoscompte.html.twig' %}
+
+	<a href="{{ path('utilisateur_modifier') }}" class="btn btn-primary">Modifier votre profil</a>
 
 	<div class="dashboard">
 		<section class="info">
@@ -26,7 +28,7 @@
 				<div class="col mb-3">
 					<div class="card text-center h-100">
 						<div class="card-body">
-							<h5 class="card-title">Commande N°{{  }}</h5>
+							<h5 class="card-title">Commande N°</h5>
 							<img src="" class="card-img-top" alt="...">
 						</div>
 						<div class="card-footer">
@@ -44,7 +46,7 @@
 					<div class="card text-center h-100">
 						<a href="#">
 							<div class="card-body">
-								<h5 class="card-title">Commande N°{{  }}</h5>
+								<h5 class="card-title">Commande N°</h5>
 								<img src="" class="card-img-top" alt="...">
 							</div>
 						</div>

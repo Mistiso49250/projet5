@@ -1,45 +1,43 @@
 <header>
-	<div
-		class="top" style="background-color: #0A3782;">
-		<!-- logo -->
-		<div class="logo">
-			<a href="{{ path('home') }}">
-				<img src="" alt="...">
-			</a>
-		</div>
-
-		<!-- Search form -->
-		<form class="form-inline" id="formSearch" role="search">
-			<div class="md-form my-0">
-				<input class="form-control mr-sm-2" id="formControlSearch" type="text" placeholder="Recherche" aria-label="Rechercher parmi le contenu du site" minlength="4" maxlength="12" pattern="[A-Za-z\é\è\ê\-\¨]">
+	{# <div
+			class="top" style="background-color: #0A3782;">
+			<!-- logo -->
+			<div class="logo">
+				<a href="{{ path('home') }}">
+					<img src="{{ asset ('images/logo/Capture.jpg') }}" alt="...">
+				</a>
 			</div>
-		</form>
-		<!-- comptes -->
-		<li class="nav-item dropdown ml-5" id="navCompte">
-			<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<i class="fas fa-user"></i>
-			</a>
-			<div class="dropdown-menu dropdown-menu-right dropdown-default" id="compteCo" aria-labelledby="navbarDropdownMenuLink-333">
-				<a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a>
-				<a class="dropdown-item" href="{{ path('app_register') }}">S' inscrire</a>
+	
+			<!-- Search form -->
+			<form class="form-inline" id="formSearch" role="search">
+				<div class="md-form my-0">
+					<input class="form-control mr-sm-2" id="formControlSearch" type="text" placeholder="Recherche" aria-label="Rechercher parmi le contenu du site" minlength="4" maxlength="12" pattern="[A-Za-z\é\è\ê\-\¨]">
+				</div>
+			</form>
+			<!-- comptes -->
+			<li class="nav-item dropdown ml-5" id="navCompte">
+				<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-user"></i>
+				</a>
+				<div class="dropdown-menu dropdown-menu-right dropdown-default" id="compteCo" aria-labelledby="navbarDropdownMenuLink-333">
+					<a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a>
+					<a class="dropdown-item" href="{{ path('app_register') }}">S' inscrire</a>
+				</div>
+			</li>
+			<!-- panier -->
+			<div class="basket">
+				<a href="">
+					<span class="icon icon-basket"><i class="fas fa-shopping-basket"></i></span>
+				</a>
 			</div>
-		</li>
-		<!-- panier -->
-		<div class="basket">
-			<a href="">
-				<span class="icon icon-basket"><i class="fas fa-shopping-basket"></i></span>
-			</a>
-		</div>
-	</div>
+		</div> #}
 	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1a237e;">
-		<div
-			class="container-fluid">
+		<div class="container-fluid">
 			<!-- Navbar brand -->
-			{# <a class="navbar-brand" href="{{ path('home') }}">Accueil</a> #}
+			<a class="navbar-brand" href="{{ path('home') }}">Accueil</a>
 
 			<!-- Collapse button -->
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
 			</button>
 
 			<!-- Collapsible content -->
@@ -74,13 +72,28 @@
 							</div>
 						</li>
 					{% endfor %}
-					<li class="nouveaute">
+					<li class="nouveaute" id="nouveaute">
 						<a href="{{ path('article_list_nouveaute', {}) }}">Nouveautés</a>
 					</li>
-					<li class="selection">
+					<li class="selection" id="selection">
 						<a href="{{ path('article_list_selection', {}) }}">Sélection</a>
 					</li>
-
+					<!-- comptes -->
+					<li class="nav-item dropdown ml-5" id="navCompte">
+						<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fas fa-user"></i>
+						</a>
+						<div class="dropdown-menu dropdown-menu-right dropdown-default" id="compteCo" aria-labelledby="navbarDropdownMenuLink-333">
+							<a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a>
+							<a class="dropdown-item" href="{{ path('app_register') }}">S' inscrire</a>
+						</div>
+					</li>
+					<!-- Search form -->
+					<form class="form-inline" id="formSearch" role="search">
+						<div class="md-form my-0">
+							<input class="form-control mr-sm-2" id="formControlSearch" type="text" placeholder="Recherche" aria-label="Rechercher parmi le contenu du site" minlength="4" maxlength="12" pattern="[A-Za-z\é\è\ê\-\¨]">
+						</div>
+					</form>
 				</ul>
 			</div>
 		</div>

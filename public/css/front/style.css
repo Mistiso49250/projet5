@@ -79,23 +79,15 @@ a{
 .marqueContent
 {
     display: flex;
-    /* flex-direction: row; */
-    /* justify-content: space-around; */
-    /* align-items: center; */
-    /* flex-wrap: wrap; */
-    /* margin: 0; */
     margin-top: 20px;
-    /* padding: 0;*/
 }
 
 .content
 {
     width: 100px;
     height: 100px;
-    /* position: relative; */
     background-color: white;
     display: flex;
-    /* padding-bottom: 4%; */
     align-items: center;
     border: 1px solid rgba(0,0,0,.125);
     -webkit-box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
@@ -202,7 +194,7 @@ a{
 }
 
 .navbar .mega-dropdown{
-    padding: 5px 30px 5px 30px !important;
+    padding: 5px 0px 5px 10px;
     text-align: center;
 }
 
@@ -229,8 +221,8 @@ a{
 
 .navbar.navbar-dark .navbar-nav .nav-item .nav-link {
     color: #fff !important;
-    border-right: 1px solid grey !important;
-    text-align: center !important;
+    /* border-right: 1px solid grey !important;
+    text-align: center !important; */
 }
 
 .navbar .dropdown-menu a:not(.active) {
@@ -286,7 +278,7 @@ a{
 .nouveaute, .selection{
     color: #fff;
     margin: 0 .5em 0 .5em;
-    padding: 5px 30px 5px 30px;
+    padding: 5px 0px 5px 10px;
 }
 
 .nouveaute :hover, .selection :hover{
@@ -297,10 +289,13 @@ a{
     padding: .5rem .3rem;
 }
 
-.nouveaute a{
+/* .nouveaute a{
     padding-right: .5rem;
+}  */
+
+/* #nouveaute a, #selection a{
     border-right: 1px solid grey;
-} 
+} */
 
 /* Menu description article */
 
@@ -417,7 +412,6 @@ a{
     transition: all .1s ease-in-out;
 }
 
-
 input[type=checkbox] {
     box-sizing: border-box;
     padding: 0;
@@ -447,6 +441,10 @@ input[type=checkbox] {
 
 .formResetSmall{
     margin: 1em 0 1em;
+}
+
+.checkEmailRest{
+    margin: 15rem;
 }
 
 /* Footer */
@@ -511,9 +509,21 @@ input[type=checkbox] {
     min-height: 80px;
 }
 
-#formSearch, #navCompte, .basket {
+/* #formSearch, #navCompte, .basket, .logo {
     display: table-cell;
     vertical-align: middle;
+} */
+
+.logo{
+    width: 200px;
+    padding: 0;
+}
+
+.logo img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: 45%;
 }
 
 #navCompte{
@@ -524,12 +534,12 @@ input[type=checkbox] {
     color: white;
 }
 
-#formControlSearch {
+/* #formControlSearch {
     vertical-align: middle;
     height: 40px !important;
     width: 50%;
     margin-left: 32%;
-}
+} */
 
 .basket{
     color: white;

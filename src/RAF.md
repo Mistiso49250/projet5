@@ -131,3 +131,6 @@ faire tableau data marque et tva idem appFixtures
 09/03
 Refaire les relations genre, age -> article
 ajouter slug dans genre && age
+
+23/03
+afficher profil et deco quand user co
