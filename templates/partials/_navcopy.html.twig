@@ -1,0 +1,61 @@
+<header>
+
+	<nav class="nav_bar">
+		<div
+			class="infonav">
+			<!-- Search form -->
+			<form class="form-inline" id="formSearch" role="search">
+				<div class="md-form my-0">
+					<input class="form-control mr-sm-2" id="formControlSearch" type="text" placeholder="Recherche" aria-label="Rechercher parmi le contenu du site" minlength="4" maxlength="12" pattern="[A-Za-z\é\è\ê\-\¨]">
+				</div>
+			</form>
+			<!-- comptes -->
+			<li class="nav-item dropdown ml-5" id="navCompte">
+				<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-user"></i>
+				</a>
+				<div class="dropdown-menu dropdown-menu-right dropdown-default" id="compteCo" aria-labelledby="navbarDropdownMenuLink-333">
+					<a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a>
+					<a class="dropdown-item" href="{{ path('app_register') }}">S' inscrire</a>
+				</div>
+			</li>
+			<!-- panier -->
+			<div class="basket">
+				<a href="">
+					<span class="icon icon-basket">
+						<i class="fas fa-shopping-basket"></i>
+					</span>
+				</a>
+			</div>
+		</div>
+		<a class="accueil" href="{{ path('home') }}">Accueil</a>
+		<ul>
+			{% for menuprinc in menu %}
+				<li class="">
+					<a class="">
+						{{ menuprinc.description }}<span class="sr-only">(current)</span>
+					</a>
+					{% for menusec in menuprinc.secondaire %}
+						<div class="sub">
+							<ul class="submenu">
+								<h6 class="sub-title text-uppercase font-weight-bold white-text">{{ menusec.description }}</h6>
+								{% for menucateg in menusec.secondaire %}
+									<li>
+										<a class="" href="{{ path('article_list_categ', {slug:menucateg.slug}) }}">{{ menucateg.description }}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
+					{% endfor %}
+				</li>
+			{% endfor %}
+			<li class="nouveaute" id="nouveaute">
+				<a href="{{ path('article_list_nouveaute', {}) }}">Nouveautés</a>
+			</li>
+			<li class="selection" id="selection">
+				<a href="{{ path('article_list_selection', {}) }}">Sélection</a>
+			</li>
+		</ul>
+	</nav>
+
+</header>

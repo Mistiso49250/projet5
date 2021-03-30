@@ -185,6 +185,102 @@ a{
 
 /* Menu */
 
+/* TEST */
+
+.infonav{
+    position: absolute;
+    display: flex;
+    margin-left: 40%;
+    margin-bottom: 6%;
+}
+
+#formSearch, #navCompte{
+    padding-right: 3rem;
+}
+
+#formSearch{
+    width: 390px;
+}
+
+.nav_bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    background-color: red;
+}
+nav ul{
+    margin: 0;
+    display: flex;
+    padding-top: 7.5%;
+}
+
+nav ul::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.accueil{
+    padding-top: 7.5%;
+    margin-left: 1rem;
+}
+
+nav li{
+    list-style-type: none;
+}
+
+nav ul li{
+    display: flex;
+    position: relative;
+    list-style-type: none;
+    align-items: center;
+    cursor: pointer;
+}
+
+.submenu{
+    display: none;
+    background-color: palegreen;
+    text-align: center;
+}
+
+nav li:hover .submenu{
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    z-index: 200;
+}
+
+.submenu li a{
+    padding: 15px 30px;
+    font-size: 15px;
+    width: 100%;
+    color: orangered;
+    text-align: justify;
+}
+
+.submenu h6{
+    margin-top: 1.5%;
+    width: 300px;
+}
+
+.submenu li{
+    width: 100%;
+}
+
+nav a{
+    display: inline-block;
+}
+
+nav ul li a{
+    padding: 20px 30px;
+    color: yellow;
+}
+
+/*  */
+
 .navbar-brand{
     margin-left: 0.5em !important;
 }
@@ -247,7 +343,7 @@ a{
     border: none;
     outline: none;
     box-shadow: none;
-    height: 30px !important;
+    height: 40px !important;
 }
 
 .navbar .mega-dropdown .dropdown-menu.mega-menu .sub-menu .sub-title {
