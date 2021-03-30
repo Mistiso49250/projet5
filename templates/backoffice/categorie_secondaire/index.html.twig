@@ -1,0 +1,39 @@
+{% extends 'basebackoffice.html.twig' %}
+
+{% block title %}CategorieSecondaire index{% endblock %}
+
+{% block body %}
+    <h1>CategorieSecondaire index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Code</th>
+                <th>Slug</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorie_secondaire in categorie_secondaires %}
+            <tr>
+                <td>{{ categorie_secondaire.id }}</td>
+                <td>{{ categorie_secondaire.description }}</td>
+                <td>{{ categorie_secondaire.code }}</td>
+                <td>{{ categorie_secondaire.slug }}</td>
+                <td>
+                    <a href="{{ path('categorie_secondaire_show', {'id': categorie_secondaire.id}) }}">show</a>
+                    <a href="{{ path('categorie_secondaire_edit', {'id': categorie_secondaire.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('categorie_secondaire_new') }}">Create new</a>
+{% endblock %}

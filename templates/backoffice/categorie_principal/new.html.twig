@@ -1,0 +1,11 @@
+{% extends 'basebackoffice.html.twig' %}
+
+{% block title %}New CategoriePrincipal{% endblock %}
+
+{% block body %}
+    <h1>Create new CategoriePrincipal</h1>
+
+    {{ include('backoffice/categorie_principal/_form.html.twig') }}
+
+    <a href="{{ path('categorie_principal_index') }}">back to list</a>
+{% endblock %}
