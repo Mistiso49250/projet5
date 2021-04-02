@@ -2,26 +2,26 @@
 
 namespace App\Form\Backoffice;
 
-use App\Entity\CategorieSecondaire;
+use App\Entity\Categorie;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CategorieSecondaireType extends AbstractType
+class CategorieType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('code')
             ->add('description')
-            ->add('categoriePrincipal')
+            ->add('secondaire')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => CategorieSecondaire::class,
+            'data_class' => Categorie::class,
         ]);
     }
 }

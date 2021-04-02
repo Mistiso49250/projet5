@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ article.titre }}{% endblock %}
+{% block title %}
+	{{ article.titre }}
+{% endblock %}
 
 {% block body %}
-<div class="boxArticle">
+	<div class="boxArticle">
 		<div class="visuel">
-			<img src="{{ asset ('images/' ~ article.image) }}" alt="" class="img-fluid">
+			<img src="{{ asset ('images/' ~ article.image) | imagine_filter('articledescription') }}" alt="" class="img-fluid">
 		</div>
 		<div class="infoProduit">
 			<div class="titreArticle">
@@ -17,30 +19,37 @@
 					€</span>
 			</div>
 			{# <div class="action">
-						     {{ article.stock }} 
-						     {{ article.quantité }} 
-						    <button type="submit" title="ajouter au panier"></button>
-						</div> #}
+					{{ article.stock }} 
+					{{ article.quantité }} 
+				<button type="submit" title="ajouter au panier"></button>
+			</div> #}
 		</div>
 	</div>
 
-	<div
-		class="descritpion">
-		<!-- Nav tabs -->
-		<ul class="nav nav-tabs" id="myTab" role="tablist">
+	<div class="descritpion">
+		<!-- Tabs navs -->
+		<ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
 			<li class="nav-item" role="presentation">
-				<a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Déscription</a>
+				<a class="nav-link active" id="ex1-tab-1" data-mdb-toggle="tab" href="#ex1-tabs-1" role="tab" aria-controls="ex1-tabs-1" aria-selected="true">Déscription</a>
 			</li>
 			<li class="nav-item" role="presentation">
-				<a class="nav-link" id="detail-tab" data-toggle="tab" href="#detail" role="tab" aria-controls="detail" aria-selected="false">Détail</a>
+				<a class="nav-link" id="ex1-tab-2" data-mdb-toggle="tab" href="#ex1-tabs-2" role="tab" aria-controls="ex1-tabs-2" aria-selected="false">Détail</a>
 			</li>
 		</ul>
+		<!-- Tabs navs -->
 
-		<!-- Tab panes -->
-		<div class="tab-content">
-			<div class="tab-pane active" id="description" role="tabpanel" aria-labelledby="description-tab">{{ article.contenu | nl2br }}</div>
-			<div class="tab-pane" id="detail" role="tabpanel" aria-labelledby="detail-tab">{{ article.detail | nl2br }}</div>
+		<!-- Tabs content -->
+		<div class="tab-content" id="ex1-content">
+			<div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+				{{ article.contenu | nl2br }}
+			</div>
+			<div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+				{{ article.detail | nl2br }}
+			</div>
 		</div>
+		<!-- Tabs content -->
 
 	</div>
+
+
 {% endblock %}

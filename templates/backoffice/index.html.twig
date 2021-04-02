@@ -1,0 +1,95 @@
+{% extends 'basebackoffice.html.twig' %}
+
+{% block title %}Administration
+{% endblock %}
+
+{% block body %}
+	<!-- notification message d'erreurs -->
+	{% for message in app.flashes('error') %}
+		<h5 class="alert alert-danger">
+			{{ message }}
+		</h5>
+	{% endfor %}
+	{% for message in app.flashes('success') %}
+		<h5 class="alert alert-success">
+			{{ message }}
+		</h5>
+	{% endfor %}
+	<!-- notification message d'erreurs -->
+
+	<h2 class="h2back">Bienvenue dans l'interface administration</h2>
+
+	<div class="container-fluid">
+		<div class="row chapitre">
+			<div class="col-lg-12">
+				<h2>Liste des chapitres</h2>
+
+				<section class="table-responsive">
+					<table class="table table-bordered table-striped table-condensed">
+						<thead>
+							<tr>
+								<th>Titre</th>
+								<th>Extraits des articles</th>
+								<th>Date de publication</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							{# {% for article in paginator.datas %} #}
+							<tr>
+								{# <td>{{ article.titre }}</td> #}
+								{# <td>{{ article.extrait | nl2br }}</td> #}<td>
+								titre 1
+								</td><td>
+								extrait 1
+								</td><td>
+								date 1
+								</td>
+									<td>
+										<a href="" class="btn btn-success"> Editer</a>
+
+									<!-- Button trigger modal-->
+									<button type="button" class="pull-right btn btn-danger" data-toggle="modal" data-target="#modalConfirmDelete">Supprimer</button>
+
+									<!--Modal: modalConfirmDelete-->
+									<div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div
+											class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+											<!--Content-->
+											<div
+												class="modal-content text-center">
+												<!--Header-->
+												<div class="modal-header d-flex justify-content-center">
+													<p class="heading">Êtes-vous sur de vouloirs supprimer ce chapitre ?</p>
+												</div>
+
+												<!--Body-->
+												<div class="modal-body">
+
+													<i class="fas fa-times fa-4x animated rotateIn"></i>
+
+												</div>
+
+												<!--Footer-->
+												<div class="modal-footer flex-center">
+													<a href="" class="btn btn-outline-danger">Oui</a>
+													<a type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Non</a>
+												</div>
+											</div>
+											<!--/.Content-->
+										</div>
+									</div>
+									<!--Modal: modalConfirmDelete-->
+								</td>
+							</tr>
+							{# {% endfor %} #}
+						</tbody>
+					</table>
+				</section>
+
+				{# {% include 'partials/_paginate.html.twig' %} #}
+			</div>
+		</div>
+	</div>
+{% endblock %}

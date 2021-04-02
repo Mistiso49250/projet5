@@ -26,9 +26,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('categorie_secondaire_index') }}">back to list</a>
+    <a href="{{ path('categorie_secondaire_index') }}" class="btn btn-outline-primary">Retour à la liste</a>
 
-    <a href="{{ path('categorie_secondaire_edit', {'id': categorie_secondaire.id}) }}">edit</a>
+    <a href="{{ path('categorie_secondaire_edit', {'id': categorie_secondaire.id}) }}" class="btn btn-outline-primary">edit</a>
 
     {{ include('backoffice/categorie_secondaire/_delete_form.html.twig') }}
 {% endblock %}

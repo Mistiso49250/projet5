@@ -21,8 +21,8 @@
                 <td>{{ genre.code }}</td>
                 <td>{{ genre.slug }}</td>
                 <td>
-                    <a href="{{ path('genre_show', {'id': genre.id}) }}">show</a>
-                    <a href="{{ path('genre_edit', {'id': genre.id}) }}">edit</a>
+                    <a href="{{ path('genre_show', {'id': genre.id}) }}" class="btn btn-outline-primary">show</a>
+                    <a href="{{ path('genre_edit', {'id': genre.id}) }}" class="btn btn-outline-primary">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('genre_new') }}">Create new</a>
+    <a href="{{ path('genre_new') }}" class="btn btn-outline-primary">Créer un nouveau genre</a>
 {% endblock %}

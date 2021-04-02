@@ -23,8 +23,8 @@
                 <td>{{ categorie_secondaire.code }}</td>
                 <td>{{ categorie_secondaire.slug }}</td>
                 <td>
-                    <a href="{{ path('categorie_secondaire_show', {'id': categorie_secondaire.id}) }}">show</a>
-                    <a href="{{ path('categorie_secondaire_edit', {'id': categorie_secondaire.id}) }}">edit</a>
+                    <a href="{{ path('categorie_secondaire_show', {'id': categorie_secondaire.id}) }}" class="btn btn-outline-primary">show</a>
+                    <a href="{{ path('categorie_secondaire_edit', {'id': categorie_secondaire.id}) }}" class="btn btn-outline-primary">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +35,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('categorie_secondaire_new') }}">Create new</a>
+    <a href="{{ path('categorie_secondaire_new') }}" class="btn btn-outline-primary">Créer une nouvelle catégorie secondaire</a>
 {% endblock %}

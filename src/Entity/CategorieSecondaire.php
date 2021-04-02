@@ -52,7 +52,7 @@ class CategorieSecondaire
         $this->secondaire = new ArrayCollection();
     }
 
-   
+
 
     public function getId(): ?int
     {
@@ -134,5 +134,8 @@ class CategorieSecondaire
         return $this;
     }
 
-   
+    public function __toString(): string
+    {
+        return $this->code . '-' . $this->description;
+    }
 }

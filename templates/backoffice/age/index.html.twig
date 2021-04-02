@@ -1,37 +1,40 @@
 {% extends 'basebackoffice.html.twig' %}
 
-{% block title %}Age index{% endblock %}
+{% block title %}Age index
+{% endblock %}
 
 {% block body %}
-    <h1>Age index</h1>
+	<div class="container-fluid">
+		<h1>Age index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Code</th>
-                <th>Slug</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for age in ages %}
-            <tr>
-                <td>{{ age.id }}</td>
-                <td>{{ age.code }}</td>
-                <td>{{ age.slug }}</td>
-                <td>
-                    <a href="{{ path('age_show', {'id': age.id}) }}">show</a>
-                    <a href="{{ path('age_edit', {'id': age.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Code</th>
+					<th>Slug</th>
+					<th>actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for age in ages %}
+					<tr>
+						<td>{{ age.id }}</td>
+						<td>{{ age.code }}</td>
+						<td>{{ age.slug }}</td>
+						<td>
+							<a href="{{ path('age_show', {'id': age.id}) }}" class="btn btn-outline-primary">show</a>
+							<a href="{{ path('age_edit', {'id': age.id}) }}" class="btn btn-outline-primary">edit</a>
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="4">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
 
-    <a href="{{ path('age_new') }}">Create new</a>
+		<a href="{{ path('age_new') }}" class="btn btn-rounded-primary">Créer une nouvelle tranche d' âge</a>
+	</div>
 {% endblock %}

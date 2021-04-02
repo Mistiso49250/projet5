@@ -92,66 +92,22 @@ class ArticleController extends MainController
     /**
      * @Route("/nouveaute}", name="article_list_nouveaute")
      */
-    public function listePageNouveaute(Request $request, Paginator $paginator): Response
+    public function listePageNouveaute(Paginator $paginator): Response
     {
         // $nouveau = $this->articleManager->allNouveaute();
-        $criteria = [];
-        $form = $this->createForm(SearchArticleAllType::class);
-        $search = $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $categ = $search->get('categorie')->getData();
-            if ($categ !== null) {
-                $criteria['categorie'] = $categ;
-            }
-            $marque = $search->get('marque')->getData();
-            if ($marque !== null) {
-                $criteria['marque'] = $marque;
-            }
-            $genre = $search->get('genre')->getData();
-            if ($genre !== null) {
-                $criteria['genre'] = $genre;
-            }
-            $age = $search->get('age')->getData();
-            if ($age !== null) {
-                $criteria['age'] = $age;
-            }
-        }
+        
         return $this->render('article/listeproduits.html.twig', [
             'paginator' => $paginator->createPagination(Article::class, ['new' => 1]),
-            'form' => $form->createView(),
         ]);
     }
 
     /**
      * @Route("/selection", name="article_list_selection")
      */
-    public function listePageSelection(Request $request, Paginator $paginator): Response
+    public function listePageSelection(Paginator $paginator): Response
     {
-        $criteria = [];
-        $form = $this->createForm(SearchArticleAllType::class);
-        $search = $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $categ = $search->get('categorie')->getData();
-            if ($categ !== null) {
-                $criteria['categorie'] = $categ;
-            }
-            $marque = $search->get('marque')->getData();
-            if ($marque !== null) {
-                $criteria['marque'] = $marque;
-            }
-            $genre = $search->get('genre')->getData();
-            if ($genre !== null) {
-                $criteria['genre'] = $genre;
-            }
-            $age = $search->get('age')->getData();
-            if ($age !== null) {
-                $criteria['age'] = $age;
-            }
-        }
-
         return $this->render('article/listeproduits.html.twig', [
             'paginator' => $paginator->createPagination(Article::class, ['selection' => 1]),
-            'form' => $form->createView(),
         ]);
     }
 }

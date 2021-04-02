@@ -23,8 +23,8 @@
                 <td>{{ categorie_principal.code }}</td>
                 <td>{{ categorie_principal.slug }}</td>
                 <td>
-                    <a href="{{ path('categorie_principal_show', {'id': categorie_principal.id}) }}">show</a>
-                    <a href="{{ path('categorie_principal_edit', {'id': categorie_principal.id}) }}">edit</a>
+                    <a href="{{ path('categorie_principal_show', {'id': categorie_principal.id}) }}" class="btn btn-outline-primary">show</a>
+                    <a href="{{ path('categorie_principal_edit', {'id': categorie_principal.id}) }}" class="btn btn-outline-primary">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +35,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('categorie_principal_new') }}">Create new</a>
+    <a href="{{ path('categorie_principal_new') }}" class="btn btn-outline-primary">Créer une nouvelle catégorie principal</a>
 {% endblock %}

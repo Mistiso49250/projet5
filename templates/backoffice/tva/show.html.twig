@@ -26,9 +26,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('tva_index') }}">back to list</a>
+    <a href="{{ path('tva_index') }}" class="btn btn-outline-primary">Retour à la liste</a>
 
-    <a href="{{ path('tva_edit', {'id': tva.id}) }}">edit</a>
+    <a href="{{ path('tva_edit', {'id': tva.id}) }}" class="btn btn-outline-primary">edit</a>
 
     {{ include('backoffice/tva/_delete_form.html.twig') }}
 {% endblock %}
