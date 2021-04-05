@@ -27,6 +27,7 @@ class ArticleController extends MainController
     public function allArticle(Request $request, Paginator $paginator): Response
     {
         $criteria = [];
+
         $filters = ['categorie', 'marque', 'genre', 'age'];
         $criteria = $this->filter->getFromQueryString($criteria, $filters, $request);
         $form = $this->createForm(SearchArticleAllType::class, null, ['searchdatas'=> $this->filter->getSearchDatas()]);
@@ -59,32 +60,23 @@ class ArticleController extends MainController
     public function listeProduitsParCateg(Request $request, Paginator $paginator, string $slug): Response
     {
         $categorieRepository = $this->getDoctrine()->getRepository(Categorie::class);
-        $categorie = $categorieRepository->findOneBy(['slug' => $slug]);
 
-        $criteria = [];
-        $form = $this->createForm(SearchArticleAllType::class);
+        $criteria = ['categorie' => $categorieRepository->findOneBy(['slug' => $slug])];
+        $filters = ['marque', 'genre', 'age'];
+
+        $criteria = $this->filter->getFromQueryString($criteria, $filters, $request);
+        $form = $this->createForm(SearchArticleAllType::class, null, [
+            'searchdatas'=> $this->filter->getSearchDatas(),
+            'filters'=> $filters,
+        ]);
+
         $search = $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $categ = $search->get('categorie')->getData();
-            if ($categ !== null) {
-                $criteria['categorie'] = $categ;
-            }
-            $marque = $search->get('marque')->getData();
-            if ($marque !== null) {
-                $criteria['marque'] = $marque;
-            }
-            $genre = $search->get('genre')->getData();
-            if ($genre !== null) {
-                $criteria['genre'] = $genre;
-            }
-            $age = $search->get('age')->getData();
-            if ($age !== null) {
-                $criteria['age'] = $age;
-            }
+            $criteria = $this->filter->getFromForm($criteria, $filters, $search, $request);
         }
 
         return $this->render('article/listeproduits.html.twig', [
-            'paginator' => $paginator->createPagination(Article::class, ['categorie' => $categorie]),
+            'paginator' => $paginator->createPagination(Article::class, $criteria, 8),
             'form' => $form->createView(),
         ]);
     }
@@ -92,22 +84,42 @@ class ArticleController extends MainController
     /**
      * @Route("/nouveaute}", name="article_list_nouveaute")
      */
-    public function listePageNouveaute(Paginator $paginator): Response
+    public function listePageNouveaute(Request $request,Paginator $paginator): Response
     {
-        // $nouveau = $this->articleManager->allNouveaute();
+        $criteria = ['new' => 1];
+        $filters = ['categorie', 'marque', 'genre', 'age'];
+
+        $criteria = $this->filter->getFromQueryString($criteria, $filters, $request);
+        $form = $this->createForm(SearchArticleAllType::class, null, ['searchdatas'=> $this->filter->getSearchDatas()]);
+        $search = $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $criteria = $this->filter->getFromForm($criteria, $filters, $search, $request);
+        }
         
         return $this->render('article/listeproduits.html.twig', [
-            'paginator' => $paginator->createPagination(Article::class, ['new' => 1]),
+            'paginator' => $paginator->createPagination(Article::class, $criteria, 8),
+            'form' => $form->createView(),
         ]);
     }
 
     /**
      * @Route("/selection", name="article_list_selection")
      */
-    public function listePageSelection(Paginator $paginator): Response
+    public function listePageSelection(Request $request, Paginator $paginator): Response
     {
+        $criteria = ['selection' => 1];
+        $filters = ['categorie', 'marque', 'genre', 'age'];
+
+        $criteria = $this->filter->getFromQueryString($criteria, $filters, $request);
+        $form = $this->createForm(SearchArticleAllType::class, null, ['searchdatas'=> $this->filter->getSearchDatas()]);
+        $search = $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $criteria = $this->filter->getFromForm($criteria, $filters, $search, $request);
+        }
+
         return $this->render('article/listeproduits.html.twig', [
-            'paginator' => $paginator->createPagination(Article::class, ['selection' => 1]),
+            'paginator' => $paginator->createPagination(Article::class, $criteria, 8),
+            'form' => $form->createView(),
         ]);
     }
 }

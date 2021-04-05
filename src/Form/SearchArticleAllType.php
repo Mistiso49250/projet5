@@ -18,71 +18,79 @@ class SearchArticleAllType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $searchDatas = $options['searchdatas'];
-        $builder
-            ->add('categorie', EntityType::class, [
-                'class'=>Categorie::class,
-                'label'=>'Catégorie',
-                'attr'=>[
-                    'class'=>'form-select',
+        $filters = $options['filters'];
+        if (in_array('categorie', $filters)) {
+            $builder->add('categorie', EntityType::class, [
+                'class' => Categorie::class,
+                'label' => 'Catégorie',
+                'attr' => [
+                    'class' => 'form-select',
                 ],
-                'required'=>false,
-                'query_builder'=>function(EntityRepository $er){
+                'required' => false,
+                'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('c')
-                    ->orderBy('c.description', 'ASC');
+                        ->orderBy('c.description', 'ASC');
                 },
-                'data'=>array_key_exists('categorie', $searchDatas) ? $searchDatas['categorie'] : null,
-            ])
-            ->add('marque', EntityType::class, [
-                'class'=>Marque::class,
-                'label'=>'Marque',
-                'attr'=>[
-                    'class'=>'form-select',
+                'data' => array_key_exists('categorie', $searchDatas) ? $searchDatas['categorie'] : null,
+            ]);
+        }
+        if (in_array('marque', $filters)) {
+            $builder->add('marque', EntityType::class, [
+                'class' => Marque::class,
+                'label' => 'Marque',
+                'attr' => [
+                    'class' => 'form-select',
                 ],
-                'required'=>false,
-                'query_builder'=>function(EntityRepository $er){
+                'required' => false,
+                'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('m')
-                    ->orderBy('m.titre', 'ASC');
+                        ->orderBy('m.titre', 'ASC');
                 },
-                'data'=>array_key_exists('marque', $searchDatas) ? $searchDatas['marque'] : null,
-            ])
-            ->add('genre', EntityType::class, [
-                'class'=>Genre::class,
-                'label'=>'Genre',
-                'attr'=>[
-                    'class'=>'form-select',
+                'data' => array_key_exists('marque', $searchDatas) ? $searchDatas['marque'] : null,
+            ]);
+        }
+        if (in_array('genre', $filters)) {
+            $builder->add('genre', EntityType::class, [
+                'class' => Genre::class,
+                'label' => 'Genre',
+                'attr' => [
+                    'class' => 'form-select',
                 ],
-                'required'=>false,
-                'query_builder'=>function(EntityRepository $er){
+                'required' => false,
+                'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('g')
-                    ->orderBy('g.code', 'ASC');
+                        ->orderBy('g.code', 'ASC');
                 },
-                'data'=>array_key_exists('genre', $searchDatas) ? $searchDatas['genre'] : null,
-            ])
-            ->add('age', EntityType::class, [
-                'class'=>Age::class,
-                'label'=>'Age',
-                'attr'=>[
-                    'class'=>'form-select',
+                'data' => array_key_exists('genre', $searchDatas) ? $searchDatas['genre'] : null,
+            ]);
+        }
+        if (in_array('age', $filters)) {
+            $builder->add('age', EntityType::class, [
+                'class' => Age::class,
+                'label' => 'Age',
+                'attr' => [
+                    'class' => 'form-select',
                 ],
-                'required'=>false,
-                'query_builder'=>function(EntityRepository $er){
+                'required' => false,
+                'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('a')
-                    ->orderBy('a.code', 'ASC');
+                        ->orderBy('a.code', 'ASC');
                 },
-                'data'=>array_key_exists('age', $searchDatas) ? $searchDatas['age'] : null,
-            ])
-            ->add('Rechercher', SubmitType::class, [
-                'attr'=>[
-                    'class'=>'btn btn-info btn-rounded btn-formSearch',
-                ],
-            ])
-        ;
+                'data' => array_key_exists('age', $searchDatas) ? $searchDatas['age'] : null,
+            ]);
+        }
+        $builder->add('Rechercher', SubmitType::class, [
+            'attr' => [
+                'class' => 'btn btn-info btn-rounded btn-formSearch',
+            ],
+        ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'searchdatas'=>'none',
+            'searchdatas' => 'none',
+            'filters' => ['categorie', 'marque', 'genre', 'age'],
         ]);
     }
 }

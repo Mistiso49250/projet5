@@ -13,7 +13,7 @@ html, body{
 }
 
 /* transition bouton */
-.btn{
+/* .btn{
     position: relative;
     border:1px solid #0D6EFD ;
     overflow: hidden;
@@ -43,9 +43,7 @@ html, body{
 .btn-rounded-primary:hover{
     color: white;
     transition: all 1s;
-}
-
-
+} */
 
 /* nav */
 .navbar-default

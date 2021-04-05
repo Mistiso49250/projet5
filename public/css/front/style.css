@@ -41,8 +41,14 @@ a{
     margin-top: 10rem !important;
 }
 
+/* pagination */
+
 .paginate{
     margin: 1em !important;
+}
+
+.paginate ul li{
+    margin-top: 1rem;
 }
 
 /* homePage */
@@ -293,6 +299,10 @@ header img
 .nouveaute a, .selection a{
     padding: .5rem .3rem;
 }
+
+/* #monCompte{
+    display: none;
+} */
 
 /* .nouveaute a{
     padding-right: .5rem;
