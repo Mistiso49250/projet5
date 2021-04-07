@@ -10,7 +10,7 @@
 			<div class="carousel-inner">
 				{% for slide in slider %}
 					<div class="carousel-item {{ loop.index == 1 ? 'active' : '' }} ">
-						<img src="{{ asset ('images/' ~ slide.image) | imagine_filter('slider') }}" class="d-block w-100" alt="...">
+						<img src="{{ asset ('images/slider/' ~ slide.image) | imagine_filter('slider') }}" class="d-block w-100" alt="...">
 					</div>
 				{% endfor %}
 			</div>

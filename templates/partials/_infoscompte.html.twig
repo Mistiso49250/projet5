@@ -1,15 +1,17 @@
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 container-fluid d-flex justify-content-center">
 	<div class="card" style="width: 18rem;">
 		<div class="card-body">
-			<img src="..." class="card-img-top rounded-circle" alt="...">
-			<h5 class="card-title">Bonjour
+			<img src="{{ asset ('images/pixel.jpg') | imagine_filter('article')}}" class="card-img-top rounded-circle" alt="...">
+			<h5 class="card-title h5User">Bonjour
 				{{ app.user.firstname }}!</h5>
 		</div>
 		<ul class="list-group list-group-flush">
-			<li class="list-group-item">Tableaux de bord</li>
-			<li class="list-group-item">Mes informations</li>
-			<li class="list-group-item">Mes commandes</li>
-			<li class="list-group-item">Mes listes</li>
+			<li class="list-group-item btn">Tableaux de bord</li>
+			<li class="list-group-item btn">Mes informations</li>
+			<li class="list-group-item btn">Mes commandes</li>
+			<li class="list-group-item btn">Mes listes</li>
+			<li class="list-group-item btn" a href="{{ path('utilisateur_modifier') }}">Modifier votre profil</a></li>
+			<li class="list-group-item btn" a href="{{ path('utilisateur_motdepasse') }}">Modifier votre mot de passe</a></li>
 		</ul>
 	</div>
 </div>

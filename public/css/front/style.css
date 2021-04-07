@@ -503,25 +503,78 @@ input[type=checkbox] {
     border: 2px solid #0a3782;
 }
 
+.rounded-circle{
+    width: 80px;
+    height: 80px;
+    border: 1px solid grey;
+    margin-left: 30%;
+}
+
+.h5User{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+
 .dashboard{
     background: #f2f2f2;
+    /* width: 100%; */
+    position: relative;
+    padding-top: 3%;
+    padding-bottom: 45%;
+}
+
+aside{
+    width: 35%;
+    margin-left: 4%;
+    margin-top: 5%;
 }
 
 .info{
-    margin: 0 auto 50px;
-    padding: 0 50px;
+    /* margin: 0 auto 50px; */
+    /* padding: 0 50px; */
+    position: absolute;
+    text-align: justify;
+    width: 50%;
+    right: 4%;
+    top: 10%;
 }
 
-.f-wishlist-newIcon {
-    background: #232323;
-    border-radius: 50%;
-    color: #fff;
-    padding: 10px;
-    font-size: 28px;
-    left: 50%;
+.liste{
+    position: absolute;
+    text-align: justify;
+    width: 50%;
+    right: 4%;
     top: 50%;
+}
+
+.infoCommand, .infoListe, .newListe{
+    width: 100%;
+}
+
+.info h3, .liste h3{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.newListe a:hover{
+    color: #232323;
+}
+
+.fa-plus-circle {
+    
+    /* border-radius: 50%;
+    color: #fff;
+    padding: 10px; */
+    font-size: 32px;
+    left: 50%;
+    top: 75%;
     position: absolute;
     transform: translateX(-50%) translateY(-50%);
+}
+
+.infoListeBody, .newListeBody, .infoCommandBody{
+    padding: 3rem 1rem;
 }
 
 .top {
@@ -529,6 +582,12 @@ input[type=checkbox] {
     width: 100%;
     min-height: 80px;
 }
+
+.command{
+    padding-left: 30%; 
+    padding-right: 30%;
+}
+/*  */
 
 /* #formSearch, #navCompte, .basket, .logo {
     display: table-cell;

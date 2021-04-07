@@ -17,37 +17,54 @@
 		</h5>
 	{% endfor %}
 
-	{% include 'partials/_infoscompte.html.twig' %}
-
-	<a href="{{ path('utilisateur_modifier') }}" class="btn btn-primary">Modifier votre profil</a>
-	<a href="{{ path('utilisateur_motdepasse') }}" class="btn btn-primary">Modifier votre mot de passe</a>
 
 	<div class="dashboard">
-		<section class="info">
-			<h1>Ma dernière commande</h1>
+
+		<aside>
 			<div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 container-fluid d-flex justify-content-center">
-				<div class="col mb-3">
+				<div class="card" style="width: 18rem;">
+					<div class="card-body">
+						<img src="{{ asset ('images/pixel.jpg') | imagine_filter('article')}}" class="card-img-top rounded-circle" alt="...">
+						<h5 class="card-title h5User">Bonjour
+							{{ app.user.firstname }}!</h5>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item btn">Tableaux de bord</li>
+						<li class="list-group-item btn">Mes informations</li>
+						<li class="list-group-item btn">Mes commandes</li>
+						<li class="list-group-item btn">Mes listes</li>
+						<li class="list-group-item btn" a href="{{ path('utilisateur_modifier') }}">Modifier votre profil</a></li>
+						<li class="list-group-item btn" a href="{{ path('utilisateur_motdepasse') }}">Modifier votre mot de passe</a></li>
+					</ul>
+				</div>
+			</div>
+		</aside>
+
+		<section class="info">
+			<h3>Ma dernière commande</h3>
+			<div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 container-fluid d-flex justify-content-center">
+				<div class="col mb-3 infoCommand">
 					<div class="card text-center h-100">
-						<div class="card-body">
+						<div class="card-body infoCommandBody">
 							<h5 class="card-title">Commande N°</h5>
 							<img src="" class="card-img-top" alt="...">
 						</div>
 						<div class="card-footer">
-							<a href="#" class="transparent3-btn">Mes commandes</a>
+							<a href="#" class="btn command">Mes commandes</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-
+		
 		<section class="liste">
-			<h1>Mes listes</h1>
+		<h3>Mes listes</h3>
 			<div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 container-fluid d-flex justify-content-center">
-				<div class="col mb-3">
+				<div class="col mb-3 infoListe">
 					<div class="card text-center h-100">
 						<a href="#">
-							<div class="card-body">
-								<h5 class="card-title">Commande N°</h5>
+							<div class="card-body infoListeBody">
+								<h5 class="card-title">Nom de la liste</h5>
 								<img src="" class="card-img-top" alt="...">
 							</div>
 						</div>
@@ -55,12 +72,12 @@
 				</div>
 			</div>
 			<div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 container-fluid d-flex justify-content-center">
-				<div class="col mb-3">
+				<div class="col mb-3 newListe">
 					<div class="card text-center h-100">
 						<a href="#">
-							<div class="card-body">
-								<i class="icon icon_i_211_plus f-wishlist-newIcon"></i>
-                                <p>Créer une nouvelle liste</p>
+							<div class="card-body newListeBody">
+								<i class="fas fa-plus-circle"></i>
+								<p>Créer une nouvelle liste</p>
 							</div>
 						</a>
 					</div>
@@ -68,4 +85,6 @@
 			</div>
 		</section>
 	</div>
+
+
 {% endblock %}

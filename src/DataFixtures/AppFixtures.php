@@ -556,13 +556,13 @@ class AppFixtures extends Fixture
 
         $dataSlider = [
             [
-                'image' => 'slider\moulinroty.jpg',
+                'image' => 'moulinroty.jpg',
             ],
             [
-                'image' => 'slider\wesko.jpg',
+                'image' => 'wesko.jpg',
             ],
             [
-                'image' => 'slider\trybike.jpg',
+                'image' => 'trybike.jpg',
             ],
         ];
         $slider = [];
