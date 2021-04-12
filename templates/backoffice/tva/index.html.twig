@@ -4,10 +4,11 @@
 
 {% block body %}
     <h1>Tva index</h1>
+    <a href="{{ path('tva_new') }}" class="btn btn-outline-primary newTva">Créer une nouvelle tva</a>
 
     <table class="table">
         <thead>
-            <tr>
+            <tr class="table-info">
                 <th>Id</th>
                 <th>ValeurTVA</th>
                 <th>Slug</th>
@@ -23,8 +24,8 @@
                 <td>{{ tva.slug }}</td>
                 <td>{{ tva.code }}</td>
                 <td>
-                    <a href="{{ path('tva_show', {'id': tva.id}) }}" class="btn btn-outline-primary">show</a>
-                    <a href="{{ path('tva_edit', {'id': tva.id}) }}" class="btn btn-outline-primary">edit</a>
+                    <a href="{{ path('tva_show', {'id': tva.id}) }}" class="btn btn-outline-primary">apperçu</a>
+                    <a href="{{ path('tva_edit', {'id': tva.id}) }}" class="btn btn-outline-success">editer</a>
                 </td>
             </tr>
         {% else %}
@@ -35,5 +36,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('tva_new') }}" class="btn btn-outline-primary">Créer une nouvelle tva</a>
 {% endblock %}

@@ -4,10 +4,11 @@
 
 {% block body %}
     <h1>Slider index</h1>
+    <a href="{{ path('slider_new') }}" class="btn btn-outline-primary newSlider">Créer une nouvelle image pour le slider</a>
 
     <table class="table">
         <thead>
-            <tr>
+            <tr class="table-info">
                 <th>Id</th>
                 <th>Image</th>
                 <th>actions</th>
@@ -19,8 +20,8 @@
                 <td>{{ slider.id }}</td>
                 <td>{{ slider.image }}</td>
                 <td>
-                    <a href="{{ path('slider_show', {'id': slider.id}) }}">show</a>
-                    <a href="{{ path('slider_edit', {'id': slider.id}) }}">edit</a>
+                    <a href="{{ path('slider_show', {'id': slider.id}) }}" class="btn btn-outline-primary">apperçu</a>
+                    <a href="{{ path('slider_edit', {'id': slider.id}) }}" class="btn btn-outline-success">editer</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +32,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('slider_new') }}">Create new</a>
 {% endblock %}

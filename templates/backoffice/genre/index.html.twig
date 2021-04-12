@@ -4,10 +4,11 @@
 
 {% block body %}
     <h1>Genre index</h1>
+    <a href="{{ path('genre_new') }}" class="btn btn-outline-primary newGenre">Créer un nouveau genre</a>
 
     <table class="table">
         <thead>
-            <tr>
+            <tr class="table-info">
                 <th>Id</th>
                 <th>Code</th>
                 <th>Slug</th>
@@ -21,8 +22,8 @@
                 <td>{{ genre.code }}</td>
                 <td>{{ genre.slug }}</td>
                 <td>
-                    <a href="{{ path('genre_show', {'id': genre.id}) }}" class="btn btn-outline-primary">show</a>
-                    <a href="{{ path('genre_edit', {'id': genre.id}) }}" class="btn btn-outline-primary">edit</a>
+                    <a href="{{ path('genre_show', {'id': genre.id}) }}" class="btn btn-outline-primary">apperçu</a>
+                    <a href="{{ path('genre_edit', {'id': genre.id}) }}" class="btn btn-outline-success">editer</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +34,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('genre_new') }}" class="btn btn-outline-primary">Créer un nouveau genre</a>
 {% endblock %}

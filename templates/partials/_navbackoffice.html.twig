@@ -1,0 +1,127 @@
+<header>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="home_admin">
+			<font style="vertical-align: inherit;">
+				<font style="vertical-align: inherit;">
+					Administration
+				</font>
+			</font>
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expand="false" aria-label="Basculer la navigation ">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarColor03">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ path('utilisateur') }}">
+						<font style="vertical-align: inherit;">
+							<font style="vertical-align: inherit;">
+								Créer un article
+							</font>
+						</font>
+						<span class="sr-only">
+							<font style="vertical-align: inherit;">
+								<font style="vertical-align: inherit;">
+									(actuel)
+								</font>
+							</font>
+						</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('marque_index') }}">
+						<font style="vertical-align: inherit;">
+							<font style="vertical-align: inherit;">
+								Marque
+							</font>
+						</font>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('tva_index') }}">
+						<font style="vertical-align: inherit;">
+							<font style="vertical-align: inherit;">
+								Tva
+							</font>
+						</font>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('age_index') }}">
+						<font style="vertical-align: inherit;">
+							<font style="vertical-align: inherit;">
+								Trache d'âge
+							</font>
+						</font>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('genre_index') }}">
+						<font style="vertical-align: inherit;">
+							<font style="vertical-align: inherit;">
+								Genre
+							</font>
+						</font>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('user_back_index') }}">
+						<font style="vertical-align: inherit;">
+							<font style="vertical-align: inherit;">
+								Utilisateur
+							</font>
+						</font>
+					</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+						<font style="vertical -align: inherit; ">
+							<font style=" vertical-align: inherit; ">
+								Catégorie
+							</font>
+						</font>
+					</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">
+							<font style="vertical-align: inherit;">
+								<font style="vertical-align: inherit;">
+									Catégorie Principal
+								</font>
+							</font>
+						</a>
+						<a class="dropdown-item" href="#">
+							<font style="vertical-align: inherit;">
+								<font style="vertical-align: inherit;">
+									Catégorie Secondaire
+								</font>
+							</police>
+						</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ path('genre_index') }}">
+						<font style="vertical-align: inherit;">
+							<font style="vertical-align: inherit;">
+								Nouvelle(s) commande(s) reçu
+							</font>
+						</font>
+						<span class="badge badge-pill badge-success">0</span>
+					</a>
+				</li>
+			</ul>
+			{# <form class="form-inline my-2 my-lg-0">
+												<input class="form-control mr-sm-2" type="text" placeholder="Rechercher">
+												<button class="btn btn-secondaire my-2 my-sm-0" type="submit">
+													<font style="vertical-align: inherit;">
+														<font style="vertical-align: inherit;">
+															Rechercher
+														</font>
+													</font>
+												</button>
+											</form> #}
+		</div>
+	</nav>
+
+</header>

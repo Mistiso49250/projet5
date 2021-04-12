@@ -3,9 +3,9 @@
 {% block title %}New Tva{% endblock %}
 
 {% block body %}
-    <h1>Create new Tva</h1>
+    <h1>Créer une nouvelle Tva</h1>
 
     {{ include('backoffice/tva/_form.html.twig') }}
 
-    <a href="{{ path('tva_index') }}" class="btn btn-outline-primary">Retour à la liste</a>
+    <a href="{{ path('tva_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
 {% endblock %}

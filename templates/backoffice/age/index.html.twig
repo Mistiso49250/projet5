@@ -6,10 +6,11 @@
 {% block body %}
 	<div class="container-fluid">
 		<h1>Age index</h1>
+		<a href="{{ path('age_new') }}" class="btn btn-outline-primary newAge">Créer une nouvelle tranche d' âge</a>
 
 		<table class="table">
 			<thead>
-				<tr>
+				<tr class="table-info">
 					<th>Id</th>
 					<th>Code</th>
 					<th>Slug</th>
@@ -23,8 +24,8 @@
 						<td>{{ age.code }}</td>
 						<td>{{ age.slug }}</td>
 						<td>
-							<a href="{{ path('age_show', {'id': age.id}) }}" class="btn btn-outline-primary">show</a>
-							<a href="{{ path('age_edit', {'id': age.id}) }}" class="btn btn-outline-primary">edit</a>
+							<a href="{{ path('age_show', {'id': age.id}) }}" class="btn btn-outline-primary">apperçu</a>
+							<a href="{{ path('age_edit', {'id': age.id}) }}" class="btn btn-outline-success">editer</a>
 						</td>
 					</tr>
 				{% else %}
@@ -35,6 +36,5 @@
 			</tbody>
 		</table>
 
-		<a href="{{ path('age_new') }}" class="btn btn-rounded-primary">Créer une nouvelle tranche d' âge</a>
 	</div>
 {% endblock %}

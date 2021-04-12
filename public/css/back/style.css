@@ -4,11 +4,39 @@ html, body{
     line-height: 1.4;
     height: 100%;
     margin: 0;
-    padding-top: 45px;
+}
+
+h1{
+    margin-top: 1rem;
 }
 
 .h2back{
-    margin-bottom: 4rem;
+    margin: 3rem 0 4rem 1rem;
+}
+
+/* bouton */
+
+.newAge, .newCategorie, .newCategoriePrinc, .newCategorieSec, .newGenre, .newMarque, .newSlider, .newTva, .newUser{
+    position: absolute;
+    right: 4rem;
+    top: 6rem;
+}
+
+.pull-right{
+    position: absolute;
+    margin-left: 10px;
+}
+
+.btn-outline-danger{
+    margin-top: 1rem;
+}
+
+.retourListe{
+    margin-right: 1rem;
+}
+
+.admin{
+    margin-top: 0;
     margin-left: 1rem;
 }
 
@@ -32,7 +60,7 @@ html, body{
 }
 
 .btn-rounded-primary::before{
-   color:white
+    color:white
 }
 
 .btn-rounded-primary:hover::before{
@@ -75,6 +103,14 @@ html, body{
 .navbar li a
 {
     font-size: 1.1rem;
+}
+
+.navbar ul li a font:hover{
+    color: #3399f3;
+}
+
+.navbar ul li a{
+    margin-right: 20px;
 }
 
 .btn {
@@ -155,3 +191,21 @@ html, body{
     animation-fill-mode: both;
 }
 /* fin modal */
+
+/* tableau */
+.table{
+    margin-top: 2rem;
+}
+
+.tdpassword{
+    overflow: auto;
+}
+
+caption {
+    caption-side: top;
+    margin-bottom: 10px;
+}
+
+tbody tr:hover{
+    background-color: #d4d4d4 !important;
+}
