@@ -33,10 +33,12 @@
 				</tr>
 			</thead>
 			<tbody>
-			{% for article in paginator.datas %}
+			{# {% for article in paginator.datas %} #}
 				<tr>
-					<th scope="row">{{ article.titre }}</th>
-					<td>{{ article.extrait | nl2br }}</td>
+					{# <th scope="row">{{ article.titre }}</th>
+					<td>{{ article.extrait | nl2br }}</td> #}
+					<td>titre 1</td>
+					<td>extrait 1</td>
 					<td>date 1</td>
 					<td>
 						<a href="" class="btn btn-outline-success">
@@ -76,10 +78,10 @@
 						<!--Modal: modalConfirmDelete-->
 					</td>
 				</tr>
-				{% endfor %}
+				{# {% endfor %} #}
 			</tbody>
 		</table>
-		{% include 'partials/_paginate.html.twig' %}
+		{# {% include 'partials/_paginate.html.twig' %} #}
 	</div>
 
 {% endblock %}

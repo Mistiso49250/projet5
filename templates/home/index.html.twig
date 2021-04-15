@@ -114,7 +114,7 @@
 		{% for item in marque %}
 			<div class="col-xs-4 col-sm-3 col-md-2 marqueContent">
 				<div class="content">
-					<a href="{{ path('article', {'slug': item.slug}) }} ">
+					<a href="{{ path('marque', {'slug': item.slug}) }} ">
 						<img src="{{ asset ('images/' ~ item.image)}}" class="card-img-top" alt="...">
 					</a>
 				</div>

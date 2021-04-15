@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste
+{% endblock %}
+{# {% block title %}{{ menucateg.description }}{% endblock %} #}
+
+{% block body %}
+	<!-- notification message d'erreurs -->
+	{% for message in app.flashes('error') %}
+		<h5 class="alert alert-danger">
+			{{ message }}
+		</h5>
+	{% endfor %}
+	{% for message in app.flashes('success') %}
+		<h5 class="alert alert-success">
+			{{ message }}
+		</h5>
+	{% endfor %}
+
+	<div class="form">
+		<div class="row">
+			<div class="col-md-3 formSearch">
+				{% if form is defined %}
+				<h4>filter</h4>
+					{{ form(form) }}
+				{% endif %}
+			</div>
+
+			<div class="col-md-9">
+				<div class="homeHeader">
+					<h4>Nom de la marque</h4>
+				</div>
+				<section class="allArticles">
+					{% if paginator.count != 0 %}
+						<div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 container-fluid d-flex justify-content-center">
+							{% for article in paginator.datas %}
+								<div class="col mb-3">
+									<a href="{{ path('article', {'slug': article.slug}) }} ">
+									<div class="card text-center h-100">
+										<img src="{{ asset ('images/' ~ article.image) | imagine_filter('article') }}" class="card-img-top" alt="...">
+										<div class="card-body">
+											<h5 class="card-title">{{ article.titre }}</h5>
+											<p class="card-text">{{ article.extrait | nl2br }}</p>
+											<p class="cardPrice">{{ article.prixTTC }}
+												€</p>
+											<a class="btn btn-info btn-rounded mb-4" href="">Ajouter au panier</a>
+										</div>
+									</div>
+									</a>
+								</div>
+							{% endfor %}
+						</div>
+						{% include 'partials/_paginate.html.twig' %}
+						{% else %}
+							<h2>Aucun articles n'a été trouvé.</h2>
+					{% endif %}
+				</section>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

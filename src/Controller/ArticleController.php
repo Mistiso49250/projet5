@@ -48,6 +48,10 @@ class ArticleController extends MainController
     {
         $articleRepository = $this->getDoctrine()->getRepository(Article::class);
         $article = $articleRepository->findOneBy(['slug' => $slug]);
+        if($article === null){
+            $this->addFlash('error', 'Cet article n\'existe pas');
+            return $this->redirectToRoute('home');
+        }
 
         return $this->render('article/index.html.twig', [
             'article' => $article,
@@ -120,6 +124,18 @@ class ArticleController extends MainController
         return $this->render('article/listeproduits.html.twig', [
             'paginator' => $paginator->createPagination(Article::class, $criteria, 8),
             'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/404article", name="error_article_404")
+     */
+    public function ErrorPageArticle(Paginator $paginator): Response
+    {
+        $criteria = ['selection' => 1];
+
+        return $this->render('article/listeproduits.html.twig', [
+            'paginator' => $paginator->createPagination(Article::class, $criteria, 5),
         ]);
     }
 }

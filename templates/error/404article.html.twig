@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Oups...
+{% endblock %}
+
+{% block body %}
+	<!-- notification message d'erreurs -->
+	{% for message in app.flashes('error') %}
+		<h5 class="alert alert-danger">
+			{{ message }}
+		</h5>
+	{% endfor %}
+	{% for message in app.flashes('success') %}
+		<h5 class="alert alert-success">
+			{{ message }}
+		</h5>
+	{% endfor %}
+
+	<div class="article404">
+		<div class="title">
+			<h2>Nous avons regardé partout, mais nous n'avons pas trouvé votre article</h2>
+			<p class="sub">la page que vous avez demandée n'existe pas ou plus. Vérifiez l'adresse que vous avez saisie.</p>
+		</div>
+
+		<p class="aide">Si vous avez besoin d'aide, vous pouvez nous contacter par Email:
+			<a href="mailto:poissondavrilboutique@orange.fr">
+				<span style="color:#ffba33">poissondavrilboutique@orange.fr</span>
+			</a>
+		</p>
+		<p class="selection404">Sinon, voici une séléction d'article qui pourrait vous intéresser.</p>
+
+		<section class="selection">
+			<div class="row row-cols-md-5 container-fluid d-flex justify-content-center">
+				{% for article in selection %}
+					<div class="col mb-3">
+						<a href="{{ path('article', {'slug': article.slug}) }} ">
+							<div class="card text-center h-100">
+								<img src="{{ asset ('images/' ~ article.image) | imagine_filter('article') }}" class="card-img-top" alt="...">
+								<div class="card-body">
+									<h5 class="card-title">{{ article.titre }}</h5>
+									<p class="card-text">{{ article.extrait | nl2br }}</p>
+									<p class="cardPrice">{{ article.prixTTC }}
+										€</p>
+									<a class="btn btn-info btn-rounded mb-4" href="">Ajouter au panier</a>
+								</div>
+							</div>
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+		</section>
+		<a class="btn btn-primary retour" href="{{ path('home') }}">Retour sur le site
+			<i class="fas fa-long-arrow-alt-right"></i>
+		</a>
+	</div>
+
+{% endblock %}
