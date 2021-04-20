@@ -29,11 +29,13 @@ class HomeController extends MainController
     {
         $sliderRepository = $this->getDoctrine()->getRepository(Slider::class);
         $slider = $sliderRepository->findAll();
+        
         $marqueRepository = $this->getDoctrine()->getRepository(Marque::class);
         $marque = $marqueRepository->findAll();
 
         $selectionRepository = $this->getDoctrine()->getRepository(Article::class);
         $selection = $selectionRepository->findBy(['selection'=>1]);
+
         return $this->render('home/index.html.twig', [
             'slider' => $slider,
             'selection' => $selection,

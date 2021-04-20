@@ -3,40 +3,44 @@
 namespace App\Controller;
 
 use App\Entity\Marque;
-use App\Entity\Article;
 use App\Services\Paginator;
-use App\Form\SearchArticleAllType;
-use Symfony\Component\HttpFoundation\Request;
+use App\Controller\MainController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class MarqueController extends AbstractController
+class MarqueController extends MainController
 {
     /**
-     * @Route("/marque", name="marque_list")
+     * @Route("/marque/{slug}", name="marque")
      */
-    public function index(Request $request, Paginator $paginator, string $slug): Response
+    public function index(string $slug): Response
     {
         $marqueRepository = $this->getDoctrine()->getRepository(Marque::class);
-
-        $criteria = ['marque' => $marqueRepository->findOneBy(['slug'=>$slug])];
-        $filters = ['categorie', 'genre', 'age'];
-
-        $criteria = $this->filter->getFromQueryString($criteria, $filters, $request);
-        $form = $this->createForm(SearchArticleAllType::class, null, [
-            'searchdatas'=> $this->filter->getSearchDatas(),
-            'filters'=> $filters,
-        ]);
-
-        $search = $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $criteria = $this->filter->getFromForm($criteria, $filters, $search, $request);
+        $marque = $marqueRepository->findOneBy(['slug' => $slug]);
+        if($marque === null){
+            // $this->addFlash('error', 'Cet article n\'existe pas');
+            return $this->redirectToRoute('error_marque_404');
         }
 
         return $this->render('marque/index.html.twig', [
-            'paginator' => $paginator->createPagination(Article::class, $criteria, 8),
-            'form' => $form->createView(),
+            'marque' => $marque,
+        ]);
+    }
+
+     /**
+     * @Route("/404marque", name="error_marque_404")
+     */
+    public function ErrorPageMarque(Paginator $paginator): Response
+    {
+        $criteria = [];
+
+        $marqueRepository = $this->getDoctrine()->getRepository(Marque::class);
+        $marque = $marqueRepository->findAll();
+
+        return $this->render('error/404marque.html.twig', [
+            'marque' => $marque,
+            'paginator' => $paginator->createPagination(Marque::class, $criteria, 5),
         ]);
     }
 }

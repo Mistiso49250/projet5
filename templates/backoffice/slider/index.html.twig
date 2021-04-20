@@ -18,10 +18,11 @@
         {% for slider in sliders %}
             <tr>
                 <td>{{ slider.id }}</td>
-                <td>{{ slider.image }}</td>
+                <td><img src="{{ asset ('images/slider/' ~ slider.image) | imagine_filter('sliderbackoffice') }}" alt="..."></td>
                 <td>
-                    <a href="{{ path('slider_show', {'id': slider.id}) }}" class="btn btn-outline-primary">apperçu</a>
-                    <a href="{{ path('slider_edit', {'id': slider.id}) }}" class="btn btn-outline-success">editer</a>
+                    {# <a href="{{ path('slider_show', {'id': slider.id}) }}" class="btn btn-outline-primary">apperçu</a> #}
+                    {# <a href="{{ path('slider_edit', {'id': slider.id}) }}" class="btn btn-outline-success">editer</a> #}
+                    {{ include('backoffice/slider/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}

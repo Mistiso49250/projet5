@@ -5,10 +5,11 @@ namespace App\Controller\Backoffice;
 use App\Entity\Slider;
 use App\Form\Backoffice\SliderType;
 use App\Repository\SliderRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/admin/slider")
@@ -54,34 +55,34 @@ class SliderController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="slider_show", methods={"GET"})
+     * Route("/{id}", name="slider_show", methods={"GET"})
      */
-    public function show(Slider $slider): Response
-    {
-        return $this->render('backoffice/slider/show.html.twig', [
-            'slider' => $slider,
-        ]);
-    }
+    // public function show(Slider $slider): Response
+    // {
+    //     return $this->render('backoffice/slider/show.html.twig', [
+    //         'slider' => $slider,
+    //     ]);
+    // }
 
     /**
-     * @Route("/{id}/edit", name="slider_edit", methods={"GET","POST"})
+     * Route("/{id}/edit", name="slider_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Slider $slider): Response
-    {
-        $form = $this->createForm(SliderType::class, $slider);
-        $form->handleRequest($request);
+    // public function edit(Request $request, Slider $slider): Response
+    // {
+    //     $form = $this->createForm(SliderType::class, $slider);
+    //     $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+    //     if ($form->isSubmitted() && $form->isValid()) {
+    //         $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('slider_index');
-        }
+    //         return $this->redirectToRoute('slider_index');
+    //     }
 
-        return $this->render('backoffice/slider/edit.html.twig', [
-            'slider' => $slider,
-            'form' => $form->createView(),
-        ]);
-    }
+    //     return $this->render('backoffice/slider/edit.html.twig', [
+    //         'slider' => $slider,
+    //         'form' => $form->createView(),
+    //     ]);
+    // }
 
     /**
      * @Route("/{id}", name="slider_delete", methods={"POST"})
@@ -89,9 +90,16 @@ class SliderController extends AbstractController
     public function delete(Request $request, Slider $slider): Response
     {
         if ($this->isCsrfTokenValid('delete'.$slider->getId(), $request->request->get('_token'))) {
+            $filenamefullpath = join(DIRECTORY_SEPARATOR, [
+                $this->getParameter('image_slider_directory'),
+                $slider->getImage(),
+            ]); 
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($slider);
             $entityManager->flush();
+            $fileSystem = new Filesystem();
+            $fileSystem->remove($filenamefullpath);
         }
 
         return $this->redirectToRoute('slider_index');

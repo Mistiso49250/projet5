@@ -49,8 +49,8 @@ class ArticleController extends MainController
         $articleRepository = $this->getDoctrine()->getRepository(Article::class);
         $article = $articleRepository->findOneBy(['slug' => $slug]);
         if($article === null){
-            $this->addFlash('error', 'Cet article n\'existe pas');
-            return $this->redirectToRoute('home');
+            // $this->addFlash('error', 'Cet article n\'existe pas');
+            return $this->redirectToRoute('error_article_404');
         }
 
         return $this->render('article/index.html.twig', [
@@ -134,8 +134,9 @@ class ArticleController extends MainController
     {
         $criteria = ['selection' => 1];
 
-        return $this->render('article/listeproduits.html.twig', [
+        return $this->render('error/404article.html.twig', [
             'paginator' => $paginator->createPagination(Article::class, $criteria, 5),
         ]);
     }
+
 }

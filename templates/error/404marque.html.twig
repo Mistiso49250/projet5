@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Oups...
+{% endblock %}
+
+{% block body %}
+	<!-- notification message d'erreurs -->
+	{% for message in app.flashes('error') %}
+		<h5 class="alert alert-danger">
+			{{ message }}
+		</h5>
+	{% endfor %}
+	{% for message in app.flashes('success') %}
+		<h5 class="alert alert-success">
+			{{ message }}
+		</h5>
+	{% endfor %}
+
+	<div class="article404">
+		<div class="title">
+			<h2>Nous avons regardé partout, mais nous n'avons pas trouvé la Marque demandé</h2>
+			<p class="sub">la page que vous avez demandée n'existe pas ou plus. Vérifiez l'adresse que vous avez saisie.</p>
+		</div>
+
+		<p class="aide">Si vous avez besoin d'aide, vous pouvez nous contacter par Email:
+			<a href="mailto:poissondavrilboutique@orange.fr">
+				<span style="color:#ffba33">poissondavrilboutique@orange.fr</span>
+			</a>
+		</p>
+		<p class="selection404">Sinon, voici la liste des marques avec les quels nous travaillions.</p>
+
+		<section class="row marque">
+			{% for item in marque %}
+				<div class="col-xs-4 col-sm-3 col-md-2 marqueContent">
+					<div class="content">
+						<a href="{{ path('marque', {'slug': item.slug}) }} ">
+							<img src="{{ asset ('images/' ~ item.image)}}" class="card-img-top" alt="...">
+						</a>
+					</div>
+				</div>
+			{% endfor %}
+		</section>
+		<a class="btn btn-primary retour" href="{{ path('home') }}">Retour sur le site
+			<i class="fas fa-long-arrow-alt-right"></i>
+		</a>
+	</div>
+
+{% endblock %}

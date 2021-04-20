@@ -11,6 +11,14 @@ liip_imagine:
                 thumbnail: 
                     size: [800,400]
                     mode: outbound
+        sliderbackoffice:
+            quality: 80
+            filters: 
+                upscale: 
+                    min: [320,200]
+                thumbnail: 
+                    size: [320,200]
+                    mode: outbound
         article:
             quality: 80
             filters: 

@@ -16,11 +16,6 @@ a{
     text-decoration: none;
     color: inherit;
 }
-
-.fas{
-    font-size: 25px;
-}
-
 #compteCo a{
     color: white !important;
 }
@@ -34,6 +29,16 @@ a{
     margin-top: 10rem !important;
 }
 
+/* icone */
+
+.fas{
+    font-size: 25px;
+}
+
+.fa-envelope{
+    vertical-align: middle;
+}
+
 /* bouton */
 .btn-link{
     color: #007bff !important;
@@ -42,10 +47,6 @@ a{
 .btn .btn-formSearch{
     margin-top: 2rem !important;
 }
-
-/* .btn{
-    margin: 0 !important;
-} */
 
 .btn:hover{
     background-color: #ffba33 !important;
@@ -59,7 +60,6 @@ a{
     background-color: #ffba33;
     border: #ffba33;
 }
-
 
 /* pagination */
 
@@ -498,25 +498,6 @@ input[type=checkbox] {
     margin-bottom: 1rem !important;
 }
 
-/* Page Reset password */
-
-.formReset label, .formRegister label{
-    margin-right: 1em;
-    padding: var(--input-padding-y) var(--input-padding-x);
-}
-
-.formReset input{
-    padding: 0.4em;
-}
-
-.formResetSmall{
-    margin: 1em 0 1em;
-}
-
-.checkEmailRest{
-    margin: 15rem;
-}
-
 /* Footer */
 
 .page-footer{
@@ -527,6 +508,47 @@ input[type=checkbox] {
     color: #fff;
 }
 
+/* Page 404 article */
+.article404{
+    margin-top: 5rem !important;
+    margin-bottom: 5rem !important;
+    margin-left: 5rem !important;
+    margin-right: 5rem !important;
+}
+
+.title, .aide, .selection404{
+    text-align: center;
+}
+
+.aide{
+    margin-top: 2rem !important;
+}
+
+.sub{
+    margin-top: 1rem;
+}
+
+.fa-long-arrow-alt-right{
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+/* Page produits marque */
+.boxMarque{
+    display: flex;
+    align-items: center;
+}
+
+.boxMarque img{
+    margin-right: 5em;
+    margin-top: 2em;
+}
+
+.boxMarque h2{
+    font-size: 4em;
+}
+
+/* BACKOFFICE */
 /* User */
 /* .main.account .hello a.logout {
     position: absolute;
@@ -638,36 +660,32 @@ aside{
     padding-right: 30%;
 }
 
-/* Page 404 article */
-.article404{
-    margin-top: 5rem !important;
-    margin-bottom: 5rem !important;
-    margin-left: 5rem !important;
-    margin-right: 5rem !important;
+/* Page Reset password */
+
+.formReset label, .formRegister label{
+    margin-right: 1em;
+    padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.title, .aide, .selection404{
-    text-align: center;
+.formReset input{
+    padding: 0.4em;
 }
 
-.aide{
-    margin-top: 2rem !important;
+.formResetSmall{
+    margin: 1em 0 1em;
 }
 
-.sub{
-    margin-top: 1rem;
+.checkEmailRest{
+    margin: 15rem;
 }
 
-.fa-long-arrow-alt-right{
-    vertical-align: middle;
-    margin-left: 8px;
+#marque label{
+    margin-right: 1em;
 }
+
 
 @media only screen and (min-width: 601px){
-    #circleRight
-    {
-        right: 3%;
-    }
+   
 }
 
 @media only screen and (min-width: 760px){
