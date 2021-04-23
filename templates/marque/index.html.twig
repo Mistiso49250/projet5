@@ -18,7 +18,7 @@
 	{% endfor %}
 	<div class="container-fluid">
 		<div class="boxMarque">
-			<img src="{{ asset ('images/' ~ marque.image) | imagine_filter('article') }}" alt="" class="img-fluid">
+			<img src="{{ asset ('images/logo/' ~ marque.image) | imagine_filter('marque') }}" alt="" class="img-fluid">
 			<h2>{{ marque.titre }}</h2>
 		</div>
 

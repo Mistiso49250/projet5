@@ -42,5 +42,5 @@ liip_imagine:
                     min: [224,224]
                 thumbnail: 
                     size: [224,224]
-                    # mode: outbound
+                    mode: outbound
 

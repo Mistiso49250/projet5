@@ -21,7 +21,7 @@
             <tr>
                 <td>{{ marque.id }}</td>
                 <td>{{ marque.titre }}</td>
-                <td>{{ marque.image }}</td>
+                <td class="tdBackoffice"><img src="{{ asset ('images/logo/' ~ marque.image) }}" alt="..."></td>
                 <td>{{ marque.slug }}</td>
                 <td>
                     <a href="{{ path('marque_show', {'id': marque.id}) }}" class="btn btn-outline-primary">apperçu</a>

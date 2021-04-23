@@ -129,8 +129,15 @@ faire tableau data marque et tva idem appFixtures
 
 
 09/03
-Refaire les relations genre, age -> article
-ajouter slug dans genre && age
+Refaire les relations genre, age -> article : ok
+ajouter slug dans genre && age : ok
 
 23/03
-afficher profil et deco quand user co
+afficher profil et deco quand user co : ok
+
+
+
+23/04
+Supprimer les dossier dans le repertoire image,  : ok
+faire 3 dossier : article, slider, logo : ok
+fixture:  faire comme pour les images slider : ok

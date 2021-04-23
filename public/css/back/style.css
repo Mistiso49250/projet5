@@ -16,7 +16,7 @@ h1{
 
 /* bouton */
 
-.newAge, .newCategorie, .newCategoriePrinc, .newCategorieSec, .newGenre, .newMarque, .newSlider, .newTva, .newUser{
+.newAge, .newArticle, .newCategorie, .newCategoriePrinc, .newCategorieSec, .newGenre, .newMarque, .newSlider, .newTva, .newUser{
     position: absolute;
     right: 4rem;
     top: 6rem;
@@ -38,6 +38,11 @@ h1{
 .admin{
     margin-top: 0;
     margin-left: 1rem;
+}
+
+.formEdit{
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 /* transition bouton */
@@ -216,4 +221,15 @@ tbody tr:hover{
 
 .false{
     color: red;
+}
+
+.tdBackoffice img{
+    width: 100%;
+    height: auto;
+    max-height: 5em;
+    object-fit: contain;
+}
+
+.tdBackoffice{
+    width: 15%;
 }

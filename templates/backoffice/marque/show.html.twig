@@ -17,7 +17,7 @@
             </tr>
             <tr>
                 <th>Image</th>
-                <td>{{ marque.image }}</td>
+                <td><img src="{{ asset ('images/logo/' ~ marque.image) | imagine_filter('marque') }}" alt="..."></td>
             </tr>
             <tr>
                 <th>Slug</th>

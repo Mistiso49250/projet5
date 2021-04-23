@@ -15,7 +15,7 @@
 		<div class="collapse navbar-collapse" id="navbarColor03">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="{{ path('utilisateur') }}">
+					<a class="nav-link" href="{{ path('article_index') }}">
 						<font style="vertical-align: inherit;">
 							<font style="vertical-align: inherit;">
 								Créer un article
@@ -85,29 +85,43 @@
 					</a>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
 						<font style="vertical -align: inherit; ">
 							<font style=" vertical-align: inherit; ">
-								Catégorie
+								Nouvelle Catégorie
 							</font>
 						</font>
 					</a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">
-							<font style="vertical-align: inherit;">
+					<ul class="dropdown-menu">
+						<li>
+							<a class="dropdown-item" href="{{ path('categorie_index') }}">
 								<font style="vertical-align: inherit;">
-									Catégorie Principal
+									<font style="vertical-align: inherit;">
+										Catégorie
+									</font>
 								</font>
-							</font>
-						</a>
-						<a class="dropdown-item" href="#">
-							<font style="vertical-align: inherit;">
+							</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('categorie_principal_index') }}">
 								<font style="vertical-align: inherit;">
-									Catégorie Secondaire
+									<font style="vertical-align: inherit;">
+										Catégorie Principal
+									</font>
 								</font>
-							</police>
-						</a>
-					</div>
+							</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('categorie_secondaire_index') }}">
+								<font style="vertical-align: inherit;">
+									<font style="vertical-align: inherit;">
+										Catégorie Secondaire
+									</font>
+								</font>
+							</a>
+						</li>
+
+					</ul>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="{{ path('genre_index') }}">
@@ -120,16 +134,6 @@
 					</a>
 				</li>
 			</ul>
-			{# <form class="form-inline my-2 my-lg-0">
-												<input class="form-control mr-sm-2" type="text" placeholder="Rechercher">
-												<button class="btn btn-secondaire my-2 my-sm-0" type="submit">
-													<font style="vertical-align: inherit;">
-														<font style="vertical-align: inherit;">
-															Rechercher
-														</font>
-													</font>
-												</button>
-											</form> #}
 		</div>
 	</nav>
 
