@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche de {{ recherche }}
+{% endblock %}
+
+{% block body %}
+
+    <h1>Résultat de la recherche de {{ recherche }}</h1>
+
+    <div class="list-group">
+        {% for article in produits %}
+            <a href="{{ path('article', {slug:article.slug}) }}" class="list-group-item list-group-item-action">
+                <div class="d-flex align-items-center justify-content-between">
+                    <img src="{{ asset ('images/articles/' ~ article.image) | imagine_filter('searcharticle') }}" alt="{{ article.titre }}" class="img-fluid rounded">
+                    <span class="px-1">{{ article.titre }}</span>
+                    <em>{{ article.prixTTC|format_currency('EUR', locale='fr') }}</em>
+                </div>
+            </a>
+            {% else %}
+                <div class="list-group-item">
+                    Aucun article trouvé
+                </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

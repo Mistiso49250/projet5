@@ -19,6 +19,16 @@ class ArticleRepository extends ServiceEntityRepository
         parent::__construct($registry, Article::class);
     }
 
+    public function search(string $recherche, int $limit= 5) : ? array
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.titre like :recherche or a.contenu like :recherche')
+            ->setParameter('recherche', '%'. $recherche . '%')
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->execute();
+    }
+
     // /**
     //  * @return Article[] Returns an array of Article objects
     //  */
