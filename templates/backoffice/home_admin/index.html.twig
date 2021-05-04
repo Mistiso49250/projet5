@@ -17,71 +17,98 @@
 	{% endfor %}
 	<!-- notification message d'erreurs -->
 
+	<div class="dashboard">
+		<nav class="navbar navbar-light bg-light nav_bar">
+			<ul>
+				<li>
+					<a class="nav-link" href="{{ path('article_index') }}">Article</a>
+				</li>
+				<li>
+					<a class="nav-link" href="{{ path('marque_index') }}">Marque</a>
+				</li>
+				<li>
+					<a class="nav-link" href="{{ path('tva_index') }}">Tva</a>
+				</li>
+				<li>
+					<a class="nav-link" href="{{ path('age_index') }}">Tranche d'âge</a>
+				</li>
+				<li>
+					<a class="nav-link" href="{{ path('genre_index') }}">Genre</a>
+				</li>
+				<li>
+					<a class="nav-link" href="{{ path('user_back_index') }}">Utilisateur</a>
+				</li>
+				<li>
+					<a class="nav-link" href="{{ path('slider_index') }}">Slider</a>
+				</li>
+				<li class="categorie">Categorie
+					<ul>
+						<li><a class="nav-link"href="{{ path('categorie_index') }}">Catégorie</a></li>
+						<li><a class="nav-link"href="{{ path('categorie_principal_index') }}">Catégorie Principal</a></li>
+						<li><a class="nav-link"href="{{ path('categorie_secondaire_index') }}">Catégorie Secondaire</a></li>
+					</ul>
+				</li>
+				<li class="page404">Page 404
+					<ul>
+						<li><a class="nav-link"href="{{ path('slider_index') }}">404 article</a></li>
+						<li><a class="nav-link"href="{{ path('slider_index') }}">404 marque</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<div class="dashboardContent">
 
-	<h2 class="h2back">Bienvenue dans l'interface administration</h2>
+			<div class="title">
+				<h3>Tableau de bord</h3>
+				<a href="{{ path('article_new') }}" class="btn btn-outline-primary newArticle">Créer un nouvel article</a>
+			</div>
 
-	<div class="container-fluid">
-		<h2>Liste des articles</h2>
+			<div class="statsContent">
+				<div class="weeklySales">
+					<img src="{{ asset ('images/circle.svg') }}" class="card-img-absolute" alt="">
+					<h4 class="textWhite">Ventes hebdomadaires
+						<i class="fa fa-line-chart textWhite" aria-hidden="true"></i>
+					</h4>
 
-		<table class="table">
-			<thead>
-				<tr class="table-info">
-					<th scope="col">Titre</th>
-					<th scope="col">Extraits des articles</th>
-					<th scope="col">Date de publication</th>
-					<th scope="col">Action</th>
-				</tr>
-			</thead>
-			<tbody>
-			{# {% for article in paginator.datas %} #}
-				<tr>
-					{# <th scope="row">{{ article.titre }}</th>
-					<td>{{ article.extrait | nl2br }}</td> #}
-					<td>titre 1</td>
-					<td>extrait 1</td>
-					<td>date 1</td>
-					<td>
-						<a href="" class="btn btn-outline-success">
-							Editer</a>
+					<h2 class="textWhite">Prix</h2>
+					<h5 class="textWhite">Augementé de %</h5>
+				</div>
+				<div class="weeklyOrders">
+					<img src="{{ asset ('images/circle.svg') }}" class="card-img-absolute" alt="">
+					<h4 class="textWhite">Commandes hebdomadaires
+						<i class="fa fa-bookmark-o textWhite" aria-hidden="true"></i>
+					</h4>
 
-						<!-- Button trigger modal-->
-						<button type="button" class="pull-right btn btn-outline-danger admin" data-toggle="modal" data-target="#modalConfirmDelete">Supprimer</button>
+					<h2 class="textWhite">Prix</h2>
+					<h5 class="textWhite">Diminué de %</h5>
+				</div>
+				<div class="visitorsOnline">
+					<img src="{{ asset ('images/circle.svg') }}" class="card-img-absolute" alt="">
+					<h4 class="textWhite">Visiteurs
+						<i class="fa fa-users textWhite" aria-hidden="true"></i>
+					</h4>
 
-						<!--Modal: modalConfirmDelete-->
-						<div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-							<div
-								class="modal-dialog modal-sm modal-notify modal-danger" role="document">
-								<!--Content-->
-								<div
-									class="modal-content text-center">
-									<!--Header-->
-									<div class="modal-header d-flex justify-content-center">
-										<p class="heading">Êtes-vous sur de vouloirs supprimer cet article ?</p>
-									</div>
+					<h2 class="textWhite">Prix</h2>
+					<h5 class="textWhite">Augementé de %</h5>
+				</div>
+				<div class="visitStats"></div>
+				<div class="trafficSources"></div>
+			</div>
 
-									<!--Body-->
-									<div class="modal-body">
+			<div class="chars">
+				<h4>Statistiques De Visites Et De Ventes</h4>
+			</div>
 
-										<i class="fas fa-times fa-4x animated rotateIn"></i>
+			<div class="traffic">
+				<h4>Sources de trafic</h4>
+			</div>
 
-									</div>
+			<div class="message">
+				<h4>Messages reçu</h4>
+			</div>
 
-									<!--Footer-->
-									<div class="modal-footer flex-center">
-										<a href="" class="btn btn-outline-danger">Oui</a>
-										<a type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Non</a>
-									</div>
-								</div>
-								<!--/.Content-->
-							</div>
-						</div>
-						<!--Modal: modalConfirmDelete-->
-					</td>
-				</tr>
-				{# {% endfor %} #}
-			</tbody>
-		</table>
-		{# {% include 'partials/_paginate.html.twig' %} #}
+		</div>
 	</div>
+
 
 {% endblock %}

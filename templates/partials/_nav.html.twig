@@ -64,9 +64,10 @@
 						</div>
 					</li>
 					<!-- Search form -->
-					<form class="form-inline" id="formSearch" role="search">
+					<form class="form-inline" id="formSearch" role="search" action="{{ path('app_search') }}">
 						<div class="md-form my-0">
-							<input class="form-control mr-sm-2" id="formControlSearch" type="text" placeholder="Recherche" aria-label="Rechercher parmi le contenu du site" minlength="4" maxlength="12" pattern="[A-Za-z\é\è\ê\-\¨]">
+							<input name="q" class="form-control mr-sm-2" id="formControlSearch" type="search" placeholder="Recherche" aria-label="Rechercher parmi le contenu du site" minlength="4" maxlength="12">
+							{# value = "{{recherche}}" #}
 						</div>
 					</form>
 				</ul>

@@ -45,6 +45,9 @@ class SliderController extends AbstractController
             $entityManager->persist($slider);
             $entityManager->flush();
 
+            $this->addFlash('success', 'L\'image a été crée avec succés.');
+
+
             return $this->redirectToRoute('slider_index');
         }
 

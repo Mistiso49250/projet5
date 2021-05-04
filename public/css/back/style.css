@@ -14,12 +14,26 @@ h1{
     margin: 3rem 0 4rem 1rem;
 }
 
+/* icone */
+.fa{
+    margin-right: 0.5em;
+}
+
+.fa-line-chart, .fa-bookmark-o, .fa-users{
+    margin-left: 2em;
+}
+
 /* bouton */
 
 .newAge, .newArticle, .newCategorie, .newCategoriePrinc, .newCategorieSec, .newGenre, .newMarque, .newSlider, .newTva, .newUser{
     position: absolute;
     right: 4rem;
     top: 6rem;
+}
+
+.newArticleAdmin{
+    margin-right: 1em;
+    margin-bottom: 3em;
 }
 
 .pull-right{
@@ -45,39 +59,6 @@ h1{
     margin-bottom: 1em;
 }
 
-/* transition bouton */
-/* .btn{
-    position: relative;
-    border:1px solid #0D6EFD ;
-    overflow: hidden;
-    transition: all 0.3s;
-}
-.btn-rounded-primary::before{
-    content:"";
-    position: absolute;
-    background-color: #0D6EFD;
-    height: 100%;
-    top: 0;
-    left: 0;
-    width: 0;
-    z-index: -1;
-    transition: all 1s;
-}
-
-.btn-rounded-primary::before{
-    color:white
-}
-
-.btn-rounded-primary:hover::before{
-    width: 100%;
-    color: white;
-}
-
-.btn-rounded-primary:hover{
-    color: white;
-    transition: all 1s;
-} */
-
 /* nav */
 .navbar-default
 {
@@ -100,6 +81,10 @@ h1{
     margin-right: 20px;
 }
 
+.navbar-nav{
+    margin-left: 50%;
+}
+
 .navbar h1
 {
     font-size: 2rem;
@@ -107,7 +92,7 @@ h1{
 
 .navbar li a
 {
-    font-size: 1.1rem;
+    font-size: 1em;
 }
 
 .navbar ul li a font:hover{
@@ -127,75 +112,41 @@ h1{
     color: #d8554d;
 }
 
-/* modal signaler & supprimer */
-
-.modal-dialog.modal-notify.modal-danger .modal-header {
-    background-color: #ff4b4b;
-}
-
-.modal-dialog.modal-notify .modal-header {
-    border: 0;
-}
-.modal-dialog.modal-notify .modal-header {
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-}
-.modal-dialog .modal-content .modal-header {
-    border-top-left-radius: .125rem;
-    border-top-right-radius: .125rem;
-}
-
-.modal-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 1rem;
-}
-
-.modal-dialog.modal-notify .heading {
-    margin: 0;
-    padding: .3rem;
-    color: #fff;
-    font-size: 1.15rem;
-}
-
-.modal-dialog.modal-notify .close {
-    opacity: 1;
-    color: #fff;
-}
-
-.modal-content .close {
+/* nav princ */
+.nav_bar{
+    width: 16%;
+    height: 100%;
+    text-align: justify;
     position: absolute;
-    right: 15px;
+    top: 0;
+    left: 0;
 }
 
-.modal-header .close {
-    padding: 1rem;
-    margin: -1rem -1rem -1rem auto;
+.nav_bar ul li{
+    list-style-type: none;
 }
 
-.modal-dialog.modal-notify .modal-body {
-    padding: 1.5rem;
-    color: #ff4b4b;
+.nav_bar ul li, .nav_bar ul li a {
+    color: #0000008c;
+    font-size: 0.95em;
 }
 
-.modal-body {
-    position: relative;
-    flex: 1 1 auto;
-    padding: 1rem;
+.nav_bar ul li a:hover{
+    color: #3399f3;
 }
 
-.rotateIn {
-    -webkit-animation-name: rotateIn;
-    animation-name: rotateIn;
+.container{
+    padding: 0;
+    margin: 0;
 }
 
-.animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+.nav_bar .categorie ul, .page404 ul{
+    display: none;
 }
-/* fin modal */
+
+.nav_bar .categorie:hover ul, .page404:hover ul{
+    display: block;
+}
 
 /* tableau */
 .table{
@@ -232,4 +183,108 @@ tbody tr:hover{
 
 .tdBackoffice{
     width: 15%;
+}
+
+/* dashboard */
+.dashboard{
+    position: relative;
+    align-items: center;
+    width: 100%;
+}
+
+.dashboard .fa{
+    margin-left: 1em;
+}
+
+.card-img-absolute{
+    position: absolute;
+    height: 100%;
+    left: 11em;
+    top: 0;
+}
+
+.textWhite{
+    color: white;
+}
+
+.statsContent{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 550px;
+}
+
+.dashboardContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 45px;
+    margin-left: 13em;
+    height: 550px;
+}
+
+.weeklySales, .weeklyOrders, .visitorsOnline{
+    width: 32%;
+    height: 32%;
+    position: relative;
+    display: inline-block;
+    padding-top: 2em;
+    padding-left: 2em;
+    border-radius: 9px;
+    margin-right: 11px;
+    left: 3em;
+}
+
+.weeklySales{
+    background: linear-gradient(to right, #ffbf96, #fe7096);
+}
+
+.weeklyOrders{
+    background: linear-gradient(to right, #90caf9, #047edf 99%) !important;
+}
+
+.visitorsOnline{
+    background: linear-gradient(to right, #84d9d2, #07cdae) !important;
+}
+
+
+.weeklyOrders .fa{
+    margin-left: 7em;
+}
+
+.visitorsOnline .fa{
+    margin-left: 7em;
+}
+
+.title h3{
+    position: absolute;
+    top: 6%;
+    left: 20%;
+}
+
+.title a{
+    top: 4em;
+}
+
+.dashboard h4{
+    font-size: 1.13rem;
+    top: 11%;
+    margin-bottom: 1em;
+}
+
+.dashboard h2{
+    font-size: 1.8rem;
+    margin-bottom: 1em;
+}
+
+.dashboard h5{
+    font-size: 0.9rem;
+}
+
+.chars{
+    background-color: chartreuse;
+    position: absolute;
 }

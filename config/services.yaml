@@ -6,6 +6,7 @@
 parameters:
     maxitemsperpage: 4
     image_slider_directory: '%kernel.project_dir%/public/images/slider'
+    image_article_directory: '%kernel.project_dir%/public/images/articles'
 
 services:
     # default configuration for services in *this* file

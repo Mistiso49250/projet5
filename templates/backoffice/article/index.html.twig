@@ -4,6 +4,18 @@
 {% endblock %}
 
 {% block body %}
+	<!-- notification message d'erreurs -->
+	{% for message in app.flashes('error') %}
+		<h5 class="alert alert-danger">
+			{{ message }}
+		</h5>
+	{% endfor %}
+	{% for message in app.flashes('success') %}
+		<h5 class="alert alert-success">
+			{{ message }}
+		</h5>
+	{% endfor %}
+
 	<div class="container-fluid">
 		<h1>Article index</h1>
 		<a href="{{ path('article_new') }}" class="btn btn-outline-primary newArticle">Créer un nouvel article</a>
@@ -22,15 +34,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				{% for article in articles %}
+				{% for article in paginator.datas %}
 					<tr>
 						<td>{{ article.id }}</td>
 						<td>{{ article.titre }}</td>
 						<td>{{ article.extrait }}</td>
 						<td class="tdBackoffice"><img src="{{ asset ('images/articles/' ~ article.image) }}" alt="..."></td>
-						<td>{{ article.prixTTC }} €</td>
-						<td>{{ article.new ? '<i class="fas fa-check-circle agree"></i>' : '<i class="fas fa-check-circle false"></i>' }}</td>
-						<td>{{ article.selection ? '<i class="fas fa-check-circle agree"></i>' : '<i class="fas fa-check-circle false"></i>' }}</td>
+						<td>{{ article.prixTTC }}
+							€</td>
+						<td>{{ article.new ? '<i class="fa fa-check-square-o agree" aria-hidden="true"></i>' : '<i class="fa fa-check-square-o false" aria-hidden="true"></i>' }}</td>
+						<td>{{ article.selection ? '<i class="fa fa-check-square-o agree" aria-hidden="true"></i>' : '<i class="fa fa-check-square-o false" aria-hidden="true"></i>' }}</td>
 						<td>
 							<a href="{{ path('article_show', {'id': article.id}) }}" class="btn btn-outline-primary">apperçu</a>
 							<a href="{{ path('article_edit', {'id': article.id}) }}" class="btn btn-outline-success">editer</a>
@@ -43,6 +56,7 @@
 				{% endfor %}
 			</tbody>
 		</table>
+		{% include 'partials/_paginate.html.twig' %}
 	</div>
 
 {% endblock %}

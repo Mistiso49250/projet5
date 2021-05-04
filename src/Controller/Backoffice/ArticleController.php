@@ -5,10 +5,12 @@ namespace App\Controller\Backoffice;
 use App\Entity\Article;
 use App\Form\Backoffice\ArticleType;
 use App\Repository\ArticleRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Services\Paginator;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/admin/article")
@@ -18,10 +20,12 @@ class ArticleController extends AbstractController
     /**
      * @Route("/", name="article_index", methods={"GET"})
      */
-    public function index(ArticleRepository $articleRepository): Response
+    public function index(ArticleRepository $articleRepository, Paginator $paginator): Response
     {
+        $criteria = [];
+
         return $this->render('backoffice/article/index.html.twig', [
-            'articles' => $articleRepository->findAll(),
+            'paginator' => $paginator->createPagination(Article::class, $criteria, 8),
         ]);
     }
 
@@ -35,12 +39,20 @@ class ArticleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $image = $form->get('image')->getData();
+            $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+            $fileName = $originalFilename . '-' . uniqid() . '.' . $image->guessExtension();
+            $image->move($this->getParameter('image_article_directory'), $fileName);
+            $article->setImage($fileName);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
             $entityManager->flush();
 
+            $this->addFlash('success', 'L\'article a été crée avec succés.');
+
             return $this->redirectToRoute('article_index');
         }
+       
 
         return $this->render('backoffice/article/new.html.twig', [
             'article' => $article,
@@ -67,9 +79,31 @@ class ArticleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+           $oldImage = $article->getImage();
+
+            $image = $form->get('image')->getData();
+            $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+            $fileName = $originalFilename . '-' . uniqid() . '.' . $image->guessExtension();
+            $image->move($this->getParameter('image_article_directory'), $fileName);
+            $article->setImage($fileName);
+
+            // $entityManager = $this->getDoctrine()->getManager();
+            // $entityManager->persist($article);
+            // $entityManager->flush();
+
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('article_index');
+            $filenamefullpath = join(DIRECTORY_SEPARATOR, [
+                $this->getParameter('image_article_directory'),
+                $oldImage,
+            ]); 
+            
+            $fileSystem = new Filesystem();
+            $fileSystem->remove($filenamefullpath);
+
+            $this->addFlash('success', 'L\'article a été modifié avec succés.');
+
+            // return $this->redirectToRoute('article_index');
         }
 
         return $this->render('backoffice/article/edit.html.twig', [
@@ -84,6 +118,13 @@ class ArticleController extends AbstractController
     public function delete(Request $request, Article $article): Response
     {
         if ($this->isCsrfTokenValid('delete'.$article->getId(), $request->request->get('_token'))) {
+            $filenamefullpath = join(DIRECTORY_SEPARATOR, [
+                $this->getParameter('image_article_directory'),
+                $article->getImage(),
+            ]); 
+            
+            $fileSystem = new Filesystem();
+            $fileSystem->remove($filenamefullpath);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($article);
             $entityManager->flush();

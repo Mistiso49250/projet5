@@ -29,7 +29,7 @@
             </tr>
             <tr>
                 <th>Image</th>
-                <td><img src="{{ asset ('images/articles' ~ article.image) | imagine_filter('marque') }}" alt="..."></td>
+                <td><img src="{{ asset ('images/articles/' ~ article.image) | imagine_filter('marque') }}" alt="..."></td>
             </tr>
             <tr>
                 <th>PrixTTC</th>
@@ -37,7 +37,7 @@
             </tr>
             <tr>
                 <th>New</th>
-                <td>{{ article.new ? '<i class="fas fa-check-circle agree"></i>' : '<i class="fas fa-check-circle false"></i>' }}</td>
+                <td>{{ article.new ? '<i class="fa fa-check-square-o agree" aria-hidden="true"></i>' : '<i class="fa fa-check-square-o false" aria-hidden="true"></i>' }}</td>
             </tr>
             <tr>
                 <th>Slug</th>
@@ -45,7 +45,7 @@
             </tr>
             <tr>
                 <th>Selection</th>
-                <td>{{ article.selection ? '<i class="fas fa-check-circle agree"></i>' : '<i class="fas fa-check-circle false"></i>' }}</td>
+                <td>{{ article.selection ? '<i class="fa fa-check-square-o agree" aria-hidden="true"></i>' : '<i class="fa fa-check-square-o false" aria-hidden="true"></i>' }}</td>
             </tr>
         </tbody>
     </table>

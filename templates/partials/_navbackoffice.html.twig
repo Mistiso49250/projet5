@@ -14,108 +14,40 @@
 
 		<div class="collapse navbar-collapse" id="navbarColor03">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="{{ path('article_index') }}">
-						<font style="vertical-align: inherit;">
-							<font style="vertical-align: inherit;">
-								Créer un article
-							</font>
-						</font>
-						<span class="sr-only">
-							<font style="vertical-align: inherit;">
-								<font style="vertical-align: inherit;">
-									(actuel)
-								</font>
-							</font>
-						</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path('marque_index') }}">
-						<font style="vertical-align: inherit;">
-							<font style="vertical-align: inherit;">
-								Marque
-							</font>
-						</font>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path('tva_index') }}">
-						<font style="vertical-align: inherit;">
-							<font style="vertical-align: inherit;">
-								Tva
-							</font>
-						</font>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path('age_index') }}">
-						<font style="vertical-align: inherit;">
-							<font style="vertical-align: inherit;">
-								Trache d'âge
-							</font>
-						</font>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path('genre_index') }}">
-						<font style="vertical-align: inherit;">
-							<font style="vertical-align: inherit;">
-								Genre
-							</font>
-						</font>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path('user_back_index') }}">
-						<font style="vertical-align: inherit;">
-							<font style="vertical-align: inherit;">
-								Utilisateur
-							</font>
-						</font>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ path('slider_index') }}">
-						<font style="vertical-align: inherit;">
-							<font style="vertical-align: inherit;">
-								Slider
-							</font>
-						</font>
-					</a>
-				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
 						<font style="vertical -align: inherit; ">
 							<font style=" vertical-align: inherit; ">
-								Nouvelle Catégorie
+								<i class="fa fa-envelope-o" aria-hidden="true"></i>
+								<span class="badge badge-pill badge-warning">0</span>
+								Message reçu
 							</font>
 						</font>
 					</a>
 					<ul class="dropdown-menu">
 						<li>
-							<a class="dropdown-item" href="{{ path('categorie_index') }}">
+							<a class="dropdown-item" href="">
 								<font style="vertical-align: inherit;">
 									<font style="vertical-align: inherit;">
-										Catégorie
+										Message 1
 									</font>
 								</font>
 							</a>
 						</li>
 						<li>
-							<a class="dropdown-item" href="{{ path('categorie_principal_index') }}">
+							<a class="dropdown-item" href="">
 								<font style="vertical-align: inherit;">
 									<font style="vertical-align: inherit;">
-										Catégorie Principal
+										Message 2
 									</font>
 								</font>
 							</a>
 						</li>
 						<li>
-							<a class="dropdown-item" href="{{ path('categorie_secondaire_index') }}">
+							<a class="dropdown-item" href="">
 								<font style="vertical-align: inherit;">
 									<font style="vertical-align: inherit;">
-										Catégorie Secondaire
+										Message 3
 									</font>
 								</font>
 							</a>
@@ -124,13 +56,23 @@
 					</ul>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="{{ path('genre_index') }}">
+					<a class="nav-link" href="">
 						<font style="vertical-align: inherit;">
 							<font style="vertical-align: inherit;">
-								Nouvelle(s) commande(s) reçu
+								<i class="fa fa-cart-plus" aria-hidden="true"></i>
+								Commande(s) reçu
+								<span class="badge badge-pill badge-success">0</span>
 							</font>
 						</font>
-						<span class="badge badge-pill badge-success">0</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="">
+						<font style="vertical-align: inherit;">
+							<font style="vertical-align: inherit;">
+								<i class="fa fa-power-off" aria-hidden="true"></i>
+							</font>
+						</font>
 					</a>
 				</li>
 			</ul>

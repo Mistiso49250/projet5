@@ -60,7 +60,6 @@ class Paginator
         if($limit !== null){
             $this->limit = $limit;
         }
-        
         // em -> va chercher les infos des repos
         $repo = $this->em->getRepository($entityClass);
         $this->count = count($repo->findBy($criteria));

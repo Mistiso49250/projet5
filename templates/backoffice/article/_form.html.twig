@@ -1,4 +1,23 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn btn-outline-success">{{ button_label|default('Enregister') }}</button>
+{{ form_row(form.titre) }}
+{{ form_row(form.extrait) }}
+{{ form_row(form.detail) }}
+{{ form_row(form.contenu) }}
+{{ form_row(form.image) }}
+{{ form_row(form.prixTTC) }}
+<div class="form-check form-switch">
+	{{ form_widget(form.new) }}
+	{{ form_label(form.new) }}
+</div>
+<div class="form-check form-switch">
+	{{ form_widget(form.selection) }}
+	{{ form_label(form.selection) }}
+</div>
+{{ form_row(form.categorie) }}
+{{ form_row(form.marque) }}
+{{ form_row(form.tva) }}
+{{ form_row(form.genre) }}
+{{ form_row(form.age) }}
+
+<button class="btn btn-outline-success">{{ button_label|default('Enregister') }}</button>
 {{ form_end(form) }}
