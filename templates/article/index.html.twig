@@ -27,8 +27,7 @@
 				{{ article.extrait }}
 			</div>
 			<div class="prixArticle">
-				<span class="prix justify-content-right">{{ article.prixTTC }}
-					€</span>
+				<em>{{ article.prixTTC|format_currency('EUR', locale='fr') }}</em>
 			</div>
 			{# <div class="action">
 								{{ article.stock }} 

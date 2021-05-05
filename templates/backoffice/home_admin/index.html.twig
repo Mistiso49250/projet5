@@ -18,113 +18,152 @@
 	<!-- notification message d'erreurs -->
 
 	<div class="dashboard">
-		<nav class="navbar navbar-light bg-light nav_bar">
-			<ul>
-				<li>
-					<a class="nav-link" href="{{ path('article_index') }}">Article</a>
+		<div class="row">
+			<ul class="nav flex-column navbar-light bg-light col-sm-2">
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="{{ path('article_index') }}">Article</a>
 				</li>
-				<li>
-					<a class="nav-link" href="{{ path('marque_index') }}">Marque</a>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="{{ path('marque_index') }}">Marque</a>
 				</li>
-				<li>
-					<a class="nav-link" href="{{ path('tva_index') }}">Tva</a>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="{{ path('tva_index') }}">Tva</a>
 				</li>
-				<li>
-					<a class="nav-link" href="{{ path('age_index') }}">Tranche d'âge</a>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="{{ path('age_index') }}">Tranche d'âge</a>
 				</li>
-				<li>
-					<a class="nav-link" href="{{ path('genre_index') }}">Genre</a>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="{{ path('genre_index') }}">Genre</a>
 				</li>
-				<li>
-					<a class="nav-link" href="{{ path('user_back_index') }}">Utilisateur</a>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="{{ path('user_back_index') }}">Utilisateurse</a>
 				</li>
-				<li>
-					<a class="nav-link" href="{{ path('slider_index') }}">Slider</a>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="{{ path('slider_index') }}">Slider</a>
 				</li>
-				<li class="categorie">Categorie
-					<ul>
-						<li><a class="nav-link"href="{{ path('categorie_index') }}">Catégorie</a></li>
-						<li><a class="nav-link"href="{{ path('categorie_principal_index') }}">Catégorie Principal</a></li>
-						<li><a class="nav-link"href="{{ path('categorie_secondaire_index') }}">Catégorie Secondaire</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorie</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="dropdown-item" href="{{ path('categorie_index') }}">Categorie</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('categorie_principal_index') }}">Categorie Principal</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('categorie_secondaire_index') }}">Categorie Secondaire</a>
+						</li>
 					</ul>
 				</li>
-				<li class="page404">Page 404
-					<ul>
-						<li><a class="nav-link"href="{{ path('slider_index') }}">404 article</a></li>
-						<li><a class="nav-link"href="{{ path('slider_index') }}">404 marque</a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Page 404</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="dropdown-item" href="{{ path('slider_index') }}">404 article</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="{{ path('slider_index') }}">404 marque</a>
+						</li>
 					</ul>
 				</li>
 			</ul>
-		</nav>
-		<div class="dashboardContent">
 
-			<div class="title">
-				<h3>Tableau de bord</h3>
+			<div class="dashboardContent col-sm-10">
+				<h3><i class="fa fa-home" aria-hidden="true"></i> Tableau de bord</h3>
 				<a href="{{ path('article_new') }}" class="btn btn-outline-primary newArticle">Créer un nouvel article</a>
-			</div>
 
-			<div class="statsContent">
-				<div class="weeklySales">
-					<img src="{{ asset ('images/circle.svg') }}" class="card-img-absolute" alt="">
-					<h4 class="textWhite">Ventes hebdomadaires
-						<i class="fa fa-line-chart textWhite" aria-hidden="true"></i>
-					</h4>
+				<div class="row d-flex align-items-center justify-content-space-around statsContent">
+					<div class="weeklySales col-sm-3">
+						<img src="{{ asset ('images/circle.svg') }}" class="card-img-absolute" alt="circlebackground">
+						<h4 class="textWhite">Ventes hebdomadaires
+							<i class="fa fa-line-chart" aria-hidden="true"></i>
+						</h4>
 
-					<h2 class="textWhite">Prix</h2>
-					<h5 class="textWhite">Augementé de %</h5>
+						<h2 class="textWhite">6 000 € {# format_currency('EUR', locale='fr' #}</h2>
+						<h5 class="textWhite">Augementé de 3%</h5>
+					</div>
+					<div class="weeklyOrders col-sm-3">
+						<img src="{{ asset ('images/circle.svg') }}" class="card-img-absolute" alt="circlebackground">
+						<h4 class="textWhite">Commandes hebdomadaires
+							<i class="fa fa-bookmark-o" aria-hidden="true"></i>
+						</h4>
+
+						<h2 class="textWhite">250</h2>
+						<h5 class="textWhite">Diminué de 10%</h5>
+					</div>
+					<div class="visitorsOnline col-sm-3">
+						<img src="{{ asset ('images/circle.svg') }}" class="card-img-absolute" alt="circlebackground">
+						<h4 class="textWhite">Visiteurs en ligne
+							<i class="fa fa-users" aria-hidden="true"></i>
+						</h4>
+
+						<h2 class="textWhite">1200</h2>
+						<h5 class="textWhite">Augementé de 8%</h5>
+					</div>
 				</div>
-				<div class="weeklyOrders">
-					<img src="{{ asset ('images/circle.svg') }}" class="card-img-absolute" alt="">
-					<h4 class="textWhite">Commandes hebdomadaires
-						<i class="fa fa-bookmark-o textWhite" aria-hidden="true"></i>
-					</h4>
 
-					<h2 class="textWhite">Prix</h2>
-					<h5 class="textWhite">Diminué de %</h5>
+				<div class="row d-flex align-items-center justify-content-space-around charsContent">
+
+					<div class="chars col-sm-7">
+						<h4>Statistiques De Visites Et De Ventes</h4>
+						<div class="charsLegend">
+							<ul>
+								<li>
+									<span class="roundedSpan visits"></span>visite</li>
+								<li>
+									<span class="roundedSpan sales"></span>vente</li>
+								<li>
+									<span class="roundedSpan abandonment"></span>abandon</li>
+							</ul>
+						</div>
+						<img src="{{ asset ('images/chart.png') }}" class="chars-img-absolute" alt="">
+
+					</div>
+					<div class="traffic col-sm-4">
+						<h4>Sources de trafic</h4>
+						<img src="{{ asset ('images/chartCircle.png') }}" class="traffic-img-absolute" alt="">
+						<div class="trafficLegend">
+							<ul>
+								<li>
+									<span class="roundedSpan search"></span>moteurs de recherche 40%</li>
+								<li>
+									<span class="roundedSpan direct"></span>clic direct 30%</li>
+								<li>
+									<span class="roundedSpan bookmarks"></span>favoris 30%</li>
+							</ul>
+						</div>
+					</div>
 				</div>
-				<div class="visitorsOnline">
-					<img src="{{ asset ('images/circle.svg') }}" class="card-img-absolute" alt="">
-					<h4 class="textWhite">Visiteurs
-						<i class="fa fa-users textWhite" aria-hidden="true"></i>
-					</h4>
 
-					<h2 class="textWhite">Prix</h2>
-					<h5 class="textWhite">Augementé de %</h5>
+				<div class="message">
+					<h4>Messages reçu</h4>
+					<table class="table">
+						<thead>
+							<tr class="table-info">
+								<th>Nom</th>
+								<th>Sujet</th>
+								<th>Status</th>
+								<th>Date de réception</th>
+							</tr>
+						</thead>
+						<tbody>
+							{# {% for  in  %} #}
+							<tr>
+								<td>Nom 1</td>
+								<td>Sujet 1</td>
+								<td>Progress</td>
+								<td>Date 1</td>
+							</tr>
+							{# {% else %} #}
+						{# <tr>
+															<td colspan="11">no records found</td>
+														</tr> #}
+							{# {% endfor %} #}
+						</tbody>
+					</table>
 				</div>
-				<div class="visitStats"></div>
-				<div class="trafficSources"></div>
-			</div>
-
-			<div class="chars">
-				<h4>Statistiques De Visites Et De Ventes</h4>
-				{# <img src="{{ asset ('images/chart.png') }}" class="card-img-absolute" alt=""> #}
 
 			</div>
-
-			<div class="traffic">
-				<h4>Sources de trafic</h4>
-				{# <img src="{{ asset ('images/chartCircle.png') }}" class="card-img-absolute" alt=""> #}
-				<div class="trafficLegend">
-					<ul>
-						<li>
-							moteurs de recherche 40%
-						</li>
-						<li>
-							clic direct 30%
-						</li>
-						<li>
-							favoris 30%
-						</li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="message">
-				<h4>Messages reçu</h4>
-			</div>
-
 		</div>
-	</div>
 
-
-{% endblock %}
+	{% endblock %}

@@ -19,6 +19,16 @@ h1{
     margin-right: 0.5em;
 }
 
+.fa-home{
+    padding: 8px;
+    border-radius: 100%;
+    background: linear-gradient(to right, rgba(54, 215, 232, 1), rgba(177, 148, 250, 1));
+}
+
+.fa-home, .fa-bookmark-o, .fa-line-chart, .fa-users{
+    color: white;
+}
+
 .fa-line-chart, .fa-bookmark-o, .fa-users{
     margin-left: 2em;
 }
@@ -57,6 +67,17 @@ h1{
 .formEdit{
     margin-top: 1em;
     margin-bottom: 1em;
+}
+
+.dashboardContent .newArticle{
+    color: white;
+    border: white;
+    background: linear-gradient(to right, rgba(54, 215, 232, 1), rgba(177, 148, 250, 1));
+}
+
+/* Grille boot */
+.row{
+    max-width: 100% !important;
 }
 
 /* nav */
@@ -113,39 +134,29 @@ h1{
 }
 
 /* nav princ */
-.nav_bar{
-    width: 16%;
-    height: 100%;
-    text-align: justify;
-    position: absolute;
-    top: 0;
-    left: 0;
+.container{
+    max-width: 100%;
+    padding: 0;
 }
 
-.nav_bar ul li{
+.nav{
+    width: 13%;
+    padding-top: 3em;
+    padding-left: 14px;
+    min-height: 100vh;
+}
+
+.nav, .dropdown ul{
+    background: #eee !important;
+}
+
+.nav li a{
+    color: rgba(0, 0, 0, .55);
     list-style-type: none;
 }
 
-.nav_bar ul li, .nav_bar ul li a {
-    color: #0000008c;
-    font-size: 0.95em;
-}
-
-.nav_bar ul li a:hover{
+.nav li a:hover{
     color: #3399f3;
-}
-
-.container{
-    padding: 0;
-    margin: 0;
-}
-
-.nav_bar .categorie ul, .page404 ul{
-    display: none;
-}
-
-.nav_bar .categorie:hover ul, .page404:hover ul{
-    display: block;
 }
 
 /* tableau */
@@ -185,21 +196,48 @@ tbody tr:hover{
     width: 15%;
 }
 
-/* dashboard */
-.dashboard{
-    position: relative;
-    align-items: center;
-    width: 100%;
+.message table{
+    width: 97%;
+    margin-left: 1em;
 }
 
+/* dashboard */
 .dashboard .fa{
     margin-left: 1em;
+}
+
+.dashboard{
+    background: antiquewhite;
+}
+
+.dashboard h4{
+    font-size: 1.13rem;
+    top: 11%;
+    margin-bottom: 1em;
+    margin-left: 2em;
+}
+
+.dashboard h2{
+    font-size: 1.8rem;
+    margin-bottom: 1em;
+    margin-left: 2em;
+}
+
+.dashboard h5{
+    font-size: 0.9rem;
+    margin-left: 2em;
+}
+
+.dashboardContent h3{
+    margin-top: 3em;
+    margin-left: 2em;
+    margin-bottom: 2em;
 }
 
 .card-img-absolute{
     position: absolute;
     height: 100%;
-    left: 11em;
+    left: 58%;
     top: 0;
 }
 
@@ -207,34 +245,18 @@ tbody tr:hover{
     color: white;
 }
 
+/* StatsContent */
 .statsContent{
-    position: absolute;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 550px;
-}
-
-.dashboardContent{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0 45px;
-    margin-left: 13em;
-    height: 550px;
+    margin-top: 8em !important;
 }
 
 .weeklySales, .weeklyOrders, .visitorsOnline{
     width: 32%;
     height: 32%;
-    position: relative;
-    display: inline-block;
     padding-top: 2em;
-    padding-left: 2em;
+    padding-bottom: 3em;
     border-radius: 9px;
-    margin-right: 11px;
+    margin-right: 16px;
     left: 3em;
 }
 
@@ -250,50 +272,123 @@ tbody tr:hover{
     background: linear-gradient(to right, #84d9d2, #07cdae) !important;
 }
 
+.weeklySales .fa{
+    margin-left: 4em;
+}
 
 .weeklyOrders .fa{
-    margin-left: 7em;
+    margin-left: 2em;
 }
 
 .visitorsOnline .fa{
     margin-left: 7em;
 }
 
-.title h3{
-    position: absolute;
-    top: 6%;
-    left: 20%;
-}
-
-.title a{
-    top: 4em;
-}
-
-.dashboard h4{
-    font-size: 1.13rem;
-    top: 11%;
-    margin-bottom: 1em;
-}
-
-.dashboard h2{
-    font-size: 1.8rem;
-    margin-bottom: 1em;
-}
-
-.dashboard h5{
-    font-size: 0.9rem;
-}
-
+/* charsContent */
 .chars{
-    background-color: chartreuse;
-    position: absolute;
+    margin-right: 3em;
+    height: 100%;
+    border-radius: 9px;
 }
 
-/* .legend-dots{
-    width: 1rem;
-    height: 1rem;
+.charsContent{
+    margin-top: 5em;
+    margin-left: 3em;
+    height: 430px;
+    width: 100%;
+}
+
+.chars h4, .traffic h4{
+    margin-top: 5%;
+}
+
+.chars-img-absolute{
+    position: absolute;
+    margin-left: 10px;
+    top: 5em;
+    height: 79%;
+    width: 93%;
+}
+
+.chars ul{
+    list-style-type: none;
+    display: flex;
+    position: absolute;
+    top: 3em;
+    left: 24em;
+}
+
+.chars li{
+    margin-right: 1em;
+}
+
+.visits{
+    background: linear-gradient(to right, rgba(54, 215, 232, 1), rgba(177, 148, 250, 1));
+}
+
+.sales{
+    background: linear-gradient(to right, rgba(255, 191, 150, 1), rgba(254, 112, 150, 1));
+}
+
+.abandonment{
+    background: linear-gradient(to right, rgba(218, 140, 255, 1), rgba(154, 85, 255, 1));
+}
+
+/* Traffic */
+.traffic{
+    border-radius: 9px;
+    height: 100%;
+}
+
+.traffic-img-absolute{
+   margin-top: 1em;
+   height: 48%;
+}
+
+.trafficLegend{
+    margin-top: 3em;
+    margin-left: 1em;
+}
+
+.trafficLegend li{
+    list-style-type: none;
+}
+
+.roundedSpan{
+    width: 1em;
+    height: 1em;
     border-radius: 100%;
+    vertical-align: middle;
     display: inline-block;
-    vertical-align: text-bottom;
-    margin-right: .5rem;
-} */
+    margin-right: 0.5em;
+}
+
+.search{
+    background: linear-gradient(to right, rgba(54, 215, 232, 1), rgba(177, 148, 250, 1));
+}
+
+.direct{
+    background: linear-gradient(to right, rgba(6, 185, 157, 1), rgba(132, 217, 210, 1));
+}
+
+.bookmarks{
+    background: linear-gradient(to right, rgba(255, 191, 150, 1), rgba(254, 112, 150, 1));
+}
+
+/* Message */
+.message{
+    width: 96%;
+    border-radius: 9px;
+    margin-top: 3em;
+    margin-bottom: 5em;
+    margin-left: 2em;
+    padding-bottom: 4%;
+}
+
+.message h4{
+    padding-top: 2%;
+}
+
+.chars, .traffic, .message{
+    background: white;
+}
