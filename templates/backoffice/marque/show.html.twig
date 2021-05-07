@@ -1,34 +1,37 @@
 {% extends 'basebackoffice.html.twig' %}
 
-{% block title %}Marque{% endblock %}
+{% block title %}Marque
+{% endblock %}
 
 {% block body %}
-    <h1>Marque</h1>
+	<div class="show-article">
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ marque.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
-                <td>{{ marque.titre }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td><img src="{{ asset ('images/logo/' ~ marque.image) | imagine_filter('marque') }}" alt="..."></td>
-            </tr>
-            <tr>
-                <th>Slug</th>
-                <td>{{ marque.slug }}</td>
-            </tr>
-        </tbody>
-    </table>
+		<h1>Marque</h1>
 
-    <a href="{{ path('marque_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>Id</th>
+					<td>{{ marque.id }}</td>
+				</tr>
+				<tr>
+					<th>Titre</th>
+					<td>{{ marque.titre }}</td>
+				</tr>
+				<tr>
+					<th>Image</th>
+					<td><img src="{{ asset ('images/logo/' ~ marque.image) | imagine_filter('marque') }}" alt="..."></td>
+				</tr>
+				<tr>
+					<th>Slug</th>
+					<td>{{ marque.slug }}</td>
+				</tr>
+			</tbody>
+		</table>
 
-    <a href="{{ path('marque_edit', {'id': marque.id}) }}" class="btn btn-outline-success">editer</a>
+		<a href="{{ path('marque_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
 
-    {{ include('backoffice/marque/_delete_form.html.twig') }}
+		<a href="{{ path('marque_edit', {'id': marque.id}) }}" class="btn btn-outline-success marque-success">editer</a>
+
+		{{ include('backoffice/marque/_delete_form.html.twig') }}</div>
 {% endblock %}

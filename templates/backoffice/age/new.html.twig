@@ -1,11 +1,15 @@
 {% extends 'basebackoffice.html.twig' %}
 
-{% block title %}New Age{% endblock %}
+{% block title %}New Age
+{% endblock %}
 
 {% block body %}
-    <h1>Créer une nouvelle tranche d' âge</h1>
+	<div class="new-article">
+		<h1>Créer une nouvelle tranche d' âge</h1>
 
-    {{ include('backoffice/age/_form.html.twig') }}
+		{{ include('backoffice/age/_form.html.twig') }}
 
-    <a href="{{ path('age_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
+		<a href="{{ path('age_index') }}" class="btn btn-outline-primary new-age-retourListe">Retour à la liste</a>
+
+	</div>
 {% endblock %}

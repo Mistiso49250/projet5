@@ -1,4 +1,4 @@
 <form method="post" action="{{ path('tva_delete', {'id': tva.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ tva.id) }}">
-    <button class="btn btn-outline-danger">Supprimer</button>
+    <button class="btn btn-outline-danger tva-form-danger show-tva-danger" id="edit-tva-danger">Supprimer</button>
 </form>

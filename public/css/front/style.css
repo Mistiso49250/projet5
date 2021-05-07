@@ -685,15 +685,88 @@ aside{
 }
 
 
-@media only screen and (min-width: 601px){
+/* Mobile */
+@media only screen and (max-width: 575.98px){
+   .carousel-item img{
+        object-fit: contain;
+    }
+
+    .homeHeader{
+        margin: 0;
+    }
+
+   .card img{
+        max-width: 60%;
+        margin: auto;
+        margin-top: 1em;
+    }
+
+    .marqueContent{
+        width: 50%;
+    }
+
+    .boxArticle, .boxMarque{
+        display: block;
+    }
+
+    .visuel{
+        max-width: 100%;
+    }
+
+    .infoProduit {
+        margin-top: 0;
+    }
+
+    .prixArticle {
+        margin-left: 10em;
+    }
+
+    .boxMarque img{
+        margin-left: 19%;
+    }
+
+    .boxMarqueDetail{
+        margin-top: 2em;
+        margin-bottom: 3em;
+    }
+
+    .mobile{
+        padding: 0;
+    }
+
+    .cardMobile{
+        height: fit-content;
+    }
+
+    .cardMobile img{
+        max-width: 100%;
+    }
+
+    .cardMobileWidth{
+        width: 100%;
+    }
+    
+}
+
+/* Mobile Paysage */
+@media only screen and (max-width: 767.98px){
    
 }
 
-@media only screen and (min-width: 760px){
-   
+/* tablette */
+@media only screen and (max-width: 991.98px){
+   .container{
+       max-width: 100%;
+   }
 }
 
-@media only screen and (min-width: 1025px) {
+/* pc */
+@media only screen and (max-width: 1199.98px){
+    
+}
+
+/* Pc jusqu'a 17" (1600px) */
+@media only screen and (max-width: 1919.98px) {
     .navbar .mega-dropdown .dropdown-menu.mega-menu {
         overflow-x: hidden;
         overflow-y: auto;
@@ -704,3 +777,9 @@ aside{
     }
     
 }
+
+
+/* changer le max-wi image dans les card a 60% et centre l'image
+slider mversion mobile => object-fit: contain sur image
+
+*/

@@ -1,37 +1,38 @@
 {% extends 'basebackoffice.html.twig' %}
 
-{% block title %}Genre index{% endblock %}
+{% block title %}Genre index
+{% endblock %}
 
 {% block body %}
-    <h1>Genre index</h1>
-    <a href="{{ path('genre_new') }}" class="btn btn-outline-primary newGenre">Créer un nouveau genre</a>
+	<h1>Genre index</h1>
+	<a href="{{ path('genre_new') }}" class="btn btn-outline-primary newGenre">Créer un nouveau genre</a>
 
-    <table class="table">
-        <thead>
-            <tr class="table-info">
-                <th>Id</th>
-                <th>Code</th>
-                <th>Slug</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for genre in genres %}
-            <tr>
-                <td>{{ genre.id }}</td>
-                <td>{{ genre.code }}</td>
-                <td>{{ genre.slug }}</td>
-                <td>
-                    <a href="{{ path('genre_show', {'id': genre.id}) }}" class="btn btn-outline-primary">apperçu</a>
-                    <a href="{{ path('genre_edit', {'id': genre.id}) }}" class="btn btn-outline-success">editer</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<table class="table table-article">
+		<thead>
+			<tr class="table-info">
+				<th>Id</th>
+				<th>Code</th>
+				<th>Slug</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for genre in genres %}
+				<tr>
+					<td>{{ genre.id }}</td>
+					<td>{{ genre.code }}</td>
+					<td>{{ genre.slug }}</td>
+					<td>
+						<a href="{{ path('genre_show', {'id': genre.id}) }}" class="btn btn-outline-primary">apperçu</a>
+						<a href="{{ path('genre_edit', {'id': genre.id}) }}" class="btn btn-outline-success">editer</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="4">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 
 {% endblock %}

@@ -36,7 +36,7 @@
 					<a class="nav-link" aria-current="page" href="{{ path('genre_index') }}">Genre</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="{{ path('user_back_index') }}">Utilisateurse</a>
+					<a class="nav-link" aria-current="page" href="{{ path('user_back_index') }}">Utilisateurs</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" aria-current="page" href="{{ path('slider_index') }}">Slider</a>
@@ -125,17 +125,17 @@
 						<div class="trafficLegend">
 							<ul>
 								<li>
-									<span class="roundedSpan search"></span>moteurs de recherche 40%</li>
+									<span class="roundedSpan search"></span>moteurs de recherche <span class="percentSearch">40%</span></li>
 								<li>
-									<span class="roundedSpan direct"></span>clic direct 30%</li>
+									<span class="roundedSpan direct"></span>clic direct <span class="percentDirect">30%</span></li>
 								<li>
-									<span class="roundedSpan bookmarks"></span>favoris 30%</li>
+									<span class="roundedSpan bookmarks"></span>favoris <span class="percentBookmarks">30%</span></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 
-				<div class="message">
+				<div class="message" id="messageRecu">
 					<h4>Messages reçu</h4>
 					<table class="table">
 						<thead>

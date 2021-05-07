@@ -1,11 +1,15 @@
 {% extends 'basebackoffice.html.twig' %}
 
-{% block title %}Nouvel Article{% endblock %}
+{% block title %}Nouvel Article
+{% endblock %}
 
 {% block body %}
-    <h1>Créer un nouvel article</h1>
+	<div class="new-article">
+		<h1>Créer un nouvel article</h1>
 
-    {{ include('backoffice/article/_form.html.twig') }}
+		{{ include('backoffice/article/_form.html.twig') }}
 
-    <a href="{{ path('article_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
+		<a href="{{ path('article_index') }}" class="btn btn-outline-primary new-retourListe">Retour à la liste</a>
+
+	</div>
 {% endblock %}

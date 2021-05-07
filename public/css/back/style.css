@@ -51,12 +51,46 @@ h1{
     margin-left: 10px;
 }
 
-.btn-outline-danger{
-    margin-top: 1rem;
+.article-form-danger{
+    margin-left: 10em;
+    top: 100.9%;
+    position: absolute;
 }
 
-.retourListe{
-    margin-right: 1rem;
+.marque-form-danger{
+    position: absolute;
+    top: 48%;
+    left: 36%;
+}
+
+.show-marque-danger{
+    position: absolute;
+    top: 82%;
+    left: 18%;
+}
+
+#edit-marque-danger{
+    position: absolute;
+    top: 48.4%;
+    left: 36%;
+}
+
+.article-retour-list{
+    margin-left: 32em;
+    top: 100.9%;
+    position: absolute;
+}
+
+.new-retourListe{
+    margin-left: 78%;
+    top: 23%;
+    position: absolute;
+}
+
+.new-form-success{
+    margin-left: 64.3%;
+    top: 32%;
+    position: absolute;
 }
 
 .admin{
@@ -65,8 +99,114 @@ h1{
 }
 
 .formEdit{
-    margin-top: 1em;
+    margin-top: 2em !important;
     margin-bottom: 1em;
+}
+
+.edit-retourListe{
+    position: absolute;
+    top: 48%;
+    left: 25%;
+}
+
+.tva-retourListe{
+    position: absolute;
+    top: 49%;
+    left: 25%;
+}
+
+.tva-form-success{
+    margin-top: 2.3em;
+}
+
+.tva-form-danger{
+    position: absolute;
+    top: 52%;
+    left: 17%;
+}
+
+#edit-tva-danger{
+    position: absolute;
+    top: 49%;
+    left: 37%;
+}
+
+.show-tva-danger{
+    position: absolute;
+    top: 52%;
+    left: 18%;
+}
+
+.new-age-retourListe{
+    margin-left: 24%;
+    top: 39%;
+    position: absolute;
+}
+
+.show-age-danger{
+    position: absolute;
+    top: 46.4%;
+    left: 17%;
+}
+
+#edit-age-danger{
+    position: absolute;
+    top: 39%;
+    left: 25%;
+}
+
+.age-retourListe{
+    position: absolute;
+    top: 39%;
+    left: 35%;
+}
+
+.new-genre-retourListe{
+    margin-left: 22%;
+    top: 44%;
+    position: absolute;
+}
+
+.show-genre-danger{
+    position: absolute;
+    top: 47%;
+    left: 17%;
+}
+
+.edit-retourListe{
+    position: absolute;
+    top: 43.5%;
+    left: 24%;
+}
+
+#edit-danger{
+    position: absolute;
+    top: 43.6%;
+    left: 35%;
+}
+
+#edit-categorie-danger{
+    position: absolute;
+    top: 62%;
+    left: 35%;
+}
+
+.show-categorie-danger{
+    position: absolute;
+    top: 51.7%;
+    left: 17%;
+}
+
+.edit-categ-retourListe{
+    position: absolute;
+    top: 62%;
+    left: 24%;
+}
+
+.new-categ-retourListe{
+    margin-left: 25%;
+    top: 62%;
+    position: absolute;
 }
 
 .dashboardContent .newArticle{
@@ -74,6 +214,7 @@ h1{
     border: white;
     background: linear-gradient(to right, rgba(54, 215, 232, 1), rgba(177, 148, 250, 1));
 }
+
 
 /* Grille boot */
 .row{
@@ -164,6 +305,12 @@ h1{
     margin-top: 2rem;
 }
 
+.table-article, .show-article{
+    width: 95%;
+    margin-top: 4em;
+    margin-left: 2em;
+}
+
 tbody td{
     vertical-align: middle !important;
 }
@@ -200,6 +347,143 @@ tbody tr:hover{
     width: 97%;
     margin-left: 1em;
 }
+
+/* formulaire */
+form{
+    margin-left: 13em;
+    margin-top: 3em;
+}
+
+.article-title, .extrait-title, .detail-title, .contenu-title{
+    width: 25%;
+}
+
+.article-title{
+    margin-top: 1em;
+    margin-bottom: 2em !important;
+    margin-left: 1em;
+}
+
+.extrait-title, .prix-title{
+    margin-bottom: 2em !important;
+}
+
+.detail-title, .contenu-title{
+    vertical-align: text-top;
+    margin-bottom: 2em !important;
+}
+
+.contenu-title{
+    height: 200px;
+}
+
+#article_image{
+    position: absolute;
+    top: 14.5em;
+    left: 50%;
+}
+
+.new-checkbox{
+    position: absolute;
+    top: 9em;
+    left: 51%;
+}
+
+.new-checkbox-label{
+    position: absolute;
+    top: 9em;
+    left: 45%;
+}
+
+.selection-checkbox{
+    position: absolute;
+    top: 10em;
+    left: 51%;
+}
+
+.selection-checkbox-label{
+    position: absolute;
+    top: 10em;
+    left: 45%;
+}
+
+.select-categorie{
+    position: absolute;
+    top: 24em;
+    left: 56%;
+}
+
+.select-label-categorie{
+    position: absolute;
+    top: 24em;
+    left: 50%;
+}
+
+.select-marque{
+    position: absolute;
+    top: 27em;
+    left: 56%;
+}
+
+.select-label-marque{
+    position: absolute;
+    top: 27em;
+    left: 50%;
+}
+
+.select-tva{
+    position: absolute;
+    top: 30em;
+    left: 56%;
+}
+
+.select-label-tva{
+    position: absolute;
+    top: 30em;
+    left: 50%;
+}
+
+.select-genre{
+    position: absolute;
+    top: 33em;
+    left: 56%;
+}
+
+.select-label-genre{
+    position: absolute;
+    top: 33em;
+    left: 50%;
+}
+
+.select-age{
+    position: absolute;
+    top: 36em;
+    left: 56%;
+}
+
+.select-label-age{
+    position: absolute;
+    top: 36em;
+    left: 50%;
+}
+
+#age_code{
+    margin-left: 1em;
+}
+
+#marque_titre, #marque_image, #marque_slug, #tva_valeurTVA, #tva_slug, #tva_code, #genre_code,
+#genre_slug, #categorie_code, #categorie_description, #categorie_secondaire
+{
+    margin-left: 1em;
+}
+
+/* Page article */
+.show-article, .edit-article, .new-article{
+    width: 95%;
+    margin-top: 4em;
+    margin-left: 2em;
+}
+
 
 /* dashboard */
 .dashboard .fa{
@@ -373,6 +657,18 @@ tbody tr:hover{
 
 .bookmarks{
     background: linear-gradient(to right, rgba(255, 191, 150, 1), rgba(254, 112, 150, 1));
+}
+
+.percentSearch{
+    margin-left: 14%;
+}
+
+.percentDirect{
+    margin-left: 40%;
+}
+
+.percentBookmarks{
+    margin-left: 46%;
 }
 
 /* Message */

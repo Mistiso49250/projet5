@@ -1,13 +1,16 @@
 {% extends 'basebackoffice.html.twig' %}
 
-{% block title %}Edit Marque{% endblock %}
+{% block title %}Edit Marque
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Marque</h1>
+	<div class="edit-article">
+		<h1>Edit Marque</h1>
 
-    {{ include('backoffice/marque/_form.html.twig', {'button_label': 'Mise a jour'}) }}
+		{{ include('backoffice/marque/_form.html.twig', {'button_label': 'Mise a jour'}) }}
 
-    <a href="{{ path('marque_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
+		<a href="{{ path('marque_index') }}" class="btn btn-outline-primary edit-retourListe">Retour à la liste</a>
 
-    {{ include('backoffice/marque/_delete_form.html.twig') }}
+		{{ include('backoffice/marque/_delete_form.html.twig') }}
+	</div>
 {% endblock %}

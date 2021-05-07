@@ -27,6 +27,11 @@ class HomeController extends MainController
      */
     public function index(Request $request, Paginator $paginator): Response
     {
+        $recherche = '';
+        if($request->query->has('q')){
+            $recherche = trim($request->query->get('q'));
+        }
+
         $sliderRepository = $this->getDoctrine()->getRepository(Slider::class);
         $slider = $sliderRepository->findAll();
         
@@ -37,6 +42,7 @@ class HomeController extends MainController
         $selection = $selectionRepository->findBy(['selection'=>1]);
 
         return $this->render('home/index.html.twig', [
+            'recherche' => $recherche,
             'slider' => $slider,
             'selection' => $selection,
             'marque' => $marque,

@@ -1,13 +1,17 @@
 {% extends 'basebackoffice.html.twig' %}
 
-{% block title %}Edit CategorieSecondaire{% endblock %}
+{% block title %}Edit CategorieSecondaire
+{% endblock %}
 
 {% block body %}
-    <h1>Edit CategorieSecondaire</h1>
+	<div class="edit-article">
+		<h1>Edit CategorieSecondaire</h1>
 
-    {{ include('backoffice/categorie_secondaire/_form.html.twig', {'button_label': 'Mise a jour'}) }}
+		{{ include('backoffice/categorie_secondaire/_form.html.twig', {'button_label': 'Mise a jour'}) }}
 
-    <a href="{{ path('categorie_secondaire_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
+		<a href="{{ path('categorie_secondaire_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
 
-    {{ include('backoffice/categorie_secondaire/_delete_form.html.twig') }}
+		{{ include('backoffice/categorie_secondaire/_delete_form.html.twig') }}
+	</div>
+
 {% endblock %}

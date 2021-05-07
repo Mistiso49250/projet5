@@ -1,11 +1,14 @@
 {% extends 'basebackoffice.html.twig' %}
 
-{% block title %}New Slider{% endblock %}
+{% block title %}New Slider
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Slider</h1>
+	<div class="new-article">
+		<h1>Create new Slider</h1>
 
-    {{ include('backoffice/slider/_form.html.twig') }}
+		{{ include('backoffice/slider/_form.html.twig') }}
 
-    <a href="{{ path('slider_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
+		<a href="{{ path('slider_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
+	</div>
 {% endblock %}

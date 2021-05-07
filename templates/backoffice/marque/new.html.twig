@@ -1,11 +1,14 @@
 {% extends 'basebackoffice.html.twig' %}
 
-{% block title %}New Marque{% endblock %}
+{% block title %}New Marque
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Marque</h1>
+	<div class="new-article">
+		<h1>Create new Marque</h1>
 
-    {{ include('backoffice/marque/_form.html.twig') }}
+		{{ include('backoffice/marque/_form.html.twig') }}
 
-    <a href="{{ path('marque_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
+		<a href="{{ path('marque_index') }}" class="btn btn-outline-primary edit-retourListe">Retour à la liste</a>
+	</div>
 {% endblock %}

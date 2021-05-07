@@ -5,11 +5,11 @@
 {{ form_row(form.contenu) }}
 {{ form_row(form.image) }}
 {{ form_row(form.prixTTC) }}
-<div class="form-check form-switch">
+<div class="form-check form-switch new-checkbox">
 	{{ form_widget(form.new) }}
 	{{ form_label(form.new) }}
 </div>
-<div class="form-check form-switch">
+<div class="form-check form-switch selection-checkbox">
 	{{ form_widget(form.selection) }}
 	{{ form_label(form.selection) }}
 </div>
@@ -19,5 +19,5 @@
 {{ form_row(form.genre) }}
 {{ form_row(form.age) }}
 
-<button class="btn btn-outline-success">{{ button_label|default('Enregister') }}</button>
+<button class="btn btn-outline-success new-form-success">{{ button_label|default('Enregister') }}</button>
 {{ form_end(form) }}

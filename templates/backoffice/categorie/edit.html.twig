@@ -1,13 +1,17 @@
 {% extends 'basebackoffice.html.twig' %}
 
-{% block title %}Edit Categorie{% endblock %}
+{% block title %}Edit Categorie
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Categorie</h1>
+	<div class="edit-article">
+		<h1>Edit Categorie</h1>
 
-    {{ include('backoffice/categorie/_form.html.twig', {'button_label': 'Mise a jour'}) }}
+		{{ include('backoffice/categorie/_form.html.twig', {'button_label': 'Mise a jour'}) }}
 
-    <a href="{{ path('categorie_index') }}"class="btn btn-outline-primary retourListe">Retour à la liste</a>
+		<a href="{{ path('categorie_index') }}" class="btn btn-outline-primary edit-categ-retourListe">Retour à la liste</a>
 
-    {{ include('backoffice/categorie/_delete_form.html.twig') }}
+		{{ include('backoffice/categorie/_delete_form.html.twig') }}
+
+	</div>
 {% endblock %}

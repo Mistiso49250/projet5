@@ -1,11 +1,14 @@
 {% extends 'basebackoffice.html.twig' %}
 
-{% block title %}New Tva{% endblock %}
+{% block title %}New Tva
+{% endblock %}
 
 {% block body %}
-    <h1>Créer une nouvelle Tva</h1>
+	<div class="new-article">
+		<h1>Créer une nouvelle Tva</h1>
 
-    {{ include('backoffice/tva/_form.html.twig') }}
+		{{ include('backoffice/tva/_form.html.twig') }}
 
-    <a href="{{ path('tva_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
+		<a href="{{ path('tva_index') }}" class="btn btn-outline-primary tva-retourListe">Retour à la liste</a>
+	</div>
 {% endblock %}

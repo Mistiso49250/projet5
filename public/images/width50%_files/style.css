@@ -1,0 +1,739 @@
+html, body{
+    font-family: "Nunito",-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+#compteCo a{
+    color: white !important;
+}
+
+
+.form{
+    margin-bottom: 5rem !important;
+}
+
+.formSearch{
+    margin-top: 10rem !important;
+}
+
+/* icone */
+
+.fas{
+    font-size: 25px;
+}
+
+.fa-envelope{
+    vertical-align: middle;
+}
+
+/* bouton */
+.btn-link{
+    color: #007bff !important;
+}
+
+.btn .btn-formSearch{
+    margin-top: 2rem !important;
+}
+
+.btn:hover{
+    background-color: #ffba33 !important;
+    border-color:  #ffba33 !important;
+}
+
+.retour{
+    box-shadow: 0 5px 24px 0 rgb(87 119 255 / 55%) !important;
+    padding: 10px 22px !important;
+    border-radius: 6px !important;
+    background-color: #ffba33;
+    border: #ffba33;
+}
+
+/* pagination */
+
+.paginate{
+    margin: 1em !important;
+}
+
+.paginate ul li{
+    margin-top: 1rem;
+}
+
+/* homePage */
+.homeHeader, .titleSelection
+{
+    margin: 4rem 0 4rem 0;
+}
+
+.titleSelection, .titleMarque{
+    margin: 2em !important;
+}
+
+.titleSection{
+    margin: 3em;
+}
+
+.history p{
+    color: #343a40;
+}
+
+.marque
+{
+    padding: 2%;
+    width: 77%;
+    margin: 0 auto;
+    margin-bottom: 10%;
+    position: relative;
+    align-items: center;
+    height: 100%;
+    z-index: 5;
+    text-decoration: none;
+}
+
+.marqueContent
+{
+    display: flex;
+    margin-top: 20px;
+}
+
+.content
+{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,.125);
+    -webkit-box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.content img
+{
+    border: none;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.fb-ic, .ins-ic{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.fb-ic:hover, .ins-ic:hover{
+    color: white;
+}
+
+.fb-ic{
+    margin-right: 1rem;
+}
+
+/* Slider */
+
+.slide
+{
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    right: 0;
+    left: 0;
+    height: auto;
+    margin-bottom: 2rem;
+    padding-top: 1.4em !important;
+}
+
+header{
+    height: 5rem;
+}
+
+header img
+{
+    width: 100%;
+    height: 28em;
+}
+
+/* Card */
+
+.card-img{
+    width: 100%;
+    height: 270px;
+}
+
+.h-100{
+    height: 100% !important;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    font-weight: 400;
+    border: 1px solid rgba(0,0,0,.125);
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.card-title{
+    margin-bottom: .75rem !important;
+}
+
+.card-body h5, p{
+    color: blueviolet;
+    font-weight: 700;
+}
+
+.card-text{
+    color: black !important;
+    font-weight: 500 !important;
+}
+
+.cardArticleText{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: .9rem;
+    font-weight: 400;
+    color: #747373;
+}
+
+.cardPrice{
+    color: blueviolet !important;
+    font-weight: 800 !important;
+}
+
+#panier{
+    padding: 13px;
+}
+
+/* Menu */
+
+.navbar-brand{
+    margin-left: 0.5em !important;
+}
+
+.navbar{
+    height: 5rem;
+}
+
+.navbar .mega-dropdown{
+    padding: 5px 0px 5px 10px;
+    text-align: center;
+}
+
+.mb-xl-0{
+    margin-left: 1em !important;
+}
+
+.sub-title{
+    color: #fff !important;
+    padding-bottom: 5px;
+}
+
+.dropdown-menu {
+    background-color: #1A237E !important;
+}
+
+.dropdown-menu :hover{
+    background-color: #1A237E !important;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar.navbar-dark .navbar-nav .nav-item .nav-link {
+    color: #fff !important;
+    
+}
+
+.navbar .dropdown-menu a:not(.active) {
+    color: #fff !important;
+}
+
+.special-color {
+    background-color: #1A237E !important;
+}
+
+.navbar form .md-form input {
+    margin: 0 5px 1px 8px;
+}
+
+.md-form input{
+    border-bottom: 1px solid #fff;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    height: 40px !important;
+}
+
+.navbar .mega-dropdown .dropdown-menu.mega-menu .sub-menu .sub-title {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar .mega-dropdown .dropdown-menu.mega-menu {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+}
+
+.contentLogin, .contentAccount, .contentRegister, .contentReset, .contentForget{
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.contentLogin h4, .contentAccount h4, .contentRegister h4, .contentReset h4, .contentForget h4{
+    margin-bottom: 5%;
+}
+
+.nouveaute, .selection{
+    color: #fff;
+    margin: 0.5em .5em 0 .5em;
+    padding: 5px 0px 5px 10px;
+}
+
+.nouveaute :hover, .selection :hover{
+    color: #fff;
+}
+
+.nouveaute a, .selection a{
+    padding: .5rem .3rem;
+}
+
+/* #monCompte{
+    display: none;
+} */
+
+/* .nouveaute a{
+    padding-right: .5rem;
+}  */
+
+/* #nouveaute a, #selection a{
+    border-right: 1px solid grey;
+} */
+
+/* Menu description article */
+
+#myTab
+{
+    margin-bottom: 1rem !important;
+}
+
+.nav-tabs .nav-link.active
+{
+    color: #6351ce !important;
+    font-weight: bold;
+}
+
+.tab-pane{
+    margin-bottom: 5rem;
+}
+
+/* #formSearch, #navCompte, .basket, .logo {
+    display: table-cell;
+    vertical-align: middle;
+} */
+
+.logo{
+    width: 200px;
+    padding: 0;
+}
+
+.logo img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: 45%;
+}
+
+#navCompte{
+    cursor: pointer;
+}
+
+.basket :hover{
+    color: white;
+}
+
+/* #formControlSearch {
+    vertical-align: middle;
+    height: 40px !important;
+    width: 50%;
+    margin-left: 32%;
+} */
+
+.basket{
+    color: white;
+}
+
+.basket .fas{
+    font-size: 30px;
+}
+
+/* page article */
+
+.boxArticle
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.visuel
+{
+    position: relative;
+    max-width: 50%;
+    padding-right: 30px;
+}
+
+.infoProduit
+{
+    position: relative;
+    max-width: 50%;
+    padding-left: 30px;
+    margin-top: 9rem;
+}
+
+.prixArticle
+{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #6351ce;
+    margin-left: 6rem;
+    padding: 1rem;
+}
+
+/* Page Login */
+
+.form-signin, .formReset, .formRegister {
+    width: 100%;
+    max-width: 390px;
+    padding: 15px;
+    margin: 0 auto;
+    padding: 10em 0 10em;
+}
+
+.form-control{
+    height: calc(2.3em + 0.75rem + 2px) !important;
+}
+
+.h3 h1{
+    font-family: "Nunito" !important;
+    line-height: 1.2;
+    color: inherit;
+}
+
+.form-signin h1{
+    text-align: center;
+    margin-top: 0;
+}
+
+.font-weight-normal {
+    font-weight: 400!important;
+}
+
+.mb-3, .my-3 {
+    margin-bottom: 1rem!important;
+}
+
+.h3, h3 {
+    font-size: 1.75rem;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+    padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+    padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+:root {
+    --input-padding-x: .75rem;
+    --input-padding-y: .75rem;
+}
+
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-label-group > input, .form-label-group > label {
+    padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.form-label-group > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    line-height: 1.5;
+    color: #495057;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: all .1s ease-in-out;
+}
+
+input[type=checkbox] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+}
+
+.btn.btn-lg {
+    margin-bottom: 1rem !important;
+}
+
+/* Footer */
+
+.page-footer{
+    background-color: currentColor;
+}
+
+.page-footer h6, .fb-ic, .ins-ic{
+    color: #fff;
+}
+
+/* Page 404 article */
+.article404{
+    margin-top: 5rem !important;
+    margin-bottom: 5rem !important;
+    margin-left: 5rem !important;
+    margin-right: 5rem !important;
+}
+
+.title, .aide, .selection404{
+    text-align: center;
+}
+
+.aide{
+    margin-top: 2rem !important;
+}
+
+.sub{
+    margin-top: 1rem;
+}
+
+.fa-long-arrow-alt-right{
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+/* Page produits marque */
+.boxMarque{
+    display: flex;
+    align-items: center;
+}
+
+.boxMarque img{
+    margin-right: 5em;
+    margin-top: 2em;
+    margin-bottom: 2em !important;
+}
+
+.boxMarque h2{
+    font-size: 4em;
+}
+
+/* BACKOFFICE */
+/* User */
+/* .main.account .hello a.logout {
+    position: absolute;
+    right: 25px;
+    left: auto;
+    top: 50%;
+    margin-top: -15px;
+} */
+
+/* .main.account .hello a.logout {
+    margin: 0 auto;
+} */
+.button.outline.color9 {
+    border-color: #e61414;
+    color: #e61414;
+}
+
+.button.outline.mini {
+    padding: 3px 11px 2px;
+}
+
+.button.outline {
+    background: 0 0;
+    padding: 8px 15px 7px;
+    border: 2px solid #0a3782;
+}
+
+.rounded-circle{
+    width: 80px;
+    height: 80px;
+    border: 1px solid grey;
+    margin-left: 30%;
+}
+
+.h5User{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.dashboard{
+    background: #f2f2f2;
+    /* width: 100%; */
+    position: relative;
+    padding-top: 3%;
+    padding-bottom: 45%;
+}
+
+aside{
+    width: 35%;
+    margin-left: 4%;
+    margin-top: 5%;
+}
+
+.info{
+    /* margin: 0 auto 50px; */
+    /* padding: 0 50px; */
+    position: absolute;
+    text-align: justify;
+    width: 50%;
+    right: 4%;
+    top: 10%;
+}
+
+.liste{
+    position: absolute;
+    text-align: justify;
+    width: 50%;
+    right: 4%;
+    top: 50%;
+}
+
+.infoCommand, .infoListe, .newListe{
+    width: 100%;
+}
+
+.info h3, .liste h3{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.newListe a:hover{
+    color: #232323;
+}
+
+.fa-plus-circle {
+    
+    /* border-radius: 50%;
+    color: #fff;
+    padding: 10px; */
+    font-size: 32px;
+    left: 50%;
+    top: 75%;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.infoListeBody, .newListeBody, .infoCommandBody{
+    padding: 3rem 1rem;
+}
+
+.top {
+    display: table;
+    width: 100%;
+    min-height: 80px;
+}
+
+.command{
+    padding-left: 30%; 
+    padding-right: 30%;
+}
+
+/* Page Reset password */
+
+.formReset label, .formRegister label{
+    margin-right: 1em;
+    padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.formReset input{
+    padding: 0.4em;
+}
+
+.formResetSmall{
+    margin: 1em 0 1em;
+}
+
+.checkEmailRest{
+    margin: 15rem;
+}
+
+#marque label{
+    margin-right: 1em;
+}
+
+
+/* Mobile */
+@media only screen and (max-width: 575.98px){
+   .carousel-item img{
+        object-fit: contain;
+    }
+
+    .homeHeader{
+        margin: 0;
+    }
+
+   .card img{
+        max-width: 60%;
+        margin: auto;
+        margin-top: 1em;
+    }
+}
+
+/* Mobile Paysage */
+@media only screen and (max-width: 767.98px){
+   
+}
+
+/* tablette */
+@media only screen and (max-width: 991.98px){
+   .container{
+       max-width: 100%;
+   }
+}
+
+/* pc */
+@media only screen and (max-width: 1199.98px){
+    
+}
+
+/* Pc jusqu'a 17" (1600px) */
+@media only screen and (max-width: 1919.98px) {
+    .navbar .mega-dropdown .dropdown-menu.mega-menu {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .navbar .mega-dropdown {
+        position: static;
+    }
+    
+}
+
+
+/* changer le max-wi image dans les card a 60% et centre l'image
+slider mversion mobile => object-fit: contain sur image
+
+*/

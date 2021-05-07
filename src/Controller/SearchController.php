@@ -22,12 +22,14 @@ class SearchController extends MainController
         $recherche = $request->query->get('q');
         $recherche = trim($recherche);
         if($recherche === null || $recherche === ''){
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('error_article_404');
         }
         
         $produits = $articleRepository->search($recherche);
         if(count($produits) === 0){
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('error_article_404', [
+                'q'=>$recherche,
+            ]);
         }
         
         return $this->render('home/search.html.twig', [

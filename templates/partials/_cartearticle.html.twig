@@ -1,6 +1,6 @@
-<div class="col mb-3">
+<div class="col mb-3 cardMobile">
 	<a href="{{ path('article', {'slug': article.slug}) }} ">
-		<div class="card text-center h-100">
+		<div class="card text-center h-100 cardMobileWidth">
 			<img src="{{ asset ('images/articles/' ~ article.image) | imagine_filter('article') }}" class="card-img-top" alt="...">
 			<div class="card-body">
 				<h5 class="card-title">{{ article.titre }}</h5>

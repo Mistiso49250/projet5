@@ -1,13 +1,17 @@
 {% extends 'basebackoffice.html.twig' %}
 
-{% block title %}Edit Article{% endblock %}
+{% block title %}Edit Article
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Article</h1>
+	<div class="edit-article">
+		<h1>Edit Article</h1>
 
-    {{ include('backoffice/article/_form.html.twig', {'button_label': 'Mise a jour'}) }}
+		{{ include('backoffice/article/_form.html.twig', {'button_label': 'Mise a jour'}) }}
 
-    <a href="{{ path('article_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
+		<a href="{{ path('article_index') }}" class="btn btn-outline-primary retourListe article-retour-list">Retour à la liste</a>
 
-    {{ include('backoffice/article/_delete_form.html.twig') }}
+		{{ include('backoffice/article/_delete_form.html.twig') }}
+
+	</div>
 {% endblock %}

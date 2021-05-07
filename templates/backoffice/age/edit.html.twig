@@ -1,13 +1,16 @@
 {% extends 'basebackoffice.html.twig' %}
 
-{% block title %}Edit Age{% endblock %}
+{% block title %}Edit Age
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Age</h1>
+	<div class="edit-article">
+		<h1>Edit Age</h1>
 
-    {{ include('backoffice/age/_form.html.twig', {'button_label': 'Mise a jour'}) }}
+		{{ include('backoffice/age/_form.html.twig', {'button_label': 'Mise a jour'}) }}
 
-    <a href="{{ path('age_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
+		<a href="{{ path('age_index') }}" class="btn btn-outline-primary age-retourListe">Retour à la liste</a>
 
-    {{ include('backoffice/age/_delete_form.html.twig') }}
+		{{ include('backoffice/age/_delete_form.html.twig') }}
+	</div>
 {% endblock %}

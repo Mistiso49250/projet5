@@ -1,11 +1,14 @@
 {% extends 'basebackoffice.html.twig' %}
 
-{% block title %}New CategorieSecondaire{% endblock %}
+{% block title %}New CategorieSecondaire
+{% endblock %}
 
 {% block body %}
-    <h1>Create new CategorieSecondaire</h1>
+	<div class="new-article">
+		<h1>Create new CategorieSecondaire</h1>
 
-    {{ include('backoffice/categorie_secondaire/_form.html.twig') }}
+		{{ include('backoffice/categorie_secondaire/_form.html.twig') }}
 
-    <a href="{{ path('categorie_secondaire_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
+		<a href="{{ path('categorie_secondaire_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
+	</div>
 {% endblock %}

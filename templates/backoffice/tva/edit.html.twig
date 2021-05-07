@@ -1,13 +1,16 @@
 {% extends 'basebackoffice.html.twig' %}
 
-{% block title %}Edit Tva{% endblock %}
+{% block title %}Edit Tva
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Tva</h1>
+	<div class="edit-article">
+		<h1>Edit Tva</h1>
 
-    {{ include('backoffice/tva/_form.html.twig', {'button_label': 'Mise a jour'}) }}
+		{{ include('backoffice/tva/_form.html.twig', {'button_label': 'Mise a jour'}) }}
 
-    <a href="{{ path('tva_index') }}" class="btn btn-outline-primary retourListe">Retour à la liste</a>
+		<a href="{{ path('tva_index') }}" class="btn btn-outline-primary tva-retourListe">Retour à la liste</a>
 
-    {{ include('backoffice/tva/_delete_form.html.twig') }}
+		{{ include('backoffice/tva/_delete_form.html.twig') }}
+	</div>
 {% endblock %}
