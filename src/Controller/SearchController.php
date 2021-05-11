@@ -31,7 +31,7 @@ class SearchController extends MainController
                 'q'=>$recherche,
             ]);
         }
-        
+        dump($produits, $recherche);
         return $this->render('home/search.html.twig', [
             'produits'=> $produits,
             'recherche'=> $recherche,
