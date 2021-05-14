@@ -81,7 +81,7 @@ class SearchArticleAllType extends AbstractType
         }
         $builder->add('Rechercher', SubmitType::class, [
             'attr' => [
-                'class' => 'btn btn-info btn-rounded btn-formSearch',
+                'class' => 'btn btn-info btn-rounded btn-formSearch btn-formSearch-articles',
             ],
         ]);
     }

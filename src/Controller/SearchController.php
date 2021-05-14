@@ -26,6 +26,12 @@ class SearchController extends MainController
         }
         
         $produits = $articleRepository->search($recherche);
+        if($request->query->get('direct')){
+            return $this->render('home/resultSearch.html.twig', [
+                'produits'=> $produits,
+            ]);
+        }
+
         if(count($produits) === 0){
             return $this->redirectToRoute('error_article_404', [
                 'q'=>$recherche,

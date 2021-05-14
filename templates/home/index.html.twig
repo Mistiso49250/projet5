@@ -25,6 +25,8 @@
 		</div>
 	</header>
 
+	{% include "partials/_separateur.html.twig"%}
+
 	<!-- notification message d'erreurs -->
 	{% for message in app.flashes('error') %}
 		<h5 class="alert alert-danger">
@@ -50,26 +52,30 @@
 		{% include 'partials/_paginate.html.twig' %}
 	</section>
 
+	{% include "partials/_separateur.html.twig"%}
+
 	<div class="titleSection">
 		<h2>Notre séléctions d'articles</h2>
 	</div>
 
 	<section class="selection">
-		<div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 container-fluid d-flex justify-content-center">
+		<div class="row row-cols-xs-1 row-cols-md-3 row-cols-lg-5 container-fluid d-flex justify-content-center mobile">
 			{% for article in selection %}
 				{% include "partials/_cartearticle.html.twig"%}
 			{% endfor %}
 		</div>
 	</section>
 
+	{% include "partials/_separateur.html.twig"%}
+
 	<div class="titleMarque">
-		<h2>Nos marques</h2>
+		<h2>Notre histoire</h2>
 	</div>
 
 	<section class="row mb-4">
 		<div class="col-lg-12 history">
 			<p>
-				<em>Les P'tits Pouces</em>
+				<span style="color:blueviolet"><em>Les P'tits Pouces</em></span>
 				est le magasin de jouet en ligne de la boutique
 				<em>Les P'tits Pouces</em>
 				à Saumur.</p>
@@ -83,6 +89,11 @@
 				et leurs heureux parents  !</p>
 		</div>
 	</section>
+
+
+	<div class="titleMarque">
+		<h2>Nos marques</h2>
+	</div>
 
 	<section class="row marque">
 		{% for item in marque %}

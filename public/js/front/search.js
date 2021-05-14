@@ -3,6 +3,8 @@ class Search {
         //On pointe sur l'élément de champ de saisie search
         this.searchField = document.getElementById('formControlSearch');
         this.resultSearch = document.getElementById('resultSearch');
+        this.url = this.searchField.dataset.url;
+        console.log(this.url)
         this.searchField.addEventListener('input', (event) => {
             const field = event.currentTarget.value;
 
@@ -17,10 +19,17 @@ class Search {
     fetchData(searchParam){
         console.log(searchParam)
         // http://localhost:8000/index.php/search?q=petit
-        fetch('http://localhost:8000/index.php/search?q=petit').then((response) => {
+        const queryString = new URLSearchParams({
+            q:searchParam, 
+            direct:1
+        });
+
+        fetch(`http://localhost:8000/index.php/search?${queryString.toString()}`).then((response) => {
             const result = response.text();
-            console.log(result)
-            this.resultSearch.innerHTML = result;
+            // console.log(result)
+            result.then((item) => {
+                this.resultSearch.innerHTML = item;
+            });
         }).catch((error) => {
             console.log(error)
         })

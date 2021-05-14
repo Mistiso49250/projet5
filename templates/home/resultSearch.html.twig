@@ -1,14 +1,4 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Recherche de {{ recherche }}
-{% endblock %}
-
-{% block body %}
-
-    <h1 class="titleResultSearch">Résultat de la recherche de {{ recherche }}</h1>
-
-    {% include "home/resultSearch.html.twig" with produits %}
-    {# <div class="list-group">
+<div class="list-group">
         {% for article in produits %}
             <a href="{{ path('article', {slug:article.slug}) }}" class="list-group-item list-group-item-action">
                 <div class="d-flex align-items-center justify-content-between">
@@ -22,6 +12,4 @@
                     Aucun article trouvé
                 </div>
         {% endfor %}
-    </div> #}
-
-{% endblock %}
+    </div>
