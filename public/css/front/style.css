@@ -609,6 +609,16 @@ input[type=checkbox] {
     margin-bottom: 6em;
 }
 
+#resultSearch{
+    position: absolute;
+    right: 13px;
+    width: 15%;
+}
+
+#resultSearch img{
+    width: 25%;
+}
+
 /* User */
 /* .main.account .hello a.logout {
     position: absolute;
@@ -753,7 +763,6 @@ aside{
 .filtre{
     margin-bottom: 1em;
 }
-
 
 /* Mobile */
 @media only screen and (max-width: 575.98px){
