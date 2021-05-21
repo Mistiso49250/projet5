@@ -141,3 +141,7 @@ afficher profil et deco quand user co : ok
 Supprimer les dossier dans le repertoire image,  : ok
 faire 3 dossier : article, slider, logo : ok
 fixture:  faire comme pour les images slider : ok
+
+
+18/05
+ne plus afficher la liste search a la sortie du focus
