@@ -1,36 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Inscription{% endblock %}
+{% block title %}Inscription
+{% endblock %}
 
 {% block body %}
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
-    <div class="formRegister">
-        <div class="text-center mb-4">
-            <h1>
-                <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">S'inscrire</font>
-                </font>
-            </h1>
-        </div>
+	{% for flashError in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+	{% endfor %}
+	<div class="formRegister">
+		<div class="text-center mb-4">
+			<h1>
+				<font style="vertical-align: inherit;">
+					<font style="vertical-align: inherit;">S'inscrire</font>
+				</font>
+			</h1>
+		</div>
 
-        {{ form_start(registrationForm) }}
-            {{ form_row(registrationForm.lastname, {
+		{{ form_start(registrationForm, {'attr': {'novalidate': 'novalidate'}}) }}
+		{{ form_row(registrationForm.lastname, {
                 label: 'Nom'
             }) }}
-            {{ form_row(registrationForm.firstname, {
+		<small id="aideLastname"></small>
+		{{ form_row(registrationForm.firstname, {
                 label: 'Prénom'
             }) }}
-            {{ form_row(registrationForm.email) }}
-            {{ form_row(registrationForm.plainPassword, {
+		<small id="aideFirstname"></small>
+		{{ form_row(registrationForm.email) }}
+		<small id="aideEmail"></small>
+		{{ form_row(registrationForm.plainPassword, {
                 label: 'Mot de passe'
             }) }}
-            {{ form_row(registrationForm.agreeTerms) }}
+		<small id="aideMdp"></small>
+		{{ form_row(registrationForm.agreeTerms) }}
 
-            <button type="submit" class="btn btn-primary">M'inscrire</button>
-        {{ form_end(registrationForm) }}
-    
-    </div>
+		<button type="submit" class="btn btn-primary">M'inscrire</button>
+		{{ form_end(registrationForm) }}
+
+	</div>
+
+	<script src="{{ asset('js/front/formValidate.js') }}"></script>
 
 {% endblock %}

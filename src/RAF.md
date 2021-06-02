@@ -145,3 +145,8 @@ fixture:  faire comme pour les images slider : ok
 
 18/05
 ne plus afficher la liste search a la sortie du focus
+
+25/05
+mettre a jour les titres des marques : ok
+mettre a jour les titres des pages : ok
+déplacer le bloc histoire dans le footer et supprimer du footer les blocs rayon et marque : ok

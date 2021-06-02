@@ -1,36 +1,18 @@
-class formValidate{
+class formLoginValidate{
     constructor(){
-        this.form = document.getElementsByName('registration_form')[0];
+        this.form = document.getElementsByName('login_form')[0];
         console.log(this.form);
 
-        this.validateFirstName = document.getElementById('registration_form_firstname');
-        this.aideFirstname = document.getElementById('aideFirstname');
-
-        this.validateLastName = document.getElementById('registration_form_lastname');
-        this.aideLastname = document.getElementById('aideLastname');
-
-        this.validatePassword = document.getElementById('registration_form_plainPassword');
+        this.validatePassword = document.getElementById('inputPassword');
         this.aideMdp = document.getElementById('aideMdp');
 
-        this.validateMail = document.getElementById('registration_form_email');
+        this.validateMail = document.getElementById('inputEmail');
         this.aideMail = document.getElementById('aideEmail');
 
         //vérification du mot de passe
         this.validatePassword.addEventListener("change", () => {
             console.log('password');
             let passwordIsValide = this.validPassword(this.validatePassword);
-        });
-
-        //vérification prénom
-        this.validateFirstName.addEventListener("change", () => {
-            console.log('FirstName');
-            let validate = this.verifFirstname(this.validateFirstName);
-        });
-
-        //vérification nom
-        this.validateLastName.addEventListener("change", () => {
-            console.log('LastName');
-            let validate = this.verifLastname(this.validateLastName) ;
         });
 
         // vérification email
@@ -43,8 +25,7 @@ class formValidate{
         this.form.addEventListener('submit', (event) => {
             event.preventDefault();
 
-            if(this.validEmail(this.validateMail) && this.validPassword(this.validatePassword) && 
-            this.verifPseudo(this.validateLastName) && this.verifPseudo(this.validateFirstName)){
+            if(this.validEmail(this.validateMail) && this.validPassword(this.validatePassword)){
                 this.form.submit();
             }
         });
@@ -121,72 +102,6 @@ class formValidate{
             return false;
         }
     }
-
-    verifFirstname(inputName)
-    {
-        this.regexPseudo = /^[A-Za-z\é\è\ê\-\_\¨]+$/;
-        this.msg;
-        this.valide = false;
-
-        // au moins 4 caractères, 
-        if(inputName.value.length < 4){
-            this.msg = 'Votre prénom doit contenir au moins 4 caractères';
-        }
-        // au moins 1majuscule, 
-        else if(!this.regexPseudo.test(inputName.value)){
-            this.msg = 'Votre prénom ne doit pas contenir de caractères spéciaux comme : @, $, %,*';
-        }
-        else{
-            this.valide = true;
-            this.msg = 'Votre prénom est valide';
-        }
-
-        // affichage
-        if(this.valide){
-            this.aideFirstname.innerHTML = 'Prénom valide';
-            this.aideFirstname.classList.remove('text-danger');
-            this.aideFirstname.classList.add('text-success');
-            return true;
-        } else{
-            this.aideFirstname.innerHTML = this.msg; 
-            this.aideFirstname.classList.remove('text-success');
-            this.aideFirstname.classList.add('text-danger');
-            return false;
-        }
-    }
-
-    verifLastname(inputName)
-    {
-        this.regexPseudo = /^[A-Za-z\é\è\ê\-\_\¨]+$/;
-        this.msg;
-        this.valide = false;
-
-        // au moins 4 caractères, 
-        if(inputName.value.length < 4){
-            this.msg = 'Votre nom doit contenir au moins 4 caractères';
-        }
-        // au moins 1majuscule, 
-        else if(!this.regexPseudo.test(inputName.value)){
-            this.msg = 'Votre nom ne doit pas contenir de caractères spéciaux comme : @, $, %,*';
-        }
-        else{
-            this.valide = true;
-            this.msg = 'Votre nom est valide';
-        }
-
-        // affichage
-        if(this.valide){
-            this.aideLastname.innerHTML = 'Nom valide';
-            this.aideLastname.classList.remove('text-danger');
-            this.aideLastname.classList.add('text-success');
-            return true;
-        } else{
-            this.aideLastname.innerHTML = this.msg; 
-            this.aideLastname.classList.remove('text-success');
-            this.aideLastname.classList.add('text-danger');
-            return false;
-        }
-    }
 }
 
-const ValidateForm = new formValidate();
+const ValidateForm = new formLoginValidate();

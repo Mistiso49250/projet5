@@ -15,13 +15,13 @@
 				class="collapse navbar-collapse" id="navbarScroll">
 
 				<!-- Links -->
-				<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+				<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll navMenu" style="--bs-scroll-height: 100px;">
 					{% for menuprinc in menu %}
 						<li class="nav-item dropdown mega-dropdown active">
-							<a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="nav-link dropdown-toggle" id="navbarScrollingDropdown{{ menuprinc.id}}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								{{ menuprinc.description }}<span class="sr-only">(current)</span>
 							</a>
-							<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-5 px-3 dropdown-menu-right dropdown-default" aria-labelledby="navbarScrollingDropdown">
+							<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-5 px-3 dropdown-menu-right dropdown-default" aria-labelledby="navbarScrollingDropdown{{ menuprinc.id }}">
 								<div class="row">
 									{% for menusec in menuprinc.secondaire %}
 										<div class="col-md-6 col-xl-3 sub-menu mb-xl-0 mb-4">
@@ -50,9 +50,9 @@
 					</li>
 					<!-- comptes -->
 					<li class="nav-item dropdown ml-5" id="navCompte">
-						<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<div class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<i class="fas fa-user"></i>
-						</a>
+						</div>
 						<div class="dropdown-menu dropdown-menu-right dropdown-default" id="compteCo" aria-labelledby="navbarDropdownMenuLink-333">
 							{% if app.user %}
 								<a class="dropdown-item" href="{{ path('utilisateur') }}">Mon compte</a>
@@ -63,30 +63,28 @@
 							{% endif %}
 						</div>
 					</li>
-					<!-- Search form -->
-					<form class="form-inline" id="formSearch" role="search" action="{{ path('app_search') }}">
-						<div class="md-form my-0">
-							<input 
-								name="q" 
-								class="form-control mr-sm-2" 
-								id="formControlSearch" 
-								data-url="{{ path('app_search') }}"
-								type="search" 
-								placeholder="Recherche" 
-								aria-label="Rechercher parmi le contenu du site" 
-								minlength="4" 
-								maxlength="12"
-								{% if recherche is defined %}
-									value = "{{recherche}}"
-								
-								{% endif %}
-							>
-						</div>
-					</form>
 				</ul>
+				<!-- Search form -->
+				<form class="form-inline" id="formSearch" role="search" action="{{ path('app_search') }}">
+					<div class="md-form my-0">
+						<input name="q" 
+						class="form-control mr-sm-2" 
+						id="formControlSearch" 
+						data-url="{{ path('app_search') }}" 
+						type="search" 
+						placeholder="Recherche" 
+						aria-label="Rechercher parmi le contenu du site" 
+						minlength="4" 
+						maxlength="12" 
+						{% if recherche is defined %} 
+						value="{{recherche}}" 
+						{% endif %}>
+					</div>
+				</form>
 			</div>
 		</div>
 	</nav>
-					<div class="resultSearch" id="resultSearch"></div>
+	<div class="resultSearch" id="resultSearch"></div>
+	{# <div class="loader"></div> #}
 
 </header>

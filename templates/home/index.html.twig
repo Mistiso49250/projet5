@@ -68,19 +68,19 @@
 
 	{% include "partials/_separateur.html.twig"%}
 
-	<div class="titleMarque">
+	{# <div class="titleMarque">
 		<h2>Notre histoire</h2>
 	</div>
 
 	<section class="row mb-4">
-		<div class="col-lg-12 history">
+		<div class="col-lg-10 history">
 			<p>
 				<span style="color:blueviolet"><em>Les P'tits Pouces</em></span>
 				est le magasin de jouet en ligne de la boutique
 				<em>Les P'tits Pouces</em>
 				à Saumur.</p>
 			<p>Notre boutique propose un large éventail de produits de grande qualité dés la naissance et pour les plus grands, constitué de marques renommées comme
-				<a href="index.php?action=Moulin Roty">
+				<a href="{{ path('marque', { slug: 'moulinroty' }) }}">
 					<span style="color:blueviolet">Moulin Roty</span>
 				</a>, Funky frame, Djeco, Haba, Lilliputiens et beaucoup d'autres…</p>
 			<p>Dans notre boutique de jouets, vous trouverez vos cadeaux de naissance, articles de puériculture, jeux d’éveil, décoration pour la chambre et produits personnalisables au prénom de votre enfant.</p>
@@ -88,7 +88,7 @@
 				<em>loupiots</em>
 				et leurs heureux parents  !</p>
 		</div>
-	</section>
+	</section> #}
 
 
 	<div class="titleMarque">
