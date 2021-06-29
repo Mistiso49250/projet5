@@ -16,7 +16,7 @@
 			{{ message }}
 		</h5>
 	{% endfor %}
-	
+
 	<div class="boxArticle">
 		<div class="visuel">
 			<img src="{{ asset ('images/articles/' ~ article.image) | imagine_filter('articledescription') }}" alt="" class="img-fluid">
@@ -29,35 +29,49 @@
 			<div class="prixArticle">
 				<em>{{ article.prixTTC|format_currency('EUR', locale='fr') }}</em>
 			</div>
-		
+
 		</div>
 	</div>
 
-	<div
-		class="descritpion">
-		<!-- Tabs navs -->
-		<ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
+	<div class="descritpion">
+
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
 			<li class="nav-item" role="presentation">
-				<a class="nav-link active" id="ex1-tab-1" data-mdb-toggle="tab" href="#ex1-tabs-1" role="tab" aria-controls="ex1-tabs-1" aria-selected="true">Déscription</a>
+				<button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Déscription</button>
 			</li>
 			<li class="nav-item" role="presentation">
-				<a class="nav-link" id="ex1-tab-2" data-mdb-toggle="tab" href="#ex1-tabs-2" role="tab" aria-controls="ex1-tabs-2" aria-selected="false">Détail</a>
+				<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Détail</button>
 			</li>
+			
 		</ul>
-		<!-- Tabs navs -->
-
-		<!-- Tabs content -->
-		<div class="tab-content" id="ex1-content">
-			<div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
-				{{ article.contenu | nl2br }}
-			</div>
-			<div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-				{{ article.detail | nl2br }}
-			</div>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">{{ article.contenu | nl2br }}</div>
+			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">{{ article.detail | nl2br }}</div>
 		</div>
-		<!-- Tabs content -->
 
-	</div>
+		{# <!-- Tabs navs -->
+						<ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
+							<li class="nav-item" role="presentation">
+								<a class="nav-link active" id="ex1-tab-1" data-mdb-toggle="tab" href="#ex1-tabs-1" role="tab" aria-controls="ex1-tabs-1" aria-selected="true">Déscription</a>
+							</li>
+							<li class="nav-item" role="presentation">
+								<a class="nav-link" id="ex1-tab-2" data-mdb-toggle="tab" href="#ex1-tabs-2" role="tab" aria-controls="ex1-tabs-2" aria-selected="false">Détail</a>
+							</li>
+						</ul>
+						<!-- Tabs navs -->
+				
+						<!-- Tabs content -->
+						<div class="tab-content" id="ex1-content">
+							<div class="tab-pane fade show active" id="ex1-tabs-1" role="tabpanel" aria-labelledby="ex1-tab-1">
+								{{ article.contenu | nl2br }}
+							</div>
+							<div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+								{{ article.detail | nl2br }}
+							</div>
+						</div>
+						<!-- Tabs content -->
+
+		</div> #}
 
 
-{% endblock %}
+	{% endblock %}
