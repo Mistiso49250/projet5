@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page non trouvée
+{% endblock %}
+
+{% block body %}
+
+	<div class="errorContaint">
+			<div class="errorImg">
+            <img src="{{ asset ('images/errorImg/robot404.jpg') | imagine_filter('slider') }}" class="img-fluid" alt="...">
+            </div>		
+	</div>
+
+
+{% endblock %}

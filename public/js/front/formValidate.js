@@ -40,14 +40,14 @@ class formValidate{
         });
 
         // vérification soumission formulaire
-        this.form.addEventListener('submit', (event) => {
-            event.preventDefault();
+        // this.form.addEventListener('submit', (event) => {
+        //     event.preventDefault();
 
-            if(this.validEmail(this.validateMail) && this.validPassword(this.validatePassword) && 
-            this.verifPseudo(this.validateLastName) && this.verifPseudo(this.validateFirstName)){
-                this.form.submit();
-            }
-        });
+        //     if(this.validEmail(this.validateMail) && this.validPassword(this.validatePassword) && 
+        //     this.verifPseudo(this.validateLastName) && this.verifPseudo(this.validateFirstName)){
+        //         this.form.submit();
+        //     }
+        // });
 
     }
 
@@ -128,9 +128,9 @@ class formValidate{
         this.msg;
         this.valide = false;
 
-        // au moins 4 caractères, 
-        if(inputName.value.length < 4){
-            this.msg = 'Votre prénom doit contenir au moins 4 caractères';
+        // au moins 3 caractères, 
+        if(inputName.value.length < 3){
+            this.msg = 'Votre prénom doit contenir au moins 3 caractères';
         }
         // au moins 1majuscule, 
         else if(!this.regexPseudo.test(inputName.value)){
@@ -161,9 +161,9 @@ class formValidate{
         this.msg;
         this.valide = false;
 
-        // au moins 4 caractères, 
-        if(inputName.value.length < 4){
-            this.msg = 'Votre nom doit contenir au moins 4 caractères';
+        // au moins 3 caractères, 
+        if(inputName.value.length < 3){
+            this.msg = 'Votre nom doit contenir au moins 3 caractères';
         }
         // au moins 1majuscule, 
         else if(!this.regexPseudo.test(inputName.value)){

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le serveur a commis une erreur...
+{% endblock %}
+
+{% block body %}
+	<div class="errorContaint">
+			<div class="errorImg">
+            <img src="{{ asset ('images/errorImg/robot500.jpg') | imagine_filter('slider') }}" class="img-fluid" alt="...">
+            </div>		
+	</div>
+
+
+{% endblock %}

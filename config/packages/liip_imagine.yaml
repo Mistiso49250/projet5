@@ -51,4 +51,12 @@ liip_imagine:
                 thumbnail: 
                     size: [224,224]
                     mode: outbound
+        errorimg:
+            quality: 80
+            filters: 
+                upscale: 
+                    min: [1200,800]
+                thumbnail: 
+                    size: [1200,800]
+                    mode: outbound
 

@@ -309,8 +309,8 @@ a{
 /* Form Login span */
 #aideEmail{
     position: absolute;
-    left: 46%;
-    top: 56.5%;
+    left: 38%;
+    top: 67.5%;
 }
 
 
@@ -793,6 +793,11 @@ input[type=checkbox] {
 .fa-long-arrow-alt-right{
     vertical-align: middle;
     margin-left: 8px;
+}
+
+/* error 403 Img */
+.errorImg img{
+    width: 100%;
 }
 
 /* Page produits marque */

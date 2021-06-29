@@ -22,13 +22,13 @@ class formLoginValidate{
         });
 
         // vérification soumission formulaire
-        this.form.addEventListener('submit', (event) => {
-            event.preventDefault();
+        // this.form.addEventListener('submit', (event) => {
+        //     event.preventDefault();
 
-            if(this.validEmail(this.validateMail) && this.validPassword(this.validatePassword)){
-                this.form.submit();
-            }
-        });
+        //     if(this.validEmail(this.validateMail) && this.validPassword(this.validatePassword)){
+        //         this.form.submit();
+        //     }
+        // });
 
     }
 

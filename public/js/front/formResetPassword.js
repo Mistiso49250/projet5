@@ -13,13 +13,13 @@ class formResetPasswordValidate{
         });
 
         // vérification soumission formulaire
-        this.form.addEventListener('submit', (event) => {
-            event.preventDefault();
+        // this.form.addEventListener('submit', (event) => {
+        //     event.preventDefault();
 
-            if(this.validEmail(this.validateMail) ){
-                this.form.submit();
-            }
-        });
+        //     if(this.validEmail(this.validateMail) ){
+        //         this.form.submit();
+        //     }
+        // });
 
     }
 
