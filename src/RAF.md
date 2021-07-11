@@ -150,3 +150,21 @@ ne plus afficher la liste search a la sortie du focus
 mettre a jour les titres des marques : ok
 mettre a jour les titres des pages : ok
 déplacer le bloc histoire dans le footer et supprimer du footer les blocs rayon et marque : ok
+
+
+1er
+techno front et back
+
+1er afficher partie techno
+mvc partie techno
+front et back
+validation ajax
+
+back
+
+
+front = JS
+
+partie frontend transfert dans back
+
+securité en fin

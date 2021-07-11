@@ -41,6 +41,15 @@ h1{
     top: 6rem;
 }
 
+.newArticle2{
+    position: absolute;
+    right: 18rem;
+    top: 6rem;
+    color: white;
+    border: white;
+    background: linear-gradient(to right, rgba(54, 215, 232, 1), rgba(177, 148, 250, 1));
+}
+
 .newArticleAdmin{
     margin-right: 1em;
     margin-bottom: 3em;

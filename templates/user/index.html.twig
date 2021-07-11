@@ -28,14 +28,27 @@
 						<h5 class="card-title h5User">Bonjour
 							{{ app.user.firstname }}!</h5>
 					</div>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item btn">Tableaux de bord</li>
-						{# <li class="list-group-item btn">Mes informations</li> #}
-						{# <li class="list-group-item btn">Mes commandes</li>
-						<li class="list-group-item btn">Mes listes</li> #}
-						<li class="list-group-item btn" a href="{{ path('utilisateur_modifier') }}">Modifier votre profil</a></li>
-						<li class="list-group-item btn" a href="{{ path('utilisateur_motdepasse') }}">Modifier votre mot de passe</a></li>
-					</ul>
+					{% if is_granted('ROLE_ADMIN') %}
+										{# is_granted('ROLE_ADMIN') #}
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item btn"><a href="{{ path('utilisateur') }}">Tableaux de bord</a></li>
+							<li class="list-group-item btn"><a href="{{ path('home_admin') }}">Administration</a></li>
+							{# <li class="list-group-item btn">Mes informations</li> #}
+							{# <li class="list-group-item btn">Mes commandes</li>
+							<li class="list-group-item btn">Mes listes</li> #}
+							<li class="list-group-item btn"><a href="{{ path('utilisateur_modifier') }}">Modifier votre profil</a></li>
+							<li class="list-group-item btn"><a href="{{ path('utilisateur_motdepasse') }}">Modifier votre mot de passe</a></li>
+						</ul>
+					{% else %}
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item btn"><a href="{{ path('utilisateur') }}">Tableaux de bord</a></li>
+							{# <li class="list-group-item btn">Mes informations</li> #}
+							{# <li class="list-group-item btn">Mes commandes</li>
+							<li class="list-group-item btn">Mes listes</li> #}
+							<li class="list-group-item btn"><a href="{{ path('utilisateur_modifier') }}">Modifier votre profil</a></li>
+							<li class="list-group-item btn"><a href="{{ path('utilisateur_motdepasse') }}">Modifier votre mot de passe</a></li>
+						</ul>
+					{% endif %}
 				</div>
 			</div>
 		</aside>
